@@ -37,26 +37,29 @@ def PlotFgvR(inputfile):
     R500 = 1.
     R200 = 1.325
     Rvir = 1.90
+    R3_500 = 3.
 
-    radius = np.array([R500, R200, Rvir])
+    radius = np.array([R500, R200, Rvir, R3_500])
 
     colors = np.array(['b', 'r', 'g'])
-    styles = np.array(['-','--','-.','.'])
+    styles = np.array(['-','--','-.','..'])
 
+    lables = np.array([r'Rasheed et al. 2010 - %1.1e M$_\odot$',r'Rasheed et al. 2010 - %1.1e M$_\odot$',r'Rasheed et al. 2010 - %1.1e M$_\odot$',r'Rasheed et al. 2010 - %1.1e M$_\odot$',r'Ade et al. 2013 - %1.1e M$_\odot$', r'Eckert et al. 2013 - %1.1e M$_\odot$', r'Eckert et al. 2013 - Cool Core']) 
+    
     for i in np.arange(len(GasData['Mass'])):
         data = GasData[i]
-        Fgas = np.array([data['F500'], data['F200'], data['Fvir']])
-        err = np.array([data['err500'], data['err200'], data['errvir']])
+        Fgas = np.array([data['F500'], data['F200'], data['Fvir'], data['F3_R500']])
+        err = np.array([data['err500'], data['err200'], data['errvir'], data['err3_R500']])
         
-        plt.errorbar(radius, Fgas, yerr=err, c=colors[data['ref']-1], marker='o', ms=5)
+        plt.errorbar(radius, Fgas, yerr=err, c=colors[data['ref']-1], marker='o', ms=8, ls=data['Style'])#, label = lables[data['Label']] %(data['Mass']))
 
 def SetAxes(legend=False):
-    plt.axhline(y=0.165, ls='-', c='k', label=r'$\Omega_{b}$ (WMAP)')
-    plt.axhline(y=0.157, ls='--', c='k', label=r'Expected Hot Gas')
+    plt.axhline(y=0.165, ls='-', c='k', label=r'$\Omega_{b}$/$\Omega_{M}$ (WMAP)')
+    plt.axhline(y=0.153, ls='--', c='k', label=r'Expected Hot Gas')
     plt.xlabel(r'R/R$_{500}$')
     plt.ylabel(r'F$_{gas}$ (<R)')
-    plt.xticks([0.8, 1., 1.2, 1.325, 1.4, 1.6, 1.8, 1.9, 2.],[0.8, 1, 1.2, r'R$_{200}$', 1.4, 1.6, 1.8, r'R$_{vir}$', 2.])
-
+    plt.xticks([1., 1.325, 1.5, 1.9, 2., 3.],[1, r'R$_{200}$', 1.5, r'R$_{vir}$', 2.,3.])
+    plt.xlim([0.8,3.2])
 
     if legend:
         plt.legend(loc=0)
