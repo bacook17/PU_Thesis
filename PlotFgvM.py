@@ -6,14 +6,8 @@ import matplotlib.pyplot as plt, numpy as np, os
 Plot the gas-fraction against Mass, for the cluster sample provided in inputfile
 """
 
-def PlotFgvR(inputfile):
+def PlotFgvM(inputfile):
     GasData = np.genfromtxt(inputfile, dtype=None, names=True)
-
-    #Radius in units of R500
-    R500 = 1.
-    R200 = 1.325
-    Rvir = 1.90
-    R3_500 = 3.
 
     Mass = GasData['Mass']/1e+13
 
@@ -34,8 +28,8 @@ def SetAxes(legend=False):
         plt.legend(loc=0)
 
 if __name__ == '__main__':
-    inputfile = 'F_gas.dat'
+    inputfile = 'F_all.dat'
     plt.figure(1, facecolor='w')
-    PlotFgvR(inputfile)
+    PlotFgvM(inputfile)
     SetAxes(legend=True)
     plt.show()

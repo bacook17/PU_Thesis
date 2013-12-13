@@ -12,7 +12,7 @@ def PlotFgvR_first(inputfile):
 
     #Radius in units of R500
     R500 = 1.
-    R200 = 1.325
+    R200 = 1.43
     Rvir = 1.90
 
     #use nan for missing data in a column
@@ -58,14 +58,14 @@ def SetAxes(legend=False):
     plt.axhline(y=0.153, ls='--', c='k', label=r'Expected Hot Gas')
     plt.xlabel(r'R/R$_{500}$')
     plt.ylabel(r'F$_{gas}$ (<R)')
-    plt.xticks([1., 1.325, 1.5, 1.9, 2., 3.],[1, r'R$_{200}$', 1.5, r'R$_{vir}$', 2.,3.])
+    plt.xticks([1., 1.43, 1.5, 1.9, 2., 3.],[1, r'R$_{200}$', 1.5, r'R$_{vir}$', 2.,3.])
     plt.xlim([0.8,3.2])
 
     if legend:
         plt.legend(loc=0)
 
 if __name__ == '__main__':
-    inputfile = 'F_gas.dat'
+    inputfile = 'F_all.dat'
     plt.figure(1, facecolor='w')
     PlotFgvR(inputfile)
     SetAxes(legend=True)
