@@ -1,0 +1,55 @@
+A summary of information about the several sources of gas fraction data.
+
+1) Rasheed et al. 2010
+bibcode: 2010arXiv1007.1980R
+h = 0.72
+Redshift range: 0.012 -> 0.23
+Mass range: M500 h_72^-1 => 0.3 - 10 (E14 M_solar)
+Mass bins: 0.3 - 0.7 
+     	   0.7 - 1.7
+	   1.7 - 4.2
+	   4.2 - 10. 
+Rvir defined as R_100
+Overdensities defined as versus critical, not background
+*Fg_500 are averages from Chandra and XMM observations
+Fg_500 data originally from Giodini et al. 2009 (2009ApJ...703..982G)
+*Paper uses mean observed gas and mass density profiles to extrapolate Fg
+These density profiles are observed out to Rvir and beyond (not extrapolations themselves)
+Hydrostatic equilibrium is assumed for Fg_500 (needs correction)
+*Total cluster mass is calculated from Lx vs. M relation, calibrated against Weak Lensing (!)
+
+
+2) Planck Collaboration Intermediate Results V
+bibcode: 2013A&A...550A.131P
+Also used Corrigendum: 2013A&A...558C...2P
+h = 0.70
+Redshift range: 0.04 - 0.4
+Mass range: M500 => 2 - 15 (E14 M_solar)
+Mass bins: only one
+No Rvir defined
+Overdensities defined as versus critical
+*Fg calculated as follows:
+    Gas pressure derived from SZ measurements
+    Gas temperature derived from X-ray observations
+    Total mass appoximated using M500 and NFW profile
+*Temp only measured to 1.2 R500...Two temperature assumptions made:
+     H1: Extrapolate observed temp profile (Most reasonable)
+     H2: Assume constant temp beyond 1.2 R500
+Total mass from Yx vs. M, calibrated against hydrostatic masses
+*Both total mass range and F_gas need correction for hydrostatic equil.
+Corrigendum gives proper F_gas distribution
+Could select arbitrarily many radii to plot, not just R500, R200, Rvir
+
+3) Eckert et al. 2013
+bibcode: 2013A&A...551A..23E
+h = 0.70
+Results only given at R500 and R200
+*Fg calculated as follows:
+    Average gas pressure profile from Planck
+    Average gas density profile from ROSAT X-ray obs.
+    Pressure + density -> Hydrostatic mass profile
+    density -> gas mass profile
+Also gives Fg for 18 ind. clusters in overlap btwn. Planck/ROSAT
+Two different deprojection techniques... which one is more reasonable?
+CC (relaxed) clusters show lower gas fractions than NCC
+Represents a different way of getting at Fgas than Planck... Why are they different?
