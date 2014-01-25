@@ -1,0 +1,27 @@
+%preamble document for 2014 thesis
+%Ben Cook '14 (bacook@)
+%adviser: Neta Bahcall
+
+\bibliographystyle{apj}
+\usepackage{graphicx, multirow, natbib, color,amsmath,amssymb,afterpage}
+\usepackage[colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
+
+%slightly bigger plots than standard
+\newcommand\plottwobig[2]{\centering \leavevmode
+\includegraphics[width=.49\linewidth]{#1} \hfil
+\includegraphics[width=.49\linewidth]{#2}}
+
+\newcommand\plotonebig[2]{\centering \leavevmode
+\includegraphics[width=#2\linewidth]{#1}}
+
+%commonly used macros
+\newcommand\apx{\ensuremath{\sim}}
+\newcommand\citeeg[1]{\citep[e.g.,][]{#1}
+\newcommand\gsim{\gtrsim}
+\newcommand\lsim{\lesssim}
+\newcommand\kms{km~s$^{-1}$}
+\newcommand\Lsun{\ensuremath{L_\odot}}
+\newcommand\Msun{\ensuremath{M_\odot}}
+\newcommand\todo[1]{\textcolor{red}{#1}}
+
+
