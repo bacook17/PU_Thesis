@@ -1,7 +1,30 @@
 
+%% $Log: apj.bst,v $
+%%
+%% Revision 1.6  2009/05/18 15:13:02  alberto
+%% Fixed sorting of references with truncated lists of authors
+%% in sort.format.names
+%% Fix courtesy of Stephen Fegan <sfegan@llr.in2p3.fr>
+%%
+%% Revision 1.5  2009/03/19 13:15:11  alberto
+%% Truncate \bibitem entries with more than 8 authors.
+%% Fix courtesy of Craig Wiegert <wigie@alum.mit.edu>
+%% and Andrew R. Marble <amarble@as.arizona.edu>
+%%
+%% Revision 1.4  2002/06/18 16:37:48  alberto
+%% Add comma after first author in two-author reference
+%% Fix courtesy of Tim Robishaw <robishaw@astron.berkeley.edu>
+%%
+%% Revision 1.3  2000/04/20 22:17:50  jbaker
+%% Fixed INBOOK bug, now works essentially like BOOK.
+%%
+%% Revision 1.2  1998/08/30 22:35:45  jbaker
+%% Added RCS keywords.
+%%
 %% 1998/08/12  J Baker
 %% Tweaked by hand to get correct results for ApJ.  Added functions from
 %% astrobib.
+
 
 %%
 %% This is file `apj.bst',
@@ -380,38 +403,53 @@ FUNCTION {format.names}
   #1 'nameptr :=
   s num.names$ 'numnames :=
   numnames 'namesleft :=
-    { namesleft #0 > }
-    { s nameptr
-      "{vv~}{ll}{, jj}{, f.}" format.name$
-    't :=
-      nameptr #1 >
-        {
-          namesleft #1 >
-            { ", " * t * }
-            {
-              numnames #2 >
-                { "," * }
-                'skip$
-              if$
-              s nameptr "{ll}" format.name$ duplicate$ "others" =
-                { 't := }
-                { pop$ }
-              if$
-              t "others" =
-                {
-                  " {et~al.}" *
-                }
-                { " \& " * t * }
-              if$
-            }
-          if$
-        }
-        't
-      if$
-      nameptr #1 + 'nameptr :=
-      namesleft #1 - 'namesleft :=
+%% AA 3/19/2009
+%% This fix courtesy of Craig Wiegert <wigie@alum.mit.edu>
+%% and comes by way of Tim Robishaw; a similar patch has
+%% also been contributed by Andy Marble <amarble@as.arizona.edu>
+%% Added the following two lines to make 8 author upper limit to
+%% reference list, based on what is found in aas.bst.
+  numnames #8 >
+    { s #1 "{vv~}{ll}{, jj}{, f.,}" format.name$ " {et~al.}" * }
+    { { namesleft #0 > }
+      { s nameptr
+	"{vv~}{ll}{, jj}{, f.}" format.name$
+	't :=
+	nameptr #1 >
+	  {
+            namesleft #1 >
+              { ", " * t * }
+              {
+                  numnames #1 >
+%% AA 6/18/2002
+%% This fix courtesy of Tim Robishaw <robishaw@astron.berkeley.edu>:
+%% Original version left comma out after initials of first author
+%% for two-author papers!!
+%%                numnames #2 >
+                  { "," * }
+                  'skip$
+                if$
+                s nameptr "{ll}" format.name$ duplicate$ "others" =
+                  { 't := }
+                  { pop$ }
+                if$
+                t "others" =
+                  {
+                    " {et~al.}" *
+                  }
+                  { " \& " * t * }
+                if$
+              }
+            if$
+          }
+          't
+        if$
+        nameptr #1 + 'nameptr :=
+        namesleft #1 - 'namesleft :=
+      }
+    while$
     }
-  while$
+  if$
 }
 
 FUNCTION {format.names.ed}
@@ -1103,7 +1141,7 @@ FUNCTION {inbook}
   if$
   format.date "year" output.check
   date.block
-  title format.full.book.spec
+  title format.full.book.spec output
 %  format.btitle "title" output.check
 %  crossref missing$
 %    {
@@ -1408,25 +1446,35 @@ FUNCTION {sort.format.names}
   #1 'nameptr :=
   ""
   s num.names$ 'numnames :=
-  numnames 'namesleft :=
-    { namesleft #0 > }
+  numnames #8 >
     { s nameptr
       "{vv{ } }{ll{ }}{  f{ }}{  jj{ }}"
       format.name$ 't :=
-      nameptr #1 >
-        {
-          "   "  *
-          namesleft #1 = t "others" = and
-            { "zzzzz" * }
-            { t sortify * }
-          if$
-        }
-        { t sortify * }
-      if$
-      nameptr #1 + 'nameptr :=
-      namesleft #1 - 'namesleft :=
+      t sortify *
+      "   "  *
+      "zzzzz" *
     }
-  while$
+    { numnames 'namesleft :=
+      { namesleft #0 > }
+      { s nameptr
+        "{vv{ } }{ll{ }}{  f{ }}{  jj{ }}"
+        format.name$ 't :=
+        nameptr #1 >
+          {
+            "   "  *
+            namesleft #1 = t "others" = and
+              { "zzzzz" * }
+              { t sortify * }
+            if$
+          }
+          { t sortify * }
+        if$
+        nameptr #1 + 'nameptr :=
+        namesleft #1 - 'namesleft :=
+      }
+    while$
+    }
+  if$
 }
 
 FUNCTION {sort.format.title}
