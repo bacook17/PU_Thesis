@@ -46,7 +46,7 @@
 \def\@submittedyear{\ifnum\month>10 \stepcounter{subyear}\thesubyear
   \else\thesubyear\fi}
 \def\@submittedmonth{\ifnum\month>10 January\else\ifnum\month>5 November
-  \else June\fi\fi}
+  \else May\fi\fi}
 \long\def\@abstract{\@latex@error{No \noexpand\abstract given}\@ehc}
 \newcommand*{\frontmatter}{
   \pagenumbering{roman}
@@ -161,6 +161,7 @@ purpose of scholarly research.\vspace*{.5in}\\ \\
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions
 \LoadClass[12pt]{report}
+\usepackage[bookmarks=true,colorlinks,bookmarksopen,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}     
 \setlength{\oddsidemargin}{0.5in}   %{.4375in}
 \setlength{\evensidemargin}{.1in} %{.4375in}
 \setlength{\topmargin}{-.5in}  %{-.5625in}

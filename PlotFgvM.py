@@ -32,4 +32,11 @@ if __name__ == '__main__':
     plt.figure(1, facecolor='w')
     PlotFgvM(inputfile)
     SetAxes(legend=True)
-    plt.show()
+    if len (sys.argv) == 1:
+        plt.show()
+
+    #If two command-line arguments, second is interpreted as
+    #name of path to save figure to.
+    if len (sys.argv) > 1:
+        print("Saving figure as " + sys.argv[1] + "\n")
+        plt.savefig (sys.argv[1])

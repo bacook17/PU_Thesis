@@ -11,27 +11,24 @@
 \author{Benjamin A. Cook}
 \advisor{Prof. Neta Bahcall}
 
-\begin{document}
-%=====================================================================%
 
-\begin{abstract}
+\abstract{
 Here be a nice summary of the work done in the thesis.\\
 
-Some more stuff.\\
+Some more stuff.}
 
-\end{abstract}
-
-\begin{acknowledgements}
+\acknowledgements{
 Here is where I thank errbody.\\
-Like, errbody.\\
-\end{acknowledgements}
+Like, errbody.}
 
-\begin{dedication}
-Dedicated to someone.
-\end{dedication}
+\dedication{
+Dedicated to someone.}
 
-\chapter{Introduction}
+\begin{document}
+%=====================================================================%
+\chapter*{Introduction}
 \label{c.Intro}
+\addcontentsline{toc}{chapter}{Introduction}
 \section{The Trouble with Baryons}
 \label{s.Trouble}
 Here is where I introduce the subject. Lalala.\\
@@ -42,10 +39,14 @@ Some more intro stuff.\\
 \label{s.More}
 And some more stuff.\\
 
-\chapter{The Sequel}
+\section{The Sequel}
 \label{c.Sequel}
 \section{What we did}
 \label{s.Work}
 Here is some description of the work we did.\\
+
+\citep{Ade2013b}
+
+\bibliography{Thesis}
 
 \end{document}

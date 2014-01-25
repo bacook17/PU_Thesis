@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt, numpy as np, os
 """
 Plot the gas-fraction against radius, for the cluster sample provided in inputfile
 """
-
+"""
 def PlotFgvR_first(inputfile):
     
     GasData = np.genfromtxt(inputfile, dtype=None, names=True)
@@ -29,7 +29,7 @@ def PlotFgvR_first(inputfile):
     plt.errorbar(R500 + np.zeros_like(F500), F500, yerr=err500)
     plt.errorbar(R200 + np.zeros_like(F200), F200, yerr=err200)
     plt.errorbar(Rvir + np.zeros_like(Fvir), Fvir, yerr=errvir)
-
+"""
 def PlotFgvR(inputfile):
     GasData = np.genfromtxt(inputfile, dtype=None, names=True)
 
@@ -69,4 +69,11 @@ if __name__ == '__main__':
     plt.figure(1, facecolor='w')
     PlotFgvR(inputfile)
     SetAxes(legend=True)
-    plt.show()
+    if len (sys.argv) == 1:
+        plt.show()
+
+    #If two command-line arguments, second is interpreted as
+    #name of path to save figure to.
+    if len (sys.argv) > 1:
+        print("Saving figure as " + sys.argv[1] + "\n")
+        plt.savefig (sys.argv[1])

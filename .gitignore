@@ -1,0 +1,7 @@
+.latexwork/*
+Cook_Thesis.pdf
+Figs_Thesis/*
+*.aux
+*.log
+*.toc
+*.out
