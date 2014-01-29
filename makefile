@@ -2,7 +2,7 @@ default: Cook_Thesis.pdf
 
 thesis: Cook_Thesis.pdf 
 
-subtexs = thesis_setup.tex
+subtexs = thesis_setup.tex thesis_chapter*.tex
 figs = Figs_Thesis/FbvM.pdf Figs_Thesis/FgvM.pdf Figs_Thesis/FgvR.pdf
 cleans = Cook_Thesis.pdf Figs_Thesis/*.pdf
 
