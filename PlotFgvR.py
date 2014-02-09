@@ -44,25 +44,38 @@ def PlotFgvR(inputfile):
     colors = np.array(['b', 'r', 'g'])
     styles = np.array(['-','--','-.','..'])
 
-    lables = np.array([r'Rasheed et al. 2010 - %1.1e M$_\odot$',r'Rasheed et al. 2010 - %1.1e M$_\odot$',r'Rasheed et al. 2010 - %1.1e M$_\odot$',r'Rasheed et al. 2010 - %1.1e M$_\odot$',r'Ade et al. 2013 - %1.1e M$_\odot$', r'Eckert et al. 2013 - %1.1e M$_\odot$', r'Eckert et al. 2013 - Cool Core']) 
+    lables = np.array([r'Rasheed+ 2010 - %1.1e M$_\odot$',r'Planck Coll. H1 - %1.1e M$_\odot$', r'Planck Coll. H2 - %1.1e M$_\odot$',r'Eckert+ 2013 - %1.1e M$_\odot$', r'Eckert+ 2013 - Cool Core'])
+
+    markers = np.array(['o','s','D','^','o','s','o','D'])
     
     for i in np.arange(len(GasData['Mass'])):
         data = GasData[i]
         Fgas = np.array([data['F500'], data['F200'], data['Fvir'], data['F3_R500']])
         err = np.array([data['err500'], data['err200'], data['errvir'], data['err3_R500']])
         
-        plt.errorbar(radius, Fgas, yerr=err, c=colors[data['ref']-1], marker='o', ms=8, ls=data['Style'])#, label = lables[data['Label']] %(data['Mass']))
+        plt.errorbar(radius, Fgas, yerr=err, c=colors[data['ref']-1], marker=markers[i], ms=8, ls=data['Style'], label = lables[data['Label']] %(data['Mass']))
 
 def SetAxes(legend=False):
-    plt.axhline(y=0.165, ls='-', c='k', label=r'$\Omega_{b}$/$\Omega_{M}$ (WMAP)')
-    plt.axhline(y=0.153, ls='--', c='k', label=r'Expected Hot Gas')
-    plt.xlabel(r'R/R$_{500}$')
-    plt.ylabel(r'F$_{gas}$ (<R)')
-    plt.xticks([1., 1.43, 1.5, 1.9, 2., 3.],[1, r'R$_{200}$', 1.5, r'R$_{vir}$', 2.,3.])
+    f_b = 0.162
+    f_star = 0.009
+    err_b = 0.006
+    err_star = 0.001
+    f_gas = f_b - f_star
+    err_gas = np.sqrt(err_b**2 + err_star**2)
+
+    plt.axhline(y=f_gas, ls='--', c='k', label=None, zorder=-1)
+    x = np.linspace(.8,3.2,1000)
+    plt.fill_between(x, y1=f_gas - err_gas, y2=f_gas + err_gas, color='k', alpha=0.3, zorder=-1)
+    plt.text(1.3, f_gas+0.0005, 'Expected Hot Gas', verticalalignment='bottom', size='small')
+    plt.xlabel(r'r/r$_{500}$')
+    plt.ylabel(r'f$_{gas}$ ($<$ r)')
+
+    plt.xscale('log')
+    plt.xticks([1., 1.43, 1.9, 2., 3.],[1, r'r$_{200}$', r'r$_{vir}$', 2.,3.])
     plt.xlim([0.8,3.2])
 
     if legend:
-        plt.legend(loc=0)
+        plt.legend(loc=0, prop={'size':'x-small'}, markerscale=0.7, numpoints=1)
 
 if __name__ == '__main__':
     inputfile = 'F_all.dat'
