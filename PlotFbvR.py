@@ -58,13 +58,13 @@ def PlotFbvR(inputfile_1, inputfile_2):
     err_b_high = np.sqrt(np.power(err_gas_high, 2) + np.power(err_star_high_int(gas_radius),2))
 
     #Plot them all
-    plt.errorbar(gas_radius,F_gas_med, yerr=err_gas_med, c='g', marker='o', ls='--', mfc='g', mec='k', ms=8, label=r'Gas, med')
-    plt.errorbar(gas_radius,F_gas_high, yerr=err_gas_high, c='b', marker='o', ls='--', mfc='b', mec='k', ms=8, label=r'Gas, high')
+    plt.errorbar(gas_radius,F_gas_med, yerr=err_gas_med, color='g', marker='D', ls='--', mfc='w', mec='g',mew=2, ms=8, label=r'Gas, med')
+    plt.errorbar(gas_radius,F_gas_high, yerr=err_gas_high, color='b', marker='D', ls='--', mfc='w', mec='b',mew=2, ms=8, label=r'Gas, high')
     plt.errorbar(star_radius, F_star_med, yerr=err_star_med, c='g', marker='*', ls='--', mfc='g', mec='k', ms=8, label=r'Stars, med')
     plt.errorbar(star_radius, F_star_high, yerr=err_star_high, c='b', marker='*', ls='--', mfc='b', mec='k', ms=8, label=r'Stars, high')
 
-    plt.errorbar(gas_radius, F_b_med, yerr=err_b_med, c='g', marker='D', ls='--', mfc='g', mec='k', ms=8, label=r'Baryons, med')
-    plt.errorbar(gas_radius, F_b_high, yerr=err_b_high, c='b', marker='D', ls='--', mfc='b', mec='k', ms=8, label=r'Baryons, high')
+    plt.errorbar(gas_radius, F_b_med, yerr=err_b_med, c='g', marker='o', ls='--', mfc='g', mec='k', ms=8, label=r'Baryons, med')
+    plt.errorbar(gas_radius, F_b_high, yerr=err_b_high, c='b', marker='o', ls='--', mfc='b', mec='k', ms=8, label=r'Baryons, high')
 
     F_b_max = F_b_high[-1]
     err_b_max = err_b_high[-1]
@@ -86,14 +86,14 @@ def SetAxes(legend=False):
     F_b = 0.162
     sig_F_b = 0.006
     plt.axhline(y=F_b, ls='--', c='k', label=None, zorder=-1)
-    plt.text(.4,F_b+0.005, r'f$_{b,cosmic}$ (CMB+BAO+H$_0$)', verticalalignment='bottom', size='medium')
+    plt.text(1,F_b+0.005, r'f$_{b}$ (CMB+BAO+H$_0$)', verticalalignment='bottom', size='medium')
     plt.fill_between(x, y1=F_b - sig_F_b, y2=F_b + sig_F_b, color='k', alpha=0.3, zorder=-1)
 
     plt.xlabel(r'r/r$_{500}$')
     plt.ylabel(r'f$_{X}$ ($<$ r)')
 
     plt.xscale('log')
-    plt.xlim([0.2,40])
+    plt.xlim([0.8,40])
 
     plt.ylim(ymax=0.2)
 
