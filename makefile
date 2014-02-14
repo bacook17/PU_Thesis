@@ -3,7 +3,7 @@ default: Cook_Thesis.pdf
 thesis: Cook_Thesis.pdf 
 
 subtexs = thesis_setup.tex thesis_chapter*.tex
-figs = Figs_Thesis/FbvM.pdf Figs_Thesis/FgvM.pdf Figs_Thesis/FgvR.pdf
+figs = Figs_Thesis/FbvM.pdf Figs_Thesis/FgvM.pdf Figs_Thesis/FgvR.pdf Figs_Thesis/FbvR.pdf
 cleans = Cook_Thesis.pdf Figs_Thesis/*.pdf
 
 # Figures
@@ -17,6 +17,9 @@ Figs_Thesis/FgvM.pdf: PlotFgvM.py F_all.dat
 	./$< $@
 
 Figs_Thesis/FgvR.pdf: PlotFgvR.py F_all.dat
+	./$< $@
+
+Figs_Thesis/FbvR.pdf: PlotFbvR.py F_all.dat F_star.dat
 	./$< $@
 
 Cook_Thesis.pdf: thesis_body.tex $(subtexs) $(figs)
