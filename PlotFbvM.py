@@ -16,6 +16,8 @@ def PlotFbvM(inputfile):
 
     plt.errorbar(Mass, Fb, yerr=errb, c='r', marker='o', ls='', mfc='r', mec='k', ms=8, label=r'f$_{gas}$ + f$_*$')
 
+    plt.errorbar(10**(12.2)/1e+13, 0.13365, yerr=0.06075, marker='S', mfc='k', mec='k', ms=3, label=r'Werk+ 2014', ls='', ecolor='k', mew=3, capsize=6, elinewidth=3)
+
 #    lables = np.array([r'Rasheed+ 2010',r'Rasheed+ 2010', r'Rasheed+2010', r'Ade+ 2013', r'Ade+ 2013',r'Eckert+ 2013', r'Eckert+'])
 
 """
@@ -26,18 +28,18 @@ def PlotFbvM(inputfile):
 """
 
 def SetAxes(legend=False):
-    x = np.linspace(4,110,1000)
+    x = np.linspace(0.1,110,1000)
     F_b = 0.162
     sig_F_b = 0.006
     plt.axhline(y=F_b, ls='--', c='k', label=None, zorder=-1)
-    plt.text(10,F_b+0.0005, r'f$_{b,cosmic}$ (CMB+BAO+H$_0$)', verticalalignment='bottom', size='small')
+    plt.text(.6,F_b+0.0005, r'f$_{b,cosmic}$', verticalalignment='bottom', size='small')
     plt.fill_between(x, y1=F_b - sig_F_b, y2=F_b + sig_F_b, color='k', alpha=0.3, zorder=-1)
 
     plt.xlabel(r'Mass ($\times 10^{13} M_\odot$)')
     plt.ylabel(r'f$_b$ ($<$ r$_{vir}$)')
 
     plt.xscale('log')
-    plt.xlim([4,110])
+    plt.xlim([.1,110])
 
     if legend:
         plt.legend(loc=0, prop={'size':'small'}, markerscale=0.7, numpoints=1)
