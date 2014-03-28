@@ -9,7 +9,7 @@ Plot the gas-fraction against Mass, for the cluster sample provided in inputfile
 def PlotFgvM(inputfile):
     GasData = np.genfromtxt(inputfile, dtype=None, names=True)
 
-    Mass = GasData['Mass']/1e+13
+    Mass = GasData['Mass'] * 1.35 #1.35 is rough transform from M500 -> Mvir
 
     plt.errorbar(Mass, GasData['F500'], yerr=GasData['err500'], c='b', marker='o', ls='', label=r'r$_{500}$')
     plt.errorbar(Mass, GasData['F200'], yerr=GasData['err200'], c='g', marker='o', ls='', label=r'r$_{200}$')
@@ -25,17 +25,17 @@ def SetAxes(legend=False):
     err_gas = np.sqrt(err_b**2 + err_star**2)
 
     plt.axhline(y=f_gas, ls='--', c='k', label=None, zorder=-1)
-    x = np.linspace(4,110,1000)
+    x = np.linspace(4e+13,200e+13,1000)
     plt.fill_between(x, y1=f_gas - err_gas, y2=f_gas + err_gas, color='k', alpha=0.3, zorder=-1)
-    plt.text(10, f_gas+0.0005, 'Expected Hot Gas', verticalalignment='bottom', size='small')
-    plt.xlabel(r'Mass ($\times 10^{13} M_\odot$)')
+    plt.text(10e+13, f_gas+0.0005, 'Expected Hot Gas', verticalalignment='bottom', size='small')
+    plt.xlabel(r'M$_{vir}$ (M$_\odot$)')
     plt.ylabel(r'f$_{gas}$ ($<$ r)')
 
     plt.xscale('log')
-    plt.xlim([4,110])
+    plt.xlim([4e+13,200e+13])
 
     if legend:
-        plt.legend(loc=0, prop={'size':'small'}, markerscale=0.7, numpoints=1)
+        plt.legend(loc=0, prop={'size':'medium'}, markerscale=0.7, numpoints=1)
 
 if __name__ == '__main__':
     inputfile = 'F_all.dat'

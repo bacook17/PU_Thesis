@@ -86,7 +86,7 @@ def SetAxes(legend=False):
     F_b = 0.162
     sig_F_b = 0.006
     plt.axhline(y=F_b, ls='--', c='k', label=None, zorder=-1)
-    plt.text(1,F_b+0.005, r'f$_{b}$ (CMB+BAO+H$_0$)', verticalalignment='bottom', size='medium')
+    plt.text(1,F_b+0.005, r'f$_{b,cosmic}$', verticalalignment='bottom', size='medium')
     plt.fill_between(x, y1=F_b - sig_F_b, y2=F_b + sig_F_b, color='k', alpha=0.3, zorder=-1)
 
     plt.xlabel(r'r/r$_{500}$')
