@@ -16,10 +16,11 @@ def PlotFbvM(inputfile):
     errb = np.sqrt(np.power(Data['errvir'], 2) + np.power(Data['errS200b'], 2))
 
     plt.errorbar(Mass, Fb, yerr=errb, c='r', marker='o', ls='', mfc='r', mec='k', ms=8, label=r'f$_{gas}$ + f$_*$')
-    plt.errorbar(Mass, Fb2, yerr=errb, c='g', marker='o', ls='', mfc='g', mec='k', ms=8, label=r'f(1.2r$_{vir}$)')
+    plt.errorbar(Mass, Fb2, yerr=errb, marker='o', ls='', mfc='None', ecolor='g', mec='g', ms=8, mew=1, label=r'f(1.2r$_{vir}$)', zorder=-1)
 
-    plt.errorbar(10**(12.2), 0.11502, yerr=np.array([[.03742],[.07938]]), marker='o', mfc='k', mec='k', ms=8, ls='', label=r'Werk+ 2014', ecolor='k')
-
+    plt.plot(10**(12.2), 0.13, marker='o', mfc='None', mec='b', ms=8, ls='', mew=1, label=r'Werk+ 2014')
+    plt.errorbar(10**(12.2), 0.0757, yerr=np.array([[0],[.005]]), uplims=True, mfc='b', mec='b', ms=12, ecolor='b')
+    plt.errorbar(10**(12.2), 0.189, yerr=np.array([[0.005],[0]]), lolims=True, mfc='b', mec='b', ms=12, ecolor='b')
 #    lables = np.array([r'Rasheed+ 2010',r'Rasheed+ 2010', r'Rasheed+2010', r'Ade+ 2013', r'Ade+ 2013',r'Eckert+ 2013', r'Eckert+'])
 
 """
@@ -44,10 +45,10 @@ def SetAxes(legend=False):
     plt.xlim([1e+12,2e+15])
 
     plt.text(4e+12, 0.08, 'Galaxies', size='small', verticalalignment='center')
-    plt.plot(3e+12, 0.08, 'ko', ms=8, mfc='k', mec='k', marker=r'$\leftarrow$')
+    plt.plot(3e+12, 0.08, 'ko', ms=8, mfc='k', mec='k', marker=r'$\Leftarrow$')
 
     plt.text(2e+13, 0.08, 'Groups & Clusters', size='small', verticalalignment='center')
-    plt.plot(1.3e+14, 0.08, 'ko', ms=8, mfc='k', mec='k', marker=r'$\rightarrow$')
+    plt.plot(1.3e+14, 0.08, 'ko', ms=8, mfc='k', mec='k', marker=r'$\Rightarrow$')
 
 
     if legend:
