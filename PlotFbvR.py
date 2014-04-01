@@ -57,20 +57,26 @@ def PlotFbvR(inputfile_1, inputfile_2):
     F_b_high = F_gas_high + F_star_high_int(gas_radius)
     err_b_high = np.sqrt(np.power(err_gas_high, 2) + np.power(err_star_high_int(gas_radius),2))
 
-    #Plot them all
-    plt.errorbar(gas_radius,F_gas_med, yerr=err_gas_med, color='g', marker='D', ls='--', mfc='w', mec='g',mew=2, ms=8, label=r'Gas, med')
-    plt.errorbar(gas_radius,F_gas_high, yerr=err_gas_high, color='b', marker='D', ls='--', mfc='w', mec='b',mew=2, ms=8, label=r'Gas, high')
-    plt.errorbar(star_radius, F_star_med, yerr=err_star_med, c='g', marker='*', ls='--', mfc='g', mec='k', ms=8, label=r'Stars, med')
-    plt.errorbar(star_radius, F_star_high, yerr=err_star_high, c='b', marker='*', ls='--', mfc='b', mec='k', ms=8, label=r'Stars, high')
+    #Plot F_gas and F_star
+    plt.figure(1, facecolor='w')
 
-    plt.errorbar(gas_radius, F_b_med, yerr=err_b_med, c='g', marker='o', ls='--', mfc='g', mec='k', ms=8, label=r'Baryons, med')
-    plt.errorbar(gas_radius, F_b_high, yerr=err_b_high, c='b', marker='o', ls='--', mfc='b', mec='k', ms=8, label=r'Baryons, high')
+    plt.errorbar(gas_radius,F_gas_high, yerr=err_gas_high, color='b', marker='D', ls='--', mfc='w', mec='b',mew=1.5, ms=8, label=r'Gas, M > 10$^{14.5}$M$_\odot$')
+    plt.errorbar(gas_radius,F_gas_med, yerr=err_gas_med, color='g', marker='D', ls='--', mfc='w', mec='g',mew=1.5, ms=8, label=r'Gas, M < 10$^{14.5}$M$_\odot$')
+    plt.text(2.5,0.12, r'f$_{gas}$($<$ r/r$_{500}$)', size='small')
+
+    plt.errorbar(star_radius, F_star_high, yerr=err_star_high, c='b', marker='*', ls='--', mfc='b', mec='k', ms=12, label=r'Stars, M > 10$^{14.5}$M$_\odot$')
+    plt.errorbar(star_radius, F_star_med, yerr=err_star_med, c='g', marker='*', ls='--', mfc='g', mec='k', ms=12, label=r'Stars, M < 10$^{14.5}$M$_\odot$')
+    plt.text(4, 0.025, r'f$_{stars}$($<$ r/r$_{500}$)', size='small')
+    
+    plt.figure(2, facecolor='w')
+    plt.errorbar(gas_radius, F_b_high, yerr=err_b_high, c='b', marker='o', ls='--', mfc='b', mec='k', ms=8, label=r'M > 10$^{14.5}$M$_\odot$')
+    plt.errorbar(gas_radius, F_b_med, yerr=err_b_med, c='g', marker='o', ls='--', mfc='g', mec='k', ms=8, label=r'M < 10$^{14.5}$M$_\odot$')
 
     F_b_max = F_b_high[-1]
     err_b_max = err_b_high[-1]
 
     radius_extrapolate = np.logspace(np.log10(R3_500), np.log10(40), 100)
-    plt.fill_between(radius_extrapolate, y1=F_b_max - err_b_max, y2=F_b_max + err_b_max, color='b', alpha=0.3, zorder=-2)
+    plt.fill_between(radius_extrapolate, y1=F_b_max - err_b_max, y2=F_b_max + err_b_max, color='b', alpha=0.3, zorder=-1)
     plt.plot(radius_extrapolate, np.zeros_like(radius_extrapolate)+F_b_max, 'b--', marker=None, lw=2)
 
 
@@ -83,11 +89,20 @@ def WeightMean(values, errors):
 
 def SetAxes(legend=False):
     x = np.linspace(.2,40,1000)
-    F_b = 0.162
-    sig_F_b = 0.006
-    plt.axhline(y=F_b, ls='--', c='k', label=None, zorder=-1)
-    plt.text(1,F_b+0.005, r'f$_{b,cosmic}$', verticalalignment='bottom', size='medium')
-    plt.fill_between(x, y1=F_b - sig_F_b, y2=F_b + sig_F_b, color='k', alpha=0.3, zorder=-1)
+    F_wmap = 0.165 #median of given data sets
+    sig_F_wmap = 0.005 #Systematic uncertainty, not statistical
+
+    F_planck = 0.156 #median of given data sets
+    sig_F_planck = 0.003 #statistical uncertainty
+
+    plt.figure(1)
+    plt.axhline(y=F_wmap, ls=':', c='k', zorder=-1)
+    plt.text(10,F_wmap+0.005, r'f$_{b,WMAP}$', verticalalignment='bottom', size='medium')
+    plt.fill_between(x, y1=F_wmap - sig_F_wmap, y2=F_wmap + sig_F_wmap, color='k', alpha=0.3, zorder=-2)
+
+    plt.axhline(y=F_planck, ls=':', c='k', zorder=-1)
+    plt.text(10,F_planck-0.004, r'f$_{b,Planck}$', verticalalignment='top', size='medium')
+    plt.fill_between(x, y1=F_planck - sig_F_planck, y2=F_planck + sig_F_planck, edgecolor='k', color='w', zorder=-3, hatch='//', lw=0.0)
 
     plt.xlabel(r'r/r$_{500}$')
     plt.ylabel(r'f$_{X}$ ($<$ r)')
@@ -100,17 +115,42 @@ def SetAxes(legend=False):
     if legend:
         plt.legend(loc=0, prop={'size':'small'}, markerscale=0.7, numpoints=1)
 
+    plt.figure(2)
+    plt.axhline(y=F_wmap, ls=':', c='k', zorder=-1)
+    plt.text(0.8,F_wmap+0.005, r'f$_{b,WMAP}$', verticalalignment='bottom', size='medium')
+    plt.fill_between(x, y1=F_wmap - sig_F_wmap, y2=F_wmap + sig_F_wmap, color='k', alpha=0.3, zorder=-2)
+
+    plt.axhline(y=F_planck, ls=':', c='k', zorder=-1)
+    plt.text(0.8,F_planck-0.004, r'f$_{b,Planck}$', verticalalignment='top', size='medium')
+    plt.fill_between(x, y1=F_planck - sig_F_planck, y2=F_planck + sig_F_planck, color='w', edgecolor='k', zorder=-3, hatch='//', lw=0.0)
+
+    plt.xlabel(r'r/r$_{500}$')
+    plt.ylabel(r'f$_{b}$ ($<$ r)')
+
+    plt.xscale('log')
+    plt.xlim([0.6,40])
+
+    plt.ylim([0.06,0.2])
+
+    if legend:
+        plt.legend(loc=0, prop={'size':'small'}, markerscale=0.7, numpoints=1)
+
 if __name__ == '__main__':
     inputfile_1 = 'F_all.dat'
     inputfile_2 = 'stellar_fraction.dat'
     plt.figure(1, facecolor='w')
     PlotFbvR(inputfile_1, inputfile_2)
     SetAxes(legend=True)
-    if len (sys.argv) == 1:
+    if len (sys.argv) < 3:
         plt.show()
 
     #If two command-line arguments, second is interpreted as
     #name of path to save figure to.
-    if len (sys.argv) > 1:
-        print("Saving figure as " + sys.argv[1] + "\n")
+    if len (sys.argv) == 3:
+        plt.figure(1)
+        print("Saving figure 1 as " + sys.argv[1] + "\n")
         plt.savefig (sys.argv[1])
+
+        plt.figure(2)
+        print("Saving figure 2 as " + sys.argv[2] + "\n")
+        plt.savefig (sys.argv[2])

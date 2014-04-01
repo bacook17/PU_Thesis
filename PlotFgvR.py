@@ -53,7 +53,7 @@ def PlotFgvR(inputfile):
         Fgas = np.array([data['F500'], data['F200'], data['Fvir'], data['F3_R500']])
         err = np.array([data['err500'], data['err200'], data['errvir'], data['err3_R500']])
         
-        plt.errorbar(radius, Fgas, yerr=err, c=colors[data['ref']-1], marker=markers[i], ms=8, ls=data['Style'], label = lables[data['Label']] %(data['Mass']))
+        plt.errorbar(radius, Fgas, yerr=err, c=colors[data['ref']-1], marker=markers[i], ms=8, ls=data['Style'], label = lables[data['Label']] %(data['Mass']*1.35)) #1.35 is correction from M500 -> Mvir
 
 def SetAxes(legend=False):
     f_b = 0.162

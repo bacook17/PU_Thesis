@@ -18,9 +18,9 @@ def PlotFbvM(inputfile):
     plt.errorbar(Mass, Fb, yerr=errb, c='r', marker='o', ls='', mfc='r', mec='k', ms=8, label=r'f$_{gas}$ + f$_*$')
     plt.errorbar(Mass, Fb2, yerr=errb, marker='o', ls='', mfc='None', ecolor='g', mec='g', ms=8, mew=1, label=r'f(1.2r$_{vir}$)', zorder=-1)
 
-    plt.plot(10**(12.2), 0.13, marker='o', mfc='None', mec='b', ms=8, ls='', mew=1, label=r'Werk+ 2014')
-    plt.errorbar(10**(12.2), 0.0757, yerr=np.array([[0],[.005]]), uplims=True, mfc='b', mec='b', ms=12, ecolor='b')
-    plt.errorbar(10**(12.2), 0.189, yerr=np.array([[0.005],[0]]), lolims=True, mfc='b', mec='b', ms=12, ecolor='b')
+    plt.plot(10**(12.2), 0.124, marker='o', mfc='None', mec='b', ms=8, ls='', mew=1, label=r'Werk+ 2014') #using geometric mean of min/max
+    plt.errorbar(10**(12.2), 0.095, yerr=np.array([[0],[.005]]), uplims=True, mfc='b', mec='b', ms=12, ecolor='b', label='')
+    plt.errorbar(10**(12.2), 0.19, yerr=np.array([[0.005],[0]]), lolims=True, mfc='b', mec='b', ms=12, ecolor='b', label='')
 #    lables = np.array([r'Rasheed+ 2010',r'Rasheed+ 2010', r'Rasheed+2010', r'Ade+ 2013', r'Ade+ 2013',r'Eckert+ 2013', r'Eckert+'])
 
 """
@@ -32,11 +32,20 @@ def PlotFbvM(inputfile):
 
 def SetAxes(legend=False):
     x = np.linspace(1e+12,2e+15,1000)
-    F_b = 0.162
-    sig_F_b = 0.006
-    plt.axhline(y=F_b, ls='--', c='k', label=None, zorder=-1)
-    plt.text(6e+12,F_b+0.0005, r'f$_{b,cosmic}$', verticalalignment='bottom', size='small')
-    plt.fill_between(x, y1=F_b - sig_F_b, y2=F_b + sig_F_b, color='k', alpha=0.3, zorder=-1)
+
+    F_wmap = 0.165 #median of given data sets
+    sig_F_wmap = 0.005 #Systematic uncertainty, not statistical
+
+    F_planck = 0.156 #median of given data sets
+    sig_F_planck = 0.003 #statistical uncertainty
+
+    plt.axhline(y=F_wmap, ls=':', c='k', zorder=-1)
+    plt.text(1e+13,F_wmap+0.005, r'f$_{b,WMAP}$', verticalalignment='bottom', size='medium')
+    plt.fill_between(x, y1=F_wmap - sig_F_wmap, y2=F_wmap + sig_F_wmap, color='k', alpha=0.3, zorder=-2)
+
+    plt.axhline(y=F_planck, ls=':', c='k', zorder=-1)
+    plt.text(1e+13,F_planck-0.004, r'f$_{b,Planck}$', verticalalignment='top', size='medium')
+    plt.fill_between(x, y1=F_planck - sig_F_planck, y2=F_planck + sig_F_planck, edgecolor='k', color='w', zorder=-3, hatch='//', lw=0.0)
 
     plt.xlabel(r'M$_{vir}$ (M$_\odot$)')
     plt.ylabel(r'f$_b$ ($<$ r$_{vir}$)')
@@ -44,11 +53,11 @@ def SetAxes(legend=False):
     plt.xscale('log')
     plt.xlim([1e+12,2e+15])
 
-    plt.text(4e+12, 0.08, 'Galaxies', size='small', verticalalignment='center')
-    plt.plot(3e+12, 0.08, 'ko', ms=8, mfc='k', mec='k', marker=r'$\Leftarrow$')
+    plt.text(4e+12, 0.1, 'Galaxies', size='small', verticalalignment='center')
+    plt.plot(3e+12, 0.1, 'ko', ms=8, mfc='k', mec='k', marker=r'$\Leftarrow$')
 
-    plt.text(2e+13, 0.08, 'Groups & Clusters', size='small', verticalalignment='center')
-    plt.plot(1.3e+14, 0.08, 'ko', ms=8, mfc='k', mec='k', marker=r'$\Rightarrow$')
+    plt.text(2e+13, 0.1, 'Groups & Clusters', size='small', verticalalignment='center')
+    plt.plot(1.3e+14, 0.1, 'ko', ms=8, mfc='k', mec='k', marker=r'$\Rightarrow$')
 
 
     if legend:
