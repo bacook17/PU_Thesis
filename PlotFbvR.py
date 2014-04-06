@@ -33,19 +33,27 @@ def PlotFbvR(inputfile_1, inputfile_2):
    
 
     #Average the data for the two "medium richness" samples
-    F_gas_med_500, err_gas_med_500 = WeightMean(Gas_Data['F500'][np.array([2,3])], Gas_Data['err500'][np.array([2,3])])
-    F_gas_med_200, err_gas_med_200 = WeightMean(Gas_Data['F200'][np.array([2,3])], Gas_Data['err200'][np.array([2,3])])
-    F_gas_med_vir, err_gas_med_vir = WeightMean(Gas_Data['Fvir'][np.array([2,3])], Gas_Data['errvir'][np.array([2,3])])
+#    F_gas_med_500, err_gas_med_500 = WeightMean(Gas_Data['F500'][np.array([2,3])], Gas_Data['err500'][np.array([2,3])])
+#    F_gas_med_200, err_gas_med_200 = WeightMean(Gas_Data['F200'][np.array([2,3])], Gas_Data['err200'][np.array([2,3])])
+#    F_gas_med_vir, err_gas_med_vir = WeightMean(Gas_Data['Fvir'][np.array([2,3])], Gas_Data['errvir'][np.array([2,3])])
+    F_gas_med_500, err_gas_med_500 = WeightMean(Gas_Data['F500'][np.array([2,3,4])], Gas_Data['err500'][np.array([2,3,4])])
+    F_gas_med_200, err_gas_med_200 = WeightMean(Gas_Data['F200'][np.array([2,3,4])], Gas_Data['err200'][np.array([2,3,4])])
+    F_gas_med_vir, err_gas_med_vir = WeightMean(Gas_Data['Fvir'][np.array([2,3,4])], Gas_Data['errvir'][np.array([2,3,4])])
+
     F_gas_med_3_500, err_gas_med_3_500 = np.nan, np.nan
     
     F_gas_med = np.array([F_gas_med_500,F_gas_med_200,F_gas_med_vir,F_gas_med_3_500])
     err_gas_med = np.array([err_gas_med_500,err_gas_med_200,err_gas_med_vir,err_gas_med_3_500])
 
     #Average the data for the three "high richness" samples
-    F_gas_high_500, err_gas_high_500 = WeightMean(Gas_Data['F500'][np.array([0,1,4])], Gas_Data['err500'][np.array([0,1,4])])
-    F_gas_high_200, err_gas_high_200 = WeightMean(Gas_Data['F200'][np.array([0,1,4])], Gas_Data['err200'][np.array([0,1,4])])
-    F_gas_high_vir, err_gas_high_vir = WeightMean(Gas_Data['Fvir'][np.array([0,1,4])], Gas_Data['errvir'][np.array([0,1,4])])
-    F_gas_high_3_500, err_gas_high_3_500 = Gas_Data['F3_R500'][4], Gas_Data['err3_R500'][4]
+#    F_gas_high_500, err_gas_high_500 = WeightMean(Gas_Data['F500'][np.array([0,1,5])], Gas_Data['err500'][np.array([0,1,5])])
+#    F_gas_high_200, err_gas_high_200 = WeightMean(Gas_Data['F200'][np.array([0,1,5])], Gas_Data['err200'][np.array([0,1,5])])
+#    F_gas_high_vir, err_gas_high_vir = WeightMean(Gas_Data['Fvir'][np.array([0,1,5])], Gas_Data['errvir'][np.array([0,1,5])])
+    F_gas_high_500, err_gas_high_500 = WeightMean(Gas_Data['F500'][np.array([0,1,5,6])], Gas_Data['err500'][np.array([0,1,5,6])])
+    F_gas_high_200, err_gas_high_200 = WeightMean(Gas_Data['F200'][np.array([0,1,5,6])], Gas_Data['err200'][np.array([0,1,5,6])])
+    F_gas_high_vir, err_gas_high_vir = WeightMean(Gas_Data['Fvir'][np.array([0,1,5,6])], Gas_Data['errvir'][np.array([0,1,5,6])])
+
+    F_gas_high_3_500, err_gas_high_3_500 = Gas_Data['F3_R500'][5], Gas_Data['err3_R500'][5]
 
     F_gas_high = np.array([F_gas_high_500,F_gas_high_200,F_gas_high_vir,F_gas_high_3_500])
     err_gas_high = np.array([err_gas_high_500,err_gas_high_200,err_gas_high_vir,err_gas_high_3_500])
@@ -70,7 +78,7 @@ def PlotFbvR(inputfile_1, inputfile_2):
     
     plt.figure(2, facecolor='w')
     plt.errorbar(gas_radius, F_b_high, yerr=err_b_high, c='b', marker='o', ls='--', mfc='b', mec='k', ms=8, label=r'M > 10$^{14.5}$M$_\odot$')
-    plt.errorbar(gas_radius, F_b_med, yerr=err_b_med, c='g', marker='o', ls='--', mfc='g', mec='k', ms=8, label=r'M < 10$^{14.5}$M$_\odot$')
+    plt.errorbar(gas_radius, F_b_med, yerr=err_b_med, c='g', marker='s', ls='--', mfc='g', mec='k', ms=8, label=r'M < 10$^{14.5}$M$_\odot$')
 
     F_b_max = F_b_high[-1]
     err_b_max = err_b_high[-1]

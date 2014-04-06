@@ -1,10 +1,9 @@
 Notes on the mass-calibrations of cluster samples: are they hydrostatic masses or are there corrections?
 
 Rasheed+ 2011:  doi:10.1073/pnas.1009878108 
-NOT hydrostatic mass. No correction needed
-Cluster masses are taken from the compilation by Giodini+ 2009 (2009ApJ...703..982G)
-Giodini+ 2009 total masses are taken from a Lx vs. M relation, where M is derived from stacked weak lensing analysis (Leauthaud+ 2010, 
-2010ApJ...709...97L).
+Hydrostatic masses: correction needed
+For gas-mass fraction, cluster masses are taken from the compilation by Giodini+ 2009 (2009ApJ...703..982G)
+Giodini+ 2009 gas fractions come from clusters in Vikhlinin+ 2006, Arnaud+ 2007, and Sun+ 2009, all of which use the hydrostatic mass. 
 
 ---------------------------------------------------
 

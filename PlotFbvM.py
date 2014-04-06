@@ -11,7 +11,7 @@ def PlotFbvM(inputfile):
     Mass = Data['Mass'] * 1.35 #1.35 is rough correction from M500 -> Mvir
     
     Fb = Data['Fvir'] + Data['FS200b']
-    Fb2 = Data['Fvir']*np.array([1.08, 1.11, 1.16, 1.18, 1.04, 1., 1.,]) + Data['FS200b'] #factors derived for Rasheed data by extrapolating to higher radius, for Planck data by point at 2.28R500 on plot
+    Fb2 = Data['Fvir']*np.array([1.08, 1.11, 1.16, 1.18, 1.19, 1.04, 1.086]) + Data['FS200b'] #factors derived for Rasheed data by extrapolating to higher radius, for Planck data by point at 2.28R500 on plot
     #errb = Data['errvir'] + Data['errS200b']
     errb = np.sqrt(np.power(Data['errvir'], 2) + np.power(Data['errS200b'], 2))
 
@@ -24,7 +24,7 @@ def PlotFbvM(inputfile):
     plt.errorbar(Mass, Fb, yerr=errb, c='r', marker='o', ls='', mfc='r', mec='k', ms=8, label=r'f$_{gas}$ + f$_*$')
     plt.errorbar(Mass, Fb2, yerr=errb, marker='o', ls='', mfc='None', ecolor='g', mec='g', ms=8, mew=1, label=r'f(1.2r$_{vir}$)', zorder=-1)
         
-    plt.errorbar(M_gal, Fb_gal, yerr=errb_gal, marker='x', mec='b', mfc='b', ms=8, ls='', ecolor='b', mew=1, label=r'Werk+ 2014') #using mean of min/max
+    plt.errorbar(M_gal, Fb_gal, yerr=errb_gal, marker='p', mec='b', mfc='w', ms=8, ls='', ecolor='b', mew=1, label=r'Werk+ 2014') #using mean of min/max
     plt.errorbar(M_gal, Fb_gal_min, yerr=np.array([[0],[.005]]), uplims=True, mfc='b', mec='b', ms=12, ecolor='b', label='')
     plt.errorbar(10**(12.2), Fb_gal_max, yerr=np.array([[0.005],[0]]), lolims=True, mfc='b', mec='b', ms=12, ecolor='b', label='')
 #    lables = np.array([r'Rasheed+ 2010',r'Rasheed+ 2010', r'Rasheed+2010', r'Ade+ 2013', r'Ade+ 2013',r'Eckert+ 2013', r'Eckert+'])

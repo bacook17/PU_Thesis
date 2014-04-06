@@ -44,7 +44,7 @@ def PlotFgvR(inputfile):
     colors = np.array(['b', 'r', 'g'])
     styles = np.array(['-','--','-.','..'])
 
-    lables = np.array([r'Rasheed+ 2010 - %1.1e M$_\odot$',r'Planck Coll. H1 - %1.1e M$_\odot$', r'Planck Coll. H2 - %1.1e M$_\odot$',r'Eckert+ 2013 - %1.1e M$_\odot$', r'Eckert+ 2013 - Cool Core'])
+    lables = np.array([r'Rasheed+ 2011 - %1.1e M$_\odot$',r'Planck Coll. H1 - %1.1e M$_\odot$', r'Planck Coll. H2 - %1.1e M$_\odot$',r'Eckert+ 2013 - %1.1e M$_\odot$', r'Eckert+ 2013 - Cool Core'])
 
     markers = np.array(['o','s','D','^','o','s','o','D'])
     
@@ -63,7 +63,7 @@ def SetAxes(legend=False):
     f_gas = f_b - f_star
     err_gas = np.sqrt(err_b**2 + err_star**2)
 
-    plt.axhline(y=f_gas, ls='--', c='k', label=None, zorder=-1)
+    plt.axhline(y=f_gas, ls='--', c='k', label='', zorder=-1)
     x = np.linspace(.8,3.2,1000)
     plt.fill_between(x, y1=f_gas - err_gas, y2=f_gas + err_gas, color='k', alpha=0.3, zorder=-1)
     plt.text(1.3, f_gas+0.0005, 'Expected Hot Gas', verticalalignment='bottom', size='small')

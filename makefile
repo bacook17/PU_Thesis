@@ -2,7 +2,7 @@ default: Cook_Thesis.pdf
 
 thesis: Cook_Thesis.pdf 
 
-subtexs = thesis_setup.tex thesis_chapter*.tex
+subtexs = thesis_setup.tex Chapters/*.tex
 figs = Figs_Thesis/FbvM.pdf Figs_Thesis/FgvM.pdf Figs_Thesis/FgvR.pdf Figs_Thesis/FbvR.pdf Figs_Thesis/FxvR.pdf
 cleans = Cook_Thesis.pdf Figs_Thesis/*.pdf
 
@@ -25,6 +25,7 @@ Figs_Thesis/FbvR.pdf: PlotFbvR.py F_all.dat F_star.dat
 Figs_Thesis/FxvR.pdf: Figs_Thesis/FbvR.pdf
 
 Cook_Thesis.pdf: thesis_body.tex $(subtexs) $(figs)
+	cp ~/Documents/Thesis.bib Thesis.bib
 	./latexdriver -b thesis_body.tex Cook_Thesis.pdf
 
 clean:
