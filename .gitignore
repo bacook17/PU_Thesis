@@ -5,5 +5,5 @@ Figs_Thesis/*
 *.log
 *.toc
 *.out
-*.~
+*~
 \#*\#
