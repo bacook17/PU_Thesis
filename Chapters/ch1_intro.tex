@@ -128,6 +128,9 @@ elements like lithium and $^3$He. Figure \ref{fig:Abundances} shows
 the dependance of these primordial abundances on the cosmic baryon
 abundance.
 
+\input{Chapters/Abundances}
+
+
 The baryon abundance can be determined through observational
 constraints of, for example, the deuterium abundance, which among the
 common byproducts of BBN depends most strongly on $\omegab h^2$. The
@@ -140,13 +143,86 @@ can be destroyed in stellar (and brown dwarf) cores, altering the
 deuterium abundance slightly with time. \citet{Iocco2009} provides a
 modern compilation of deuterium abundance measurements, placing the
 constraint on the baryon abundance at $\omegab h^2 = 0.021 \pm
-0.001$. Observations of $^7$Li 
+0.001$. Observed $^7$Li abundances are a factor of a few lower than
+predicted from BBN, suggesting that there could be additional physics
+responsible for destroying lithium \citep{Suzuki2000,
+  Melendez2004}. This is known as the ``Lithium Problem,'' and is
+still an unsolved problem in interpreting BBN.
 
+A complementary method of inferring the baryon abundance at early
+times is from measurements of the acoustic peaks in the Cosmic
+Microwave Background (CMB) power spectrum. Remember that the CMB power
+spectrum contains large peaks, representing correlations in the CMB on
+particular scales. In the first few hundred thousand
+years\footnote{Virtually a cosmic blink of the eye.} after the big
+bang, the temperature of the universe was high enough to keep atoms
+fully ionized into seperate nucleii and electrons. These charged
+particles were strongly coupled to the photons through electromagnetic
+interactions, so that the two combined to form what is called a
+photon-baryon fluid. This fluid (which, at the time, had an energy
+density around $\frac{1}{3}$ that of dark matter) fell towards the
+centers of gravitational wells created by dark matter. However, unlike
+the non-interacting dark matter, the photon-baryon fluid's pressure
+rose when its density rose, forcing the fluid out of the well
+until its pressure dropped enough to allow gravity to draw it back
+once again. These ongoing fluctuations in the pressure and density
+of the fluid were frozen into the CMB when the average temperature of
+the universe dropped sufficiently to allow neutral atoms to form, and
+the CMB photons began streaming freely through the
+universe\footnote{For a good, low-level introduction to the concept of
+  acoustic peaks in the CMB, see Chapter 9 of \citet{Ryden2003}.}.
 
+The baryon abundance at this early time had several effects on the
+acoustic peaks in the CMB, as did the overall mass abundance ($\omegam
+h^2$). Figure \ref{fig:CMB_Power} shows how changes in these
+abundances are reflected in the acoustic peaks. The location of the
+first peak (and all subsequent peaks) is determined by the sound speed
+at the epoch of last scattering. This sound speed increases when
+$\omegab h^2$ increases, but is more sensitive to changes in $\omegam
+h^2$, an increase of which results in a decrease in the sound speed
+\citep[][ch.~9.8]{Mukhanov2005}. The relative heights of the acoustic
+peaks is a further diagnostic of the baryon abundance. As seen in
+Figure \ref{fig:CMB_Power}, odd-numbered peaks are higher than
+even-numbered peaks in a universe with high $\omegab h^2$. This is
+because an increase in the amount of massive baryons reduces the
+frequency of acoustic oscillations
+\citep[][ch.~8.7.3]{Dodelson2003}. Finally, the power spectrum
+declines towards higher multipoles ($l$) due to a process known as
+``Silk Damping''. This damping term is due to imperfections in the
+photon-baryon coupling, and the characteristic damping scale is
+influenced by $\omegab h^2$ \citep[][ch.~4.7]{Durrer2008}.
 
-\input{Chapters/Abundances}
+Through a combination of all the processes listed above, modern CMB
+observations have been able to place strong constraints on both
+$\omegab h^2$ and $\omegam h^2$. Two of the most noteworthy such
+measurements come from the \textit{Wilkinson Microwave Anisotropy
+  Probe} \citep[WMAP][]{Bennett2003} and the \textit{Planck} Satellite
+\citep{PlanckResultsI}. Different constraints are placed on these
+parameters depending on what additional data\footnote{\Ho, BAO,
+  Polarization, etc.} is included in the analysis. We will take the
+median value (from each paper) of parameters derived through these
+various means, and we list the uncertainty as the systematic difference between
+the inferred parameters (which is of the same order, but typically
+larger than the statistical uncertainty of any one value).
 
-\afterpage{\clearpage}
+From the 9-year data release of WMAP \citep{Hinshaw2013}, we take
+values $\omegab h^2 = 0.02229 \pm 0.00035$ and $\omegac h^2 = 0.1138
+\pm 0.0032$. From the results paper of Planck
+\citep{PlanckResultsXVI}, we take the values $\omegab h^2 = 0.022115
+\pm 0.0001$ and $\omegac h^2 = 0.11957 \pm 0.0011$. These values allow
+us to constrain the cosmic baryon fraction as:
+\begin{align}
+\fb &= 0.164 \pm 0.004 \,\,(WMAP) \nonumber\\
+&= 0.156 \pm 0.002 \,\,(Planck) \nonumber
+\end{align}
+It is a commonly
+discussed fact \citep[e.g.~][]{Spergel2013} that the Planck results
+yield \omegam significantly higher and \Ho significantly lower than
+other previous measurements, including WMAP. Throughout this paper, we
+will 
+
+\input{Chapters/CMB_Power}
+
 \section{The ``Missing Baryon'' Problem...}
 \label{s.Missing}
 \subsection{In Clusters}
