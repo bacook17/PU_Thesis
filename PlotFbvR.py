@@ -97,8 +97,8 @@ def WeightMean(values, errors):
 
 def SetAxes(legend=False):
     x = np.linspace(.2,40,1000)
-    F_wmap = 0.165 #median of given data sets
-    sig_F_wmap = 0.005 #Systematic uncertainty, not statistical
+    F_wmap = 0.164 #median of given data sets
+    sig_F_wmap = 0.004 #Systematic uncertainty, not statistical
 
     F_planck = 0.156 #median of given data sets
     sig_F_planck = 0.003 #statistical uncertainty

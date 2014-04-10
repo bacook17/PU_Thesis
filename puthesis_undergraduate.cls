@@ -161,7 +161,7 @@ purpose of scholarly research.\vspace*{.5in}\\ \\
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions
 \LoadClass[12pt]{report}
-\usepackage[bookmarks=true,colorlinks,bookmarksopen,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}     
+\usepackage[bookmarks=true,colorlinks=false,bookmarksopen]{hyperref}     
 \setlength{\oddsidemargin}{0.5in}   %{.4375in}
 \setlength{\evensidemargin}{.1in} %{.4375in}
 \setlength{\topmargin}{-.5in}  %{-.5625in}

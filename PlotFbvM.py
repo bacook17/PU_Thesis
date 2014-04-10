@@ -39,8 +39,8 @@ def PlotFbvM(inputfile):
 def SetAxes(legend=False):
     x = np.linspace(1e+12,2e+15,1000)
 
-    F_wmap = 0.165 #median of given data sets
-    sig_F_wmap = 0.005 #Systematic uncertainty, not statistical
+    F_wmap = 0.164 #median of given data sets
+    sig_F_wmap = 0.004 #Systematic uncertainty, not statistical
 
     F_planck = 0.156 #median of given data sets
     sig_F_planck = 0.003 #statistical uncertainty

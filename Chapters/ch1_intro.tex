@@ -130,7 +130,6 @@ abundance.
 
 \input{Chapters/Abundances}
 
-
 The baryon abundance can be determined through observational
 constraints of, for example, the deuterium abundance, which among the
 common byproducts of BBN depends most strongly on $\omegab h^2$. The
@@ -192,6 +191,8 @@ declines towards higher multipoles ($l$) due to a process known as
 photon-baryon coupling, and the characteristic damping scale is
 influenced by $\omegab h^2$ \citep[][ch.~4.7]{Durrer2008}.
 
+\input{Chapters/CMB_Power}
+
 Through a combination of all the processes listed above, modern CMB
 observations have been able to place strong constraints on both
 $\omegab h^2$ and $\omegam h^2$. Two of the most noteworthy such
@@ -201,32 +202,122 @@ measurements come from the \textit{Wilkinson Microwave Anisotropy
 parameters depending on what additional data\footnote{\Ho, BAO,
   Polarization, etc.} is included in the analysis. We will take the
 median value (from each paper) of parameters derived through these
-various means, and we list the uncertainty as the systematic difference between
-the inferred parameters (which is of the same order, but typically
-larger than the statistical uncertainty of any one value).
+various means, and we use the systematic variance in the parameters as
+the uncertanity, if it is larger than the statistical uncertainty
+listed from the analysis.
 
-From the 9-year data release of WMAP \citep{Hinshaw2013}, we take
-values $\omegab h^2 = 0.02229 \pm 0.00035$ and $\omegac h^2 = 0.1138
-\pm 0.0032$. From the results paper of Planck
+From the 9-year data release of WMAP \citep[WMAP9,][]{Hinshaw2013}, we
+take values $\omegab h^2 = 0.02229 \pm 0.00035$ and $\omegac h^2 =
+0.1138 \pm 0.0032$. From the results paper of Planck
 \citep{PlanckResultsXVI}, we take the values $\omegab h^2 = 0.022115
-\pm 0.0001$ and $\omegac h^2 = 0.11957 \pm 0.0011$. These values allow
-us to constrain the cosmic baryon fraction as:
+\pm 0.00025$ and $\omegac h^2 = 0.11957 \pm 0.0025$. These values
+allow us to constrain the cosmic baryon fraction\footnote{We describe
+  our method for calculating the uncertainty in \fb{} in Appendix
+  \ref{a.delf}.} as:
 \begin{align}
-\fb &= 0.164 \pm 0.004 \,\,(WMAP) \nonumber\\
-&= 0.156 \pm 0.002 \,\,(Planck) \nonumber
+\fb &= 0.164 \pm 0.004 \,\,(WMAP9) \nonumber\\
+&= 0.156 \pm 0.003 \,\,(Planck) \nonumber
 \end{align}
-It is a commonly
-discussed fact \citep[e.g.~][]{Spergel2013} that the Planck results
-yield \omegam significantly higher and \Ho significantly lower than
-other previous measurements, including WMAP. Throughout this paper, we
-will 
-
-\input{Chapters/CMB_Power}
+It is commonly discussed \citeeg{Spergel2013} that the Planck
+results yield \omegam{} significantly higher and \Ho{} significantly
+lower than other previous measurements, including WMAP. This results
+in the much lower value of \fb{} as derived from Planck. Earlier
+estimates \citep[e.g.,WMAP5,][]{Dunkley2009} placed \fb{}
+around 0.17, a canonical value which is often used in the
+literature. Because of the issues surrounding the interpretation of
+the Planck data, we will use the WMAP9 measurement of $\fb{}\sim0.164$
+for our primary comparisons with low-redshift baryon fractions,
+although we will attempt to also compare to the Planck constraints
+whenever possible. One major limitation of this work is the recent
+uncertainty on the ``true'' cosmic baryon fraction due to the
+discrepant results from CMB observations. We hope that subsequent
+analyis of the WMAP/Planck discrepancies will solve this problem, one
+way or another.
 
 \section{The ``Missing Baryon'' Problem...}
 \label{s.Missing}
 \subsection{In Clusters}
 \label{s.Missing.Clusters}
+
+Large \textit{galaxy clusters} represent the most massive dark matter
+halos which have had adequate time to virialize since the big
+bang. The richest clusters often contain hundreds of large galaxies,
+while much smaller \textit{groups} may contain several to tens of
+galaxies. The galaxies are bound to the gravitational well of the
+combined mass of the cluster, which includes dark matter as well as
+baryons. Because they represent the largest bound objects in the
+universe, clusters represent one of the best ways of measuring the
+baryon fraction at low-redshift: they have collapsed from extremely
+large volumes and therefore are the largest samples of the cosmic dark
+matter and baryon densities that are not in dramatic dynamical
+evolution.
+
+The baryonic component of galaxy clusters is not primarily stored in
+galaxies, but instead in a hot ($\textrm{kT} \gsim 1$ keV), diffuse
+gas known as the \textit{Intracluster Medium} (ICM). The ICM can be
+detected through the X-ray brehmsstrahlung emission of the ionized
+plasma. X-ray telescopes such as \textit{Chandra}, \textit{ROSAT}, and
+\textit{XMM-Newton} have been key in detecting the ICM and
+constraining its distribution and total mass \citeeg{Vikhlinin2006,Eckert2012}. A complementary method
+of detecting and measuring the intracluster gas is through the thermal
+Sunyaev-Zeldovich \citep[SZ,][]{Sunyaev1972} effect, wherein the
+energy spectrum of background CMB photons passing through the cluster
+is altered, due to reverse-Compton scattering with the charged
+particles in the plasma.
+
+The stars of individual galaxies make up the remainder of the baryonic
+mass in clusters. Stellar mass is often derived from the luminosity in
+starlight, which is converted into mass using typical mass-to-light
+ratios derived for individual galaxies \citep{Bahcall2014}.
+
+The total mass of clusters is derived through stacked weak-lensing
+analysis, where the average distortion of background galaxies is
+measured as a function of cluster-centric radius. These distortions
+can be inverted to compute the distribution of mass in the cluster
+which is responsible for the gravitational lensing distortions. Recent
+weak-lensing analyses \citep{Mandelbaum2008, Sheldon2009} yield
+accurate constraints on the total mass of clusters, and show that the
+distribution of mass is fit well by the Navarro-Frenk-White
+\citep[NFW,][]{Navarro1996} profile, a prediction from N-body
+simulations of cold dark matter.
+
+Before addressing the overall masses and sizes of galaxy clusters, it
+is crucial to outline the definitions for these scales we will use
+throughout this paper. Because dark matter halos are believed to be
+self-similar (scaling only by overall mass or central density) their
+sizes are often given relative to fixed overdensities $\Delta$, the
+location where the density of matter interior is a particular multiple of
+the critical density of the universe. For example, $\Delta = 200$
+equates to the region in a halo where
+\begin{equation}
+\rhom(<r) = \frac{3M(<r)}{4\pi{}r^3} = 200\times\rhocrit. \nonumber
+\end{equation}
+The mass and radius of a galaxy cluster is typically measured at a
+characteristic overdensity. For example, many sources in the
+literature list the cluster mass and radius as M$_{500}$ and
+r$_{500}$, measured at an overdensity of $\Delta = 500$. As cluster
+mass is clustered towards the center, $\Delta$ decreases towards
+larger cluster-centric radii. The gravitational system virializes
+around $\Delta = 100$ \citep{Eke1996}, so we take the characteristic
+scales of clusters to be the virial (or halo) mass and radius,
+M$_{vir} = $M$_{100}$ and r$_{vir} = $r$_{100}$.
+
+Rich galaxy clusters have been observed to have halo masses of
+$10^{14}$ -- $10^{15} $ M$_\odot$ \citep{Mandelbaum2008}, and halo radii
+of around 1 -- 3 Mpc \citep{Vikhlinin2006}. The self-similarity of
+halos results in a fairly constant relation between M and r at various
+overdensities. For example \citep{Rasheed2011}:
+\begin{equation}
+\textrm{r}_{vir} \sim 1.3\times{}\textrm{r}_{200} \sim
+1.9\times{}\textrm{r}_{500}.
+\end{equation}
+Using an approximate mass density profile of $\rhom \propto
+\textrm{r}^{-2.5}$, we assume that the total mass scales roughly as
+M $\propto \textrm{r}^{0.5}$, so that
+\begin{equation}
+\textrm{M}_{vir} \sim 1.14\times{}\textrm{M}_{200} \sim 1.38 \times{}\textrm{M}_{500}.
+\end{equation}
+
 \subsection{In Galaxies}
 \label{s.Missing.Galaxies}
 And some more stuff.\\
