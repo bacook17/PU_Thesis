@@ -7,3 +7,5 @@ Figs_Thesis/*
 *.out
 *~
 \#*\#
+Thesis.bib
+.nfs*
