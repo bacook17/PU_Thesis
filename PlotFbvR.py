@@ -12,11 +12,11 @@ def PlotFbvR(inputfile_1, inputfile_2):
     Gas_Data = np.genfromtxt(inputfile_1, dtype=None, names=True)
     Star_Data = np.genfromtxt(inputfile_2, skip_header=1, unpack=True, delimiter=',')
 
-    #Radius in units of R500
-    R500 = 1.
-    R200 = 1.325
-    Rvir = 1.90
-    R3_500 = 3.
+    #Radius in units of Rvir
+    R500 = 1./1.9
+    R200 = 1.325/1.9
+    Rvir = 1.
+    R3_500 = 3./1.9
 
     star_radius = Star_Data[0]*R200 #radius in units of R500
     gas_radius = np.array([R500, R200, Rvir, R3_500])
@@ -70,11 +70,11 @@ def PlotFbvR(inputfile_1, inputfile_2):
 
     plt.errorbar(gas_radius,F_gas_high, yerr=err_gas_high, color='b', marker='D', ls='--', mfc='w', mec='b',mew=1.5, ms=8, label=r'Gas, M > 10$^{14.5}$M$_\odot$')
     plt.errorbar(gas_radius,F_gas_med, yerr=err_gas_med, color='g', marker='D', ls='--', mfc='w', mec='g',mew=1.5, ms=8, label=r'Gas, M < 10$^{14.5}$M$_\odot$')
-    plt.text(2.5,0.12, r'f$_{gas}$($<$ r/r$_{500}$)', size='small')
+    plt.text(1.25,0.12, r'f$_{gas}$($<$ r)', size='large')
 
     plt.errorbar(star_radius, F_star_high, yerr=err_star_high, c='b', marker='*', ls='--', mfc='b', mec='k', ms=12, label=r'Stars, M > 10$^{14.5}$M$_\odot$')
     plt.errorbar(star_radius, F_star_med, yerr=err_star_med, c='g', marker='*', ls='--', mfc='g', mec='k', ms=12, label=r'Stars, M < 10$^{14.5}$M$_\odot$')
-    plt.text(4, 0.025, r'f$_{stars}$($<$ r/r$_{500}$)', size='small')
+    plt.text(2, 0.025, r'f$_{stars}$($<$ r)', size='large')
     
     plt.figure(2, facecolor='w')
     plt.errorbar(gas_radius, F_b_high, yerr=err_b_high, c='b', marker='o', ls='--', mfc='b', mec='k', ms=8, label=r'M > 10$^{14.5}$M$_\odot$')
@@ -96,7 +96,7 @@ def WeightMean(values, errors):
     return mean, uncert
 
 def SetAxes(legend=False):
-    x = np.linspace(.2,40,1000)
+    x = np.linspace(.1,20,1000)
     F_wmap = 0.164 #median of given data sets
     sig_F_wmap = 0.004 #Systematic uncertainty, not statistical
 
@@ -105,43 +105,47 @@ def SetAxes(legend=False):
 
     plt.figure(1)
     plt.axhline(y=F_wmap, ls=':', c='k', zorder=-1)
-    plt.text(10,F_wmap+0.005, r'f$_{b,WMAP}$', verticalalignment='bottom', size='medium')
+    plt.text(5,F_wmap+0.005, r'f$_{b,WMAP}$', verticalalignment='bottom', size='large')
     plt.fill_between(x, y1=F_wmap - sig_F_wmap, y2=F_wmap + sig_F_wmap, color='k', alpha=0.3, zorder=-2)
 
     plt.axhline(y=F_planck, ls=':', c='k', zorder=-1)
-    plt.text(10,F_planck-0.004, r'f$_{b,Planck}$', verticalalignment='top', size='medium')
+    plt.text(5,F_planck-0.005, r'f$_{b,Planck}$', verticalalignment='top', size='large')
     plt.fill_between(x, y1=F_planck - sig_F_planck, y2=F_planck + sig_F_planck, edgecolor='k', color='w', zorder=-3, hatch='//', lw=0.0)
 
-    plt.xlabel(r'r/r$_{500}$')
-    plt.ylabel(r'f$_{X}$ ($<$ r)')
+    plt.xlabel(r'r/r$_{vir}$', size='x-large')
+    plt.ylabel(r'f$_{X}$ ($<$ r)', size='x-large')
 
     plt.xscale('log')
-    plt.xlim([0.8,40])
+    plt.xlim([0.4,20])
+    plt.tick_params(size=10, which='major')
+    plt.tick_params(size=5, which='minor')
 
     plt.ylim(ymax=0.2)
 
     if legend:
-        plt.legend(loc=0, prop={'size':'small'}, markerscale=0.7, numpoints=1)
+        plt.legend(loc=0, prop={'size':'medium'}, markerscale=0.7, numpoints=1)
 
     plt.figure(2)
     plt.axhline(y=F_wmap, ls=':', c='k', zorder=-1)
-    plt.text(0.8,F_wmap+0.005, r'f$_{b,WMAP}$', verticalalignment='bottom', size='medium')
+    plt.text(0.4,F_wmap+0.005, r'f$_{b,WMAP}$', verticalalignment='bottom', size='large')
     plt.fill_between(x, y1=F_wmap - sig_F_wmap, y2=F_wmap + sig_F_wmap, color='k', alpha=0.3, zorder=-2)
 
     plt.axhline(y=F_planck, ls=':', c='k', zorder=-1)
-    plt.text(0.8,F_planck-0.004, r'f$_{b,Planck}$', verticalalignment='top', size='medium')
+    plt.text(0.4,F_planck-0.004, r'f$_{b,Planck}$', verticalalignment='top', size='large')
     plt.fill_between(x, y1=F_planck - sig_F_planck, y2=F_planck + sig_F_planck, color='w', edgecolor='k', zorder=-3, hatch='//', lw=0.0)
 
-    plt.xlabel(r'r/r$_{500}$')
-    plt.ylabel(r'f$_{b}$ ($<$ r)')
+    plt.xlabel(r'r/r$_{vir}$', size='x-large')
+    plt.ylabel(r'f$_{b}$ ($<$ r)', size='x-large')
 
     plt.xscale('log')
-    plt.xlim([0.6,40])
+    plt.xlim([0.3,20])
 
     plt.ylim([0.06,0.2])
+    plt.tick_params(size=10, which='major')
+    plt.tick_params(size=5, which='minor')
 
     if legend:
-        plt.legend(loc=0, prop={'size':'small'}, markerscale=0.7, numpoints=1)
+        plt.legend(loc=0, prop={'size':'medium'}, markerscale=0.7, numpoints=1)
 
 if __name__ == '__main__':
     inputfile_1 = 'F_all.dat'

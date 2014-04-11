@@ -46,28 +46,30 @@ def SetAxes(legend=False):
     sig_F_planck = 0.003 #statistical uncertainty
 
     plt.axhline(y=F_wmap, ls=':', c='k', zorder=-1)
-    plt.text(1e+13,F_wmap+0.005, r'f$_{b,WMAP}$', verticalalignment='bottom', size='medium')
+    plt.text(8e+12,F_wmap+0.005, r'f$_{b,WMAP}$', verticalalignment='bottom', size='large')
     plt.fill_between(x, y1=F_wmap - sig_F_wmap, y2=F_wmap + sig_F_wmap, color='k', alpha=0.3, zorder=-2)
 
     plt.axhline(y=F_planck, ls=':', c='k', zorder=-1)
-    plt.text(1e+13,F_planck-0.004, r'f$_{b,Planck}$', verticalalignment='top', size='medium')
+    plt.text(8e+12,F_planck-0.005, r'f$_{b,Planck}$', verticalalignment='top', size='large')
     plt.fill_between(x, y1=F_planck - sig_F_planck, y2=F_planck + sig_F_planck, edgecolor='k', color='w', zorder=-3, hatch='//', lw=0.0)
 
-    plt.xlabel(r'M$_{vir}$ (M$_\odot$)')
-    plt.ylabel(r'f$_b$ ($<$ r$_{vir}$)')
+    plt.xlabel(r'M$_{vir}$ (M$_\odot$)', size='x-large')
+    plt.ylabel(r'f$_b$ ($<$ r)', size='x-large')
 
     plt.xscale('log')
     plt.xlim([1e+12,2e+15])
 
-    plt.text(4e+12, 0.1, 'Galaxies', size='small', verticalalignment='center')
+    plt.text(4e+12, 0.1, 'Galaxies', size='medium', verticalalignment='center')
     plt.plot(3e+12, 0.1, 'ko', ms=8, mfc='k', mec='k', marker=r'$\Leftarrow$')
 
-    plt.text(2e+13, 0.1, 'Groups & Clusters', size='small', verticalalignment='center')
+    plt.text(1.7e+13, 0.1, 'Groups & Clusters', size='medium', verticalalignment='center')
     plt.plot(1.3e+14, 0.1, 'ko', ms=8, mfc='k', mec='k', marker=r'$\Rightarrow$')
 
+    plt.tick_params(size=10, which='major')
+    plt.tick_params(size=5, which='minor')
 
     if legend:
-        plt.legend(loc=0, prop={'size':'small'}, markerscale=0.7, numpoints=1)
+        plt.legend(loc=0, prop={'size':'medium'}, markerscale=0.7, numpoints=1)
 
 if __name__ == '__main__':
     inputfile = 'F_all.dat'
