@@ -24,7 +24,7 @@ Figs_Thesis/FbvR.pdf: PlotFbvR.py F_all.dat F_star.dat
 
 Figs_Thesis/FxvR.pdf: Figs_Thesis/FbvR.pdf
 
-Cook_Thesis.pdf: thesis_body.tex $(subtexs) $(figs)
+Cook_Thesis.pdf: thesis_body.tex $(subtexs) $(figs) ~/Documents/Thesis.bib
 	cp ~/Documents/Thesis.bib Thesis.bib
 	./latexdriver -b thesis_body.tex Cook_Thesis.pdf
 
