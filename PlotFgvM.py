@@ -27,7 +27,7 @@ def SetAxes(legend=False):
     plt.axhline(y=f_gas, ls='--', c='k', label='', zorder=-1)
     x = np.linspace(1e+13,200e+13,1000)
     plt.fill_between(x, y1=f_gas - err_gas, y2=f_gas + err_gas, color='k', alpha=0.3, zorder=-1)
-    plt.text(10e+13, f_gas+0.0005, 'Expected Hot Gas', verticalalignment='bottom', size='medium')
+    plt.text(10e+13, f_gas+0.005, r'f$_{gas}$', verticalalignment='bottom', size='large')
     plt.xlabel(r'M$_{vir}$ (M$_\odot$)', size='x-large')
     plt.ylabel(r'f$_{gas}$ ($<$ r)', size='x-large')
 
