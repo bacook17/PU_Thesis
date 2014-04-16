@@ -9,29 +9,28 @@ def PlotFgvR(inputfile):
     R500 = 1./1.9
     R200 = 1.325/1.9
     Rvir = 1.
-    R3_500 = 3./1.9
+    
+    radius = np.array([R500, R200, Rvir, 1.2*Rvir])
 
-    radius = np.array([R500, R200, Rvir, R3_500])
-
-    colors = np.array(['b', 'r', 'g'])
+    colors = np.array(['b','c', 'r', 'g', 'y'])
     styles = np.array(['-','--','-.','..'])
 
-    lables = np.array([r'Rasheed+ 2011 - %1.1e M$_\odot$',r'Planck Coll. H1 - %1.1e M$_\odot$', r'Planck Coll. H2 - %1.1e M$_\odot$',r'Eckert+ 2013 - %1.1e M$_\odot$', r'Eckert+ 2013 - Cool Core'])
+    lables = np.array([r'R11 - %1.0e M$_\odot$',r'P1 - %1.0e M$_\odot$', r'P2 - %1.0e M$_\odot$',r'E13 - %1.0e M$_\odot$', r'E13 - Cool Core', r'U09 - %1.0e M$_\odot$'])
 
     markers = np.array(['o','s','D','^','o','s','o','D'])
     
-    for i in np.arange(len(GasData['Mass'])):
+    for i in np.arange(len(GasData['Mvir'])):
         data = GasData[i]
-        Fgas = np.array([data['F500'], data['F200'], data['Fvir'], data['F3_R500']])
-        err = np.array([data['err500'], data['err200'], data['errvir'], data['err3_R500']])
+        Fgas = np.array([data['Fg500'], data['Fg200'], data['Fgvir'], data['Fg12v']])
+        err = np.array([data['errg500'], data['errg200'], data['errgvir'], data['errg12v']])
         
-        plt.errorbar(radius, Fgas, yerr=err, c=colors[data['ref']-1], marker=markers[i], ms=8, ls=data['Style'], label = lables[data['Label']] %(data['Mass']*1.35)) #1.35 is correction from M500 -> Mvir
+        plt.errorbar(radius, Fgas, yerr=err, c=data['Color'], marker=data['Marker'], ms=8, ls=data['Style'], label = lables[data['Label']] %(data['Mvir']))
 
 def SetAxes(legend=False):
     f_b = 0.164
     f_star = 0.01
     err_b = 0.006
-    err_star = 0.001
+    err_star = 0.004
     f_gas = f_b - f_star
     err_gas = np.sqrt(err_b**2 + err_star**2)
 
@@ -49,10 +48,10 @@ def SetAxes(legend=False):
     plt.xlim([0.4,2.])
 
     if legend:
-        plt.legend(loc=0, prop={'size':'small'}, markerscale=0.7, numpoints=1)
+        plt.legend(loc=4, prop={'size':'x-small'}, markerscale=0.7, numpoints=1)
 
 if __name__ == '__main__':
-    inputfile = 'F_all.dat'
+    inputfile = 'F_new.dat'
     plt.figure(1, facecolor='w')
     PlotFgvR(inputfile)
     SetAxes(legend=True)

@@ -8,23 +8,24 @@ Plot the baryon-fraction against Mass, for the cluster sample provided in inputf
 
 def PlotFbvM(inputfile):
     Data = np.genfromtxt(inputfile, dtype=None, names=True)
-    Mass = Data['Mass'] * 1.35 #1.35 is rough correction from M500 -> Mvir
-    
-    Fb = Data['Fvir'] + Data['FS200b']
-    Fb2 = Data['Fvir']*np.array([1.08, 1.11, 1.16, 1.18, 1.19, 1.04, 1.086]) + Data['FS200b'] #factors derived for Rasheed data by extrapolating to higher radius, for Planck data by point at 2.28R500 on plot
-    #errb = Data['errvir'] + Data['errS200b']
-    errb = np.sqrt(np.power(Data['errvir'], 2) + np.power(Data['errS200b'], 2))
+    Mass = Data['Mvir'] 
+ 
+    Fb_vir = Data['Fgvir'] + Data['Fs200b']
+    Fb_12v = Data['Fg12v'] + Data['Fs200b'] 
+    errb_vir = np.sqrt(np.power(Data['errgvir'], 2) + np.power(Data['errs200b'], 2))
+    errb_12v = np.sqrt(np.power(Data['errg12v'], 2) + np.power(Data['errs200b'], 2))
 
+    #Data from Werk+ 2014
     Fb_gal = 0.144
     errb_gal = 0.03
     M_gal = 10**12.2
 
     Fb_gal_min, Fb_gal_max = (0.095, 0.19)
 
-    plt.errorbar(Mass, Fb, yerr=errb, c='r', marker='o', ls='', mfc='r', mec='k', ms=8, label=r'f$_{gas}$ + f$_*$')
-    plt.errorbar(Mass, Fb2, yerr=errb, marker='o', ls='', mfc='None', ecolor='g', mec='g', ms=8, mew=1, label=r'f(1.2r$_{vir}$)', zorder=-1)
+    plt.errorbar(Mass, Fb_vir, yerr=errb_vir, c='r', marker='o', ls='', mfc='r', mec='k', ms=8, label=r'r$_{vir}\,$ - Groups+Clusters')
+    plt.errorbar(Mass, Fb_12v, yerr=errb_12v, marker='o', ls='', mfc='None', ecolor='g', mec='g', ms=8, mew=1, label=r'1.2r$_{vir}\,$ - Groups+Clusters', zorder=-1)
         
-    plt.errorbar(M_gal, Fb_gal, yerr=errb_gal, marker='p', mec='b', mfc='w', ms=8, ls='', ecolor='b', mew=1, label=r'Werk+ 2014') #using mean of min/max
+    plt.errorbar(M_gal, Fb_gal, yerr=errb_gal, marker='p', mec='b', mfc='w', ms=8, ls='', ecolor='b', mew=1, label=r'r$_{vir}\,$ - Galaxies') #using mean of min/max
     plt.errorbar(M_gal, Fb_gal_min, yerr=np.array([[0],[.005]]), uplims=True, mfc='b', mec='b', ms=12, ecolor='b', label='')
     plt.errorbar(10**(12.2), Fb_gal_max, yerr=np.array([[0.005],[0]]), lolims=True, mfc='b', mec='b', ms=12, ecolor='b', label='')
 #    lables = np.array([r'Rasheed+ 2010',r'Rasheed+ 2010', r'Rasheed+2010', r'Ade+ 2013', r'Ade+ 2013',r'Eckert+ 2013', r'Eckert+'])
@@ -59,11 +60,11 @@ def SetAxes(legend=False):
     plt.xscale('log')
     plt.xlim([1e+12,2e+15])
 
-    plt.text(4e+12, 0.1, 'Galaxies', size='medium', verticalalignment='center')
-    plt.plot(3e+12, 0.1, 'ko', ms=8, mfc='k', mec='k', marker=r'$\Leftarrow$')
+    plt.text(4e+12, 0.09, 'Galaxies', size='medium', verticalalignment='center')
+    plt.plot(3e+12, 0.09, 'ko', ms=8, mfc='k', mec='k', marker=r'$\Leftarrow$')
 
-    plt.text(1.7e+13, 0.1, 'Groups & Clusters', size='medium', verticalalignment='center')
-    plt.plot(1.3e+14, 0.1, 'ko', ms=8, mfc='k', mec='k', marker=r'$\Rightarrow$')
+    plt.text(1.7e+13, 0.09, 'Groups & Clusters', size='medium', verticalalignment='center')
+    plt.plot(1.3e+14, 0.09, 'ko', ms=8, mfc='k', mec='k', marker=r'$\Rightarrow$')
 
     plt.tick_params(size=10, which='major')
     plt.tick_params(size=5, which='minor')
@@ -72,7 +73,7 @@ def SetAxes(legend=False):
         plt.legend(loc=0, prop={'size':'medium'}, markerscale=0.7, numpoints=1)
 
 if __name__ == '__main__':
-    inputfile = 'F_all.dat'
+    inputfile = 'F_new.dat'
     plt.figure(1, facecolor='w')
     PlotFbvM(inputfile)
     SetAxes(legend=True)

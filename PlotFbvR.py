@@ -16,10 +16,9 @@ def PlotFbvR(inputfile_1, inputfile_2):
     R500 = 1./1.9
     R200 = 1.325/1.9
     Rvir = 1.
-    R3_500 = 3./1.9
-
+    
     star_radius = Star_Data[0]*R200 #radius in units of R500
-    gas_radius = np.array([R500, R200, Rvir, R3_500])
+    gas_radius = np.array([R500, R200, Rvir, 1.2*Rvir])
 
     F_star_med = np.array(Star_Data[3])
     err_star_med = np.array(Star_Data[4])
@@ -32,31 +31,29 @@ def PlotFbvR(inputfile_1, inputfile_2):
     err_star_high_int = interp1d(star_radius, err_star_high)
    
 
-    #Average the data for the two "medium richness" samples
+    #Average the data for the three "medium richness" samples
 #    F_gas_med_500, err_gas_med_500 = WeightMean(Gas_Data['F500'][np.array([2,3])], Gas_Data['err500'][np.array([2,3])])
 #    F_gas_med_200, err_gas_med_200 = WeightMean(Gas_Data['F200'][np.array([2,3])], Gas_Data['err200'][np.array([2,3])])
 #    F_gas_med_vir, err_gas_med_vir = WeightMean(Gas_Data['Fvir'][np.array([2,3])], Gas_Data['errvir'][np.array([2,3])])
-    F_gas_med_500, err_gas_med_500 = WeightMean(Gas_Data['F500'][np.array([2,3,4])], Gas_Data['err500'][np.array([2,3,4])])
-    F_gas_med_200, err_gas_med_200 = WeightMean(Gas_Data['F200'][np.array([2,3,4])], Gas_Data['err200'][np.array([2,3,4])])
-    F_gas_med_vir, err_gas_med_vir = WeightMean(Gas_Data['Fvir'][np.array([2,3,4])], Gas_Data['errvir'][np.array([2,3,4])])
-
-    F_gas_med_3_500, err_gas_med_3_500 = np.nan, np.nan
+    F_gas_med_500, err_gas_med_500 = WeightMean(Gas_Data['Fg500'][np.array([0,1,2])], Gas_Data['errg500'][np.array([0,1,2])])
+    F_gas_med_200, err_gas_med_200 = WeightMean(Gas_Data['Fg200'][np.array([0,1,2])], Gas_Data['errg200'][np.array([0,1,2])])
+    F_gas_med_vir, err_gas_med_vir = WeightMean(Gas_Data['Fgvir'][np.array([0,1,2])], Gas_Data['errgvir'][np.array([0,1,2])])
+    F_gas_med_12v, err_gas_med_12v = WeightMean(Gas_Data['Fg12v'][np.array([0,1,2])], Gas_Data['errg12v'][np.array([0,1,2])])
     
-    F_gas_med = np.array([F_gas_med_500,F_gas_med_200,F_gas_med_vir,F_gas_med_3_500])
-    err_gas_med = np.array([err_gas_med_500,err_gas_med_200,err_gas_med_vir,err_gas_med_3_500])
+    F_gas_med = np.array([F_gas_med_500,F_gas_med_200,F_gas_med_vir,F_gas_med_12v])
+    err_gas_med = np.array([err_gas_med_500,err_gas_med_200,err_gas_med_vir,err_gas_med_12v])
 
     #Average the data for the three "high richness" samples
 #    F_gas_high_500, err_gas_high_500 = WeightMean(Gas_Data['F500'][np.array([0,1,5])], Gas_Data['err500'][np.array([0,1,5])])
 #    F_gas_high_200, err_gas_high_200 = WeightMean(Gas_Data['F200'][np.array([0,1,5])], Gas_Data['err200'][np.array([0,1,5])])
 #    F_gas_high_vir, err_gas_high_vir = WeightMean(Gas_Data['Fvir'][np.array([0,1,5])], Gas_Data['errvir'][np.array([0,1,5])])
-    F_gas_high_500, err_gas_high_500 = WeightMean(Gas_Data['F500'][np.array([0,1,5,6])], Gas_Data['err500'][np.array([0,1,5,6])])
-    F_gas_high_200, err_gas_high_200 = WeightMean(Gas_Data['F200'][np.array([0,1,5,6])], Gas_Data['err200'][np.array([0,1,5,6])])
-    F_gas_high_vir, err_gas_high_vir = WeightMean(Gas_Data['Fvir'][np.array([0,1,5,6])], Gas_Data['errvir'][np.array([0,1,5,6])])
+    F_gas_high_500, err_gas_high_500 = WeightMean(Gas_Data['Fg500'][np.array([3,4,5,6,7])], Gas_Data['errg500'][np.array([3,4,5,6,7])])
+    F_gas_high_200, err_gas_high_200 = WeightMean(Gas_Data['Fg200'][np.array([3,4,5,6,7])], Gas_Data['errg200'][np.array([3,4,5,6,7])])
+    F_gas_high_vir, err_gas_high_vir = WeightMean(Gas_Data['Fgvir'][np.array([3,4,5,6,7])], Gas_Data['errgvir'][np.array([3,4,5,6,7])])
+    F_gas_high_12v, err_gas_high_12v = WeightMean(Gas_Data['Fg12v'][np.array([3,4,5,6,7])], Gas_Data['errg12v'][np.array([3,4,5,6,7])])
 
-    F_gas_high_3_500, err_gas_high_3_500 = Gas_Data['F3_R500'][5], Gas_Data['err3_R500'][5]
-
-    F_gas_high = np.array([F_gas_high_500,F_gas_high_200,F_gas_high_vir,F_gas_high_3_500])
-    err_gas_high = np.array([err_gas_high_500,err_gas_high_200,err_gas_high_vir,err_gas_high_3_500])
+    F_gas_high = np.array([F_gas_high_500,F_gas_high_200,F_gas_high_vir,F_gas_high_12v])
+    err_gas_high = np.array([err_gas_high_500,err_gas_high_200,err_gas_high_vir,err_gas_high_12v])
 
     #Combine with the (interpolated) stellar fraction at each radius
     F_b_med = F_gas_med + F_star_med_int(gas_radius)
@@ -83,7 +80,7 @@ def PlotFbvR(inputfile_1, inputfile_2):
     F_b_max = F_b_high[-1]
     err_b_max = err_b_high[-1]
 
-    radius_extrapolate = np.logspace(np.log10(R3_500), np.log10(40), 100)
+    radius_extrapolate = np.logspace(np.log10(1.2*Rvir), np.log10(40), 100)
     plt.fill_between(radius_extrapolate, y1=F_b_max - err_b_max, y2=F_b_max + err_b_max, color='b', alpha=0.3, zorder=-1)
     plt.plot(radius_extrapolate, np.zeros_like(radius_extrapolate)+F_b_max, 'b--', marker=None, lw=2)
 
@@ -116,7 +113,7 @@ def SetAxes(legend=False):
     plt.ylabel(r'f$_{X}$ ($<$ r)', size='x-large')
 
     plt.xscale('log')
-    plt.xlim([0.4,20])
+    plt.xlim([0.4,8])
     plt.tick_params(size=10, which='major')
     plt.tick_params(size=5, which='minor')
 
@@ -138,7 +135,7 @@ def SetAxes(legend=False):
     plt.ylabel(r'f$_{b}$ ($<$ r)', size='x-large')
 
     plt.xscale('log')
-    plt.xlim([0.3,20])
+    plt.xlim([0.3,8])
 
     plt.ylim([0.06,0.2])
     plt.tick_params(size=10, which='major')
@@ -148,7 +145,7 @@ def SetAxes(legend=False):
         plt.legend(loc=0, prop={'size':'medium'}, markerscale=0.7, numpoints=1)
 
 if __name__ == '__main__':
-    inputfile_1 = 'F_all.dat'
+    inputfile_1 = 'F_new.dat'
     inputfile_2 = 'stellar_fraction.dat'
     plt.figure(1, facecolor='w')
     PlotFbvR(inputfile_1, inputfile_2)

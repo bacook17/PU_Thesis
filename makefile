@@ -10,16 +10,16 @@ cleans = Cook_Thesis.pdf Figs_Thesis/*.pdf
 
 # ./$< is macro for the first dependency (here, the .py)
 # $@ is macro for the name of the file being made (here, the .pdf)
-Figs_Thesis/FbvM.pdf: PlotFbvM.py F_all.dat
+Figs_Thesis/FbvM.pdf: PlotFbvM.py F_new.dat
 	./$< $@
 
-Figs_Thesis/FgvM.pdf: PlotFgvM.py F_all.dat
+Figs_Thesis/FgvM.pdf: PlotFgvM.py F_new.dat
 	./$< $@
 
-Figs_Thesis/FgvR.pdf: PlotFgvR.py F_all.dat
+Figs_Thesis/FgvR.pdf: PlotFgvR.py F_new.dat
 	./$< $@
 
-Figs_Thesis/FbvR.pdf: PlotFbvR.py F_all.dat F_star.dat
+Figs_Thesis/FbvR.pdf: PlotFbvR.py F_new.dat F_star.dat
 	./$< Figs_Thesis/FxvR.pdf Figs_Thesis/FbvR.pdf
 
 Figs_Thesis/FxvR.pdf: Figs_Thesis/FbvR.pdf
