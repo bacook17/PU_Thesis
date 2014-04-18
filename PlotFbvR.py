@@ -100,6 +100,12 @@ def SetAxes(legend=False):
     F_planck = 0.156 #median of given data sets
     sig_F_planck = 0.003 #statistical uncertainty
 
+    #Radius in units of Rvir
+    R500 = 1./1.9
+    R200 = 1.33/1.9
+    Rvir = 1.
+
+
     plt.figure(1)
     plt.axhline(y=F_wmap, ls=':', c='k', zorder=-1)
     plt.text(5,F_wmap+0.005, r'f$_{b,WMAP}$', verticalalignment='bottom', size='large')
@@ -114,7 +120,7 @@ def SetAxes(legend=False):
 
     plt.xscale('log')
     plt.xlim([0.4,8])
-    plt.xticks([1],[1])
+    plt.xticks([R500, R200, 1, 5],[r'r$_{500}$', r'r$_{200}$', 1, 5])
     plt.tick_params(size=10, which='major')
     plt.tick_params(size=5, which='minor')
 
@@ -136,6 +142,8 @@ def SetAxes(legend=False):
     plt.ylabel(r'f$_{b}$ ($<$ r)', size='x-large')
 
     plt.xscale('log')
+    plt.xticks([R500, R200, 1, 5],[r'r$_{500}$', r'r$_{200}$', 1, 5])
+
     plt.xlim([0.3,8])
 
     plt.ylim([0.06,0.2])
