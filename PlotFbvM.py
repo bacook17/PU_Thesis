@@ -23,7 +23,7 @@ def PlotFbvM(inputfile):
     Fb_gal_min, Fb_gal_max = (0.095, 0.19)
 
     plt.errorbar(Mass, Fb_vir, yerr=errb_vir, c='r', marker='o', ls='', mfc='r', mec='k', ms=8, label=r'r$_{vir}\,$ - Groups+Clusters')
-    plt.errorbar(Mass, Fb_12v, yerr=errb_12v, marker='o', ls='', mfc='None', ecolor='g', mec='g', ms=8, mew=1, label=r'1.2r$_{vir}\,$ - Groups+Clusters', zorder=-1)
+    plt.errorbar(Mass*(1.02), Fb_12v, yerr=errb_12v, marker='o', ls='', mfc='w', ecolor='g', mec='g', ms=8, mew=1, label=r'1.2r$_{vir}\,$ - Groups+Clusters')
         
     plt.errorbar(M_gal, Fb_gal, yerr=errb_gal, marker='p', mec='b', mfc='w', ms=8, ls='', ecolor='b', mew=1, label=r'r$_{vir}\,$ - Galaxies') #using mean of min/max
     plt.errorbar(M_gal, Fb_gal_min, yerr=np.array([[0],[.005]]), uplims=True, mfc='b', mec='b', ms=12, ecolor='b', label='')

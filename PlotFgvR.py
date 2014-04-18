@@ -35,7 +35,7 @@ def SetAxes(legend=False):
     err_gas = np.sqrt(err_b**2 + err_star**2)
 
     plt.axhline(y=f_gas, ls='--', c='k', label='', zorder=-1)
-    x = np.linspace(.4,2.,1000)
+    x = np.linspace(.0,2.,1000)
     plt.fill_between(x, y1=f_gas - err_gas, y2=f_gas + err_gas, color='k', alpha=0.3, zorder=-1)
     plt.text(.6, f_gas+0.006, r'f$_{gas}$', verticalalignment='bottom', size='large')
     plt.xlabel(r'r/r$_{vir}$', size='x-large')
@@ -43,10 +43,11 @@ def SetAxes(legend=False):
 
     plt.xscale('log')
     plt.xticks([1./1.9, 1.33/1.9, 1, 1.5, 2.],[r'r$_{500}$', r'r$_{200}$', 1, 1.5, 2], size='large')
+    plt.yticks([.1, .2], ['0.10', '0.20'])
     plt.tick_params(length=10, which='major')
     plt.tick_params(length=5, which='minor')
-    plt.xlim([0.4,2.])
-
+    plt.xlim([0.4,1.5])
+    plt.ylim([.04, .25])
     if legend:
         plt.legend(loc=4, prop={'size':'x-small'}, markerscale=0.7, numpoints=1)
 

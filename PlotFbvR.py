@@ -65,17 +65,17 @@ def PlotFbvR(inputfile_1, inputfile_2):
     #Plot F_gas and F_star
     plt.figure(1, facecolor='w')
 
-    plt.errorbar(gas_radius,F_gas_high, yerr=err_gas_high, color='b', marker='D', ls='--', mfc='w', mec='b',mew=1.5, ms=8, label=r'Gas, M > 10$^{14.5}$M$_\odot$')
-    plt.errorbar(gas_radius,F_gas_med, yerr=err_gas_med, color='g', marker='D', ls='--', mfc='w', mec='g',mew=1.5, ms=8, label=r'Gas, M < 10$^{14.5}$M$_\odot$')
+    plt.errorbar(gas_radius,F_gas_med, yerr=err_gas_med, color='g', marker='D', ls=':', mfc='w', mec='g',mew=1.5, ms=8, label=r'Gas, M < 10$^{14.5}$M$_\odot$')
+    plt.errorbar(gas_radius,F_gas_high, yerr=err_gas_high, color='b', marker='D', ls='--', mfc='b', mec='k', ms=8, label=r'Gas, M > 10$^{14.5}$M$_\odot$')
     plt.text(1.25,0.12, r'f$_{gas}$($<$ r)', size='large')
 
-    plt.errorbar(star_radius, F_star_high, yerr=err_star_high, c='b', marker='*', ls='--', mfc='b', mec='k', ms=12, label=r'Stars, M > 10$^{14.5}$M$_\odot$')
-    plt.errorbar(star_radius, F_star_med, yerr=err_star_med, c='g', marker='*', ls='--', mfc='g', mec='k', ms=12, label=r'Stars, M < 10$^{14.5}$M$_\odot$')
+    plt.errorbar(star_radius, F_star_med, yerr=err_star_med, c='g', marker='*', ls=':', mfc='w', mec='g', ms=15, mew=1.5, label=r'Stars, M < 10$^{14.5}$M$_\odot$')
+    plt.errorbar(star_radius, F_star_high, yerr=err_star_high, c='b', marker='*', ls='--', mfc='b', mec='k', ms=15, label=r'Stars, M > 10$^{14.5}$M$_\odot$')
     plt.text(2, 0.025, r'f$_{stars}$($<$ r)', size='large')
     
     plt.figure(2, facecolor='w')
+    plt.errorbar(gas_radius, F_b_med, yerr=err_b_med, c='g', marker='s', ls=':', mfc='w', mec='g', ms=8, mew=1.5, label=r'M < 10$^{14.5}$M$_\odot$')
     plt.errorbar(gas_radius, F_b_high, yerr=err_b_high, c='b', marker='o', ls='--', mfc='b', mec='k', ms=8, label=r'M > 10$^{14.5}$M$_\odot$')
-    plt.errorbar(gas_radius, F_b_med, yerr=err_b_med, c='g', marker='s', ls='--', mfc='g', mec='k', ms=8, label=r'M < 10$^{14.5}$M$_\odot$')
 
     F_b_max = F_b_high[-1]
     err_b_max = err_b_high[-1]
@@ -114,6 +114,7 @@ def SetAxes(legend=False):
 
     plt.xscale('log')
     plt.xlim([0.4,8])
+    plt.xticks([1],[1])
     plt.tick_params(size=10, which='major')
     plt.tick_params(size=5, which='minor')
 
