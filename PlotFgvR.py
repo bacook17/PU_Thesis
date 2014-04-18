@@ -47,7 +47,6 @@ def SetAxes(legend=False):
     plt.tick_params(length=10, which='major')
     plt.tick_params(length=5, which='minor')
     plt.xlim([0.4,1.5])
-    plt.ylim([.04, .25])
     if legend:
         plt.legend(loc=4, prop={'size':'x-small'}, markerscale=0.7, numpoints=1)
 
