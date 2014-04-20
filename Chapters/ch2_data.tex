@@ -2,35 +2,169 @@
 %Ben Cook '14 (bacook@)
 %Adviser: Neta Bahcall
 \chapter{Observations and Data Analysis}
-\label{c.Data}
-\section{Cluster Gas Mass Fraction}
-\label{s.Gas}
-The baryonic content of galaxy groups and clusters is dominated by hot gas in the
-intracluster medium (ICM). Until very recently, the most sensitive
-X-ray and SZ observations were only able to constrain the gas mass in
-the ICM in the inner regions of groups and clusters, typically to
-around \rfive. \citeeg{Vikhlinin2006, Arnaud2007, Sun2009}. \todo{Any
-more?} Because \rfive{} is about twice \rvir{}, these observations
-only probe the inner $\sim \frac{1}{8}$ of the virial volume of group
-and cluster halos. 
+\label{chap:Data}
 
-\subsection{Extrapolation of Measurements}
-\label{s.Gas.Extrapolation}
+\section{Total Mass in Groups and Clusters}
+\label{sec:Mass}
+
+
+\section{Cluster Gas Mass Fraction}
+\label{sec:Gas}
+The baryonic content of galaxy groups and clusters is dominated by hot
+gas in the intracluster medium (ICM). Until very recently, the most
+sensitive X-ray and SZ observations were only able to constrain the
+gas mass in the ICM in the inner regions of groups and clusters,
+typically to around \rfive{} \citeeg{Vikhlinin2006, Arnaud2007,
+  Sun2009}. \todo{Any more?} Because \rvir{} is about twice \rfive{},
+these observations only probe the inner $\sim \frac{1}{8}$ of the
+virial volume of group and cluster halos. In order to measure the
+baryon fraction within groups and clusters, it is essential to
+consider the gas within a volume substantially larger than that within
+\rfive{}. Here, we describe the relevant observations of groups and
+clusters which measure both the ICM and total mass to the outskirts of
+the dark matter halo. Because very few telescopes retain the
+sensitivity required to measure the gas density in the outskirts of
+clusters, we also discuss a method of using observed gas density
+profiles to extrapolate observed gas fractions to higher radii.
 
 \subsection{Observations}
-\label{s.Gas.Observations}
+\label{sec:Gas.Observations}
+\textbf{\citet{Vikhlinin2006}} derived the gas and total mass profiles
+of 10 low-redshift (median redshift z$ = 0.06$) relaxed clusters using
+long-exposure \textit{Chandra} observations. The clusters have a
+median mass $\Mvir = 7.3 \power{14}$ \Msun, and range from $\Mvir =
+1.1\power{14}$ -- $1.5 \power{15}$ \Msun. Temperatures range from $\textrm{kT}
+= 2$ -- $9$ \keV. The authors measured X-ray temperature and surface
+brightness profiles to approximately \rfive{}. They modeled the
+surface brightness profile (which is proportional to n$_e$n$_p$) to
+recover the gas particle density, $\rho_{gas}($r$)$. The total mass
+(\Mfive) was derived by solving the equation of hydrostatic
+equilibrium, using the observed density and temperature profiles, and
+is well-fit by an NFW profile in most cases. The integrated gas
+density and total mass profiles were used to derive the gas fraction
+interior to \rfive{}, $\fg(<\rfive)$. This gas fraction ranges widely
+from cluster to cluster, from $6\%$ to $14\%$, with median
+$11\%$. These observations were also used to derive a useful scaling
+relation between \Mfive{} and the X-ray temperature T:
+\begin{equation}
+\label{eq:M-T}
+\Mfive{} = (2.97 \pm 0.15)\times10^{14}~\Msun~h_{70}^{-1}
+\left(\frac{\textrm{T}}{5~\textrm{keV}}\right)^{1.58 \pm 0.11}.
+\end{equation}
+
+\textbf{\citet{Arnaud2007}} used very similar methods to derive the
+gas and total mass profiles of 10 low-redshift (median redshift z$ =
+0.09$) relaxed clusters from \textit{XMM-Newton} observations. The
+clusters range in mass from $\Mvir = 1.2\power{14}$ -- $1.16 \power{15}$ \Msun,
+with a median of $4.2 \power{14}$ \Msun, and temperatures vary from
+$\textrm{kT} = 2$ -- $8$ \keV. The total mass also relies on
+the assumption of hydrostatic equilibrium, and was extrapolated from
+$\sim$r$_{700}$ to \rfive{} using an NFW profile.  \fg{} was derived
+out to \rfive{} for these clusters, varying from $5.5\%$ to $16\%$,
+with median $11\%$, similar to the \citet{Vikhlinin2006} measurements.
+
+\textbf{\citet{Sun2009}} analyzed the gas fraction in 43 groups from
+archival \textit{Chandra} observations. All the groups are at low
+redshifts ($z \lsim 0.1$). Of these 43 observations, 11 were sensitive
+enough to measure the X-ray surface brightness to \rfive{}, while an
+additional 12 measured surface brightness to r$_{1000}$ and were
+extrapolated to \rfive{}. The total mass of the 23 best-measured
+groups ranges from $\Mvir = 2.0\power{13}$ -- $2.1 \power{14}$ \Msun, with a
+median of $1.1 \power{14}$ \Msun, and ICM temperatures range from
+$\textrm{kT} = 0.7$ -- $2.7 \keV$. The total mass (assuming hydrostatic
+equilibrium) and gas mass were calculated using similar principles to
+\citet{Vikhlinin2006}, with errors estimated by using 1000 artificial
+profiles generated from Monte-Carlo simulations. $\fg(<\rfive)$ for
+these 23 groups ranges from $5\%$ -- $11\%$, with a median of $8\%$,
+lower than for the more massive clusters of \citet{Vikhlinin2006} and
+\citet{Arnaud2007}.
+
+The above three samples were combined in the analysis of
+\textbf{\citet{Giodini2009}} (G09), which used all 10 clusters from
+\citet{Vikhlinin2006}, all 10 clusters from \citet{Arnaud2007}, and 21
+of the 23 best-measured groups from \citet{Sun2009} to study the
+group/cluster gas mass fraction over a wide range of halo masses. The
+authors bin the 42 groups and clusters logarithmically by mass,
+highlighting that lower mass halos have significantly lower gas
+fractions. The best-fit trend is:
+\begin{equation}
+\fg(<\rfive) = (9.3 \pm 0.2)\power{-2}~h_{70}^{-3/2}~
+\left(\frac{\Mfive}{2\power{14}\Msun}\right)^{0.21 \pm 0.03}.
+\end{equation}
+Figure \ref{fig:Giodini_Fgas} shows the distribution of the observed
+gas fractions, as a function of halo mass, measured by the three works
+above.
+\input{Chapters/Giodini_Fgas}
+
+Recent results from the \Planck{} satellite detect the ICM using the
+Thermal SZ effect, which measures the integrated line-of-sight gas
+pressure. \textbf{\citet{PlanckIntV}} derives a stacked pressure
+profile for 62 massive clusters which have archival observations by
+\XMM. The cluster sample \citep[detailed in][]{PlanckEarlyXI} includes
+clusters of mass $\Mvir = 3.3\power{14}$ -- $2.7 \power{15}$ \Msun,
+with median mass approximately $\Mvir = 8.70 \power{14}$ \Msun. X-ray
+temperatures range from $\textrm{kT} = 3.4$ -- $13 \keV$. Total mass
+(\Mfive) was derived from a scaling relation with the quantity
+$\textrm{Y}_X = \textrm{M}_{gas}\textrm{T}_X$, an easily-observable
+quantity that has been found to be a good mass proxy. The scaling
+relation in question \citep{Arnaud2010} was calibrated against X-ray
+derived hydrostatic masses, and so the total mass profile of the
+stacked \Planck{} clusters assumes hydrostatic equilibrium. The total
+mass beyond \rfive{} was calculated assuming an NFW profile. The
+stacked pressure profile is measured to unprecedented scales ($3\rfive
+\sim 1.6\rvir$), although the X-ray temperature profile measured by
+\XMM{} only extends to \rfive{}, so the authors extrapolated the
+observed temperature profile to $3\rfive{}$ to match the pressure
+observations.
+
+Assuming the ICM acts as an ideal gas ($\textrm{P} \propto
+\textrm{n}_\textrm{e}\textrm{kT}$), the authors inverted the pressure
+and temperature profiles to retrieve the gas density profile and
+derive $\fg{}(\textrm{r})$ out to 3\rfive{}\footnote{The authors also
+  derive the gas-fraction assuming a conservative case in which the
+  ICM is isothermal beyond \rfive{}, resulting in lower \fg{}.}. The
+reconstruction of the temperature profile was initially flawed, and
+the correct gas fraction profile was given in a corrigendum,
+\citet{PlanckIntVb}. \fg{} increases from \rfive{} to \rvir{}
+\citep[as predicted by][see \ref{sec:Gas.Extrapolation}]{Rasheed2011},
+reaching a peak of $\sim 15\pm2\%$ at $1.6\rvir{}$.
+
+\textbf{\citet{Eckert2013b}} combined the stacked pressure profile
+from \citet{PlanckIntV} with a stacked X-ray surface-brightness
+profile. The X-ray observations were performed with \Rosat{}, on a
+sample of 31 clusters ($z\lsim0.2$) of temperatures $\textrm{kT} =
+2.5$ -- $9 \keV$, with median $\textrm{kT} = 6.5 \keV$. The cluster
+masses range from $\Mvir \sim 1.4 \power{14}$ to $1.0 \power{15}
+\Msun$, with median $\Mvir = 6.0\power{14} \Msun$\footnote{The authors
+  do not give the masses of the clusters, so these values are taken
+  from the M-T relation of \citet{Vikhlinin2006} (equation
+  \ref{eq:M-T}).}. The \Rosat{} observations are used to derive the
+gas density profile to \rtwo{}. The \Planck{} pressure profile,
+combined with the gas density profile, is used to directly calculate
+the total mass, assuming hydrostatic equilibrium. This is different
+from the method used by \citet{PlanckIntV}, which assumed an NFW
+profile, although both estimates rely on the assumption of
+hydrostatic equilibrium. The authors separate their 
+
+\subsection{Extrapolation of Gas Density Profiles}
+\label{sec:Gas.Extrapolation}
+Very few observations retain the necessary sensitivity to
+measure the gas density all the way to \rvir{}, so in many cases we
+extrapolate the observed 
+
+\textbf{\citet{Rasheed2011}} 
 
 \section{Cluster Stellar Mass Fraction}
-\label{s.Stellar}
+\label{sec:Stellar}
 
 \section{Galaxy Mass Fractions}
-\label{s.Galaxy}
+\label{sec:Galaxy}
 
 \subsection{The Circumgalactic Medium}
-\label{s.Galaxy.CGM}
+\label{sec:Galaxy.CGM}
 
 \subsection{Constraints on Other Galactic Components}
-\label{s.Galaxy.Components}
+\label{sec:Galaxy.Components}
 
 \subsection{Estimate of Galactic-Halo Baryon Fraction}
-\label{s.Galaxy.Fraction}
+\label{sec:Galaxy.Fraction}
