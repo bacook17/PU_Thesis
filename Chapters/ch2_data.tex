@@ -93,12 +93,14 @@ fractions. The best-fit trend is:
 \end{equation}
 Figure \ref{fig:Giodini_Fgas} shows the distribution of the observed
 gas fractions, as a function of halo mass, measured by the three works
-above.
+above. We will use the G09 bins as 5 independent samples of \fg{} for
+different masses. 
+
 \input{Chapters/Giodini_Fgas}
 
 Recent results from the \Planck{} satellite detect the ICM using the
 Thermal SZ effect, which measures the integrated line-of-sight gas
-pressure. \textbf{\citet{PlanckIntV}} derives a stacked pressure
+pressure. \textbf{\citet{PlanckIntV}} (PC13) derives a stacked pressure
 profile for 62 massive clusters which have archival observations by
 \XMM. The cluster sample \citep[detailed in][]{PlanckEarlyXI} includes
 clusters of mass $\Mvir = 3.3\power{14}$ -- $2.7 \power{15}$ \Msun,
@@ -129,28 +131,89 @@ the correct gas fraction profile was given in a corrigendum,
 \citep[as predicted by][see \ref{sec:Gas.Extrapolation}]{Rasheed2011},
 reaching a peak of $\sim 15\pm2\%$ at $1.6\rvir{}$.
 
-\textbf{\citet{Eckert2013b}} combined the stacked pressure profile
+\textbf{\citet{Eckert2013b}} (E13) combined the stacked pressure profile
 from \citet{PlanckIntV} with a stacked X-ray surface-brightness
-profile. The X-ray observations were performed with \Rosat{}, on a
-sample of 31 clusters ($z\lsim0.2$) of temperatures $\textrm{kT} =
-2.5$ -- $9 \keV$, with median $\textrm{kT} = 6.5 \keV$. The cluster
-masses range from $\Mvir \sim 1.4 \power{14}$ to $1.0 \power{15}
-\Msun$, with median $\Mvir = 6.0\power{14} \Msun$\footnote{The authors
-  do not give the masses of the clusters, so these values are taken
-  from the M-T relation of \citet{Vikhlinin2006} (equation
-  \ref{eq:M-T}).}. The \Rosat{} observations are used to derive the
-gas density profile to \rtwo{}. The \Planck{} pressure profile,
-combined with the gas density profile, is used to directly calculate
-the total mass, assuming hydrostatic equilibrium. This is different
-from the method used by \citet{PlanckIntV}, which assumed an NFW
-profile, although both estimates rely on the assumption of
-hydrostatic equilibrium. The authors separate their 
+profile that directly constrains the gas density to \rtwo{}. The X-ray
+observations were performed with \Rosat{}, on a sample of 31 clusters
+($z\lsim0.2$) of temperatures $\textrm{kT} = 2.5$ -- $9$ \keV, with
+median $\textrm{kT} = 6.5$ \keV. The cluster masses range from $\Mvir
+\sim 1.4 \power{14}$ to $1.0 \power{15} \Msun$, with median $\Mvir =
+6.0\power{14} \Msun$\footnote{The authors do not give the masses of
+  the clusters, so these values are taken from the M-T relation of
+  \citet{Vikhlinin2006} (equation \ref{eq:M-T}).}. The \Planck{}
+pressure profile, combined with the gas density profile, is used to
+directly calculate the total mass, assuming hydrostatic
+equilibrium. This is different from the method used by
+\citet{PlanckIntV}, which assumed an NFW profile. However, both
+estimates rely on the assumption of hydrostatic equilibrium either
+explicitly or implicitly through calibration of the
+$\textrm{Y}_\textrm{X}-\Mfive$ relation. 18
+clusters are in common between the \Rosat{} and \Planck{} samples, and
+the authors separate them into cool-core (CC, 6 clusters) and
+non-cool core (NCC, 12 clusters) categories. The gas fraction profile
+is calculated separately for the two categories, and the authors find
+that NCC clusters have significantly higher gas fractions within
+\rtwo{} ($0.169 \pm 0.010$) than relaxed, CC clusters do ($0.134\pm
+0.011$), suggesting that the irregular, non-spherical morphologies of
+the disturbed clusters may bias the gas fractions high. They also find
+that \fg{} increases from \rfive{} to \rtwo{} ($\fg(<\rfive) \sim
+0.12$ for CC clusters). 
+
+\textbf{\citet{Umetsu2009}} (U09) observed the ICM of four very massive
+($\Mvir \gsim 1\power{15}$ \Msun, $\textrm{kT} \sim 9$ -- $10$ \keV)
+clusters using Thermal SZ measurements with the \textit{AMiBA} CMB
+telescope. After deriving pressure profiles from the SZ effect, the
+authors calculated the gas density profile using archival X-ray
+temperature measurements and a theoretical temperature-profile
+\citep{Komatsu2001}. The authors use \textit{Subaru} observations to
+derive the cluster masses with weak-lensing analysis. The average gas
+fraction is calculated to the limit of the SZ observations, \rtwo, and
+is found to be $\fg(<\rfive) = 0.126 \pm 0.019 \pm 0.016$ within
+\rfive{} and $\fg(<\rtwo) = 0.133 \pm 0.020 \pm 0.018$ within
+\rtwo{}. The two uncertainties on each fraction are the statistical
+error and cluster-to-cluster standard deviation, respectively. These
+observations also find that \fg{} increases with radius beyond
+\rfive{}, in agreement with \citet{PlanckIntV} and
+\citet{Eckert2013b}. We emphasize that the total mass for these
+clusters are \textit{not} dependent on the assumption of hydrostatic
+equilibrium (because they were derived using weak-lensing
+measurements), so comparisons of \fg{} from this sample to the same
+value for samples which assume HSE can put constraints on the validity
+of the HSE assumption.
+
+Table \ref{tab:F_gas} lists the samples described above with the most
+important characteristics of each sample, including median mass
+($\Mvir$), whether that mass is derived assuming HSE, and the gas
+fraction at all directly-observed radii.
+
+\input{Chapters/F_gas}
 
 \subsection{Extrapolation of Gas Density Profiles}
 \label{sec:Gas.Extrapolation}
-Very few observations retain the necessary sensitivity to
-measure the gas density all the way to \rvir{}, so in many cases we
-extrapolate the observed 
+As seen above, very few observations retain the necessary sensitivity to
+measure the gas density all the way to \rvir{}. Therefore, to
+constrain the gas fraction within the entire halo, we can extrapolate
+the observed gas mass profile (at \rtwo{} or \rfive{}) to higher
+radius by assuming a power-law profile:
+\begin{equation}
+\rho_{gas}(\textrm{r}) \propto \textrm{r}^{-\alpha_g}, \nonumber
+\end{equation}
+where $\alpha{}_g$ is the slope of the gas density profile, which can in
+general change as radius increases. The total
+matter density can be similarly modeled,
+\begin{equation}
+\rho_{m}(\textrm{r}) \propto \textrm(r)^{-\alpha_{m}}, \nonumber
+\end{equation}
+with $\alpha{}_m$ the slope of the total mass density profile. At
+large radius, the full equation for the gas fraction can be simplified
+using these model distributions:
+\begin{align}
+\fg(<\textrm{r}) = \frac{\textrm{M}_{gas}}{\textrm{M}_{tot}} &=
+\frac{\int_0^r 4\pi{}r^2dr\rho_{gas}(\textrm{r}')}{\int_0^r
+  4\pi{}r^2dr\rho_{m}(\textrm{r}')} \nonumber \\ & \propto
+\frac{\textrm{r}^{-\alpha_{gas}}}{\textrm{r}^{-\alpha_{m}}}\nonumber\\ &
+\propto \textrm{r}^{\alpha_{m} - \alpha_{tot}}. \nonumber
+\end{align}
 
 \textbf{\citet{Rasheed2011}} 
 

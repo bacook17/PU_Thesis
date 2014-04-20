@@ -43,7 +43,7 @@ def SetAxes(legend=False):
 
     plt.xscale('log')
     plt.xticks([1./1.9, 1.33/1.9, 1, 1.5, 2.],[r'r$_{500}$', r'r$_{200}$', 1, 1.5, 2], size='large')
-    plt.yticks([.1, .2], ['0.10', '0.20'])
+    #plt.yticks([.1, .2], ['0.10', '0.20'])
     plt.tick_params(length=10, which='major')
     plt.tick_params(length=5, which='minor')
     plt.xlim([0.4,1.5])
