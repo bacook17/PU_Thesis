@@ -33,7 +33,7 @@ def SetAxes(legend=False):
     plt.ylabel(r'f$_{gas}$ ($<$ r)', size='x-large')
 
     plt.xscale('log')
-    plt.xlim([1.5e+13,200e+13])
+    plt.xlim([1e+13,2e+15])
     plt.ylim(ymin=0.03)
 
     plt.tick_params(length=10, which='major')

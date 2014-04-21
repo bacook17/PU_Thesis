@@ -48,7 +48,7 @@ def SetAxes(legend=False):
     plt.tick_params(length=5, which='minor')
     plt.xlim([0.4,1.5])
     if legend:
-        plt.legend(loc=4, prop={'size':'x-small'}, markerscale=0.7, numpoints=1)
+        plt.legend(loc=0, prop={'size':'small'}, markerscale=0.7, numpoints=1, ncol=2)
 
 if __name__ == '__main__':
     inputfile = 'F_new.dat'

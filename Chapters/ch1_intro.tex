@@ -195,8 +195,6 @@ declines towards higher multipoles ($l$) due to a process known as
 photon-baryon coupling, and the characteristic damping scale is
 influenced by $\omegab h^2$ \citep[][ch.~4.7]{Durrer2008}.
 
-\input{Chapters/CMB_Power}
-
 Through a combination of all the processes listed above, modern CMB
 observations have been able to place strong constraints on both
 $\omegab h^2$ and $\omegam h^2$. Two of the most noteworthy such
@@ -215,13 +213,22 @@ take values $\omegab h^2 = 0.02229 \pm 0.00035$ and $\omegac h^2 =
 0.1138 \pm 0.0032$. From the results paper of Planck
 \citep{PlanckResultsXVI}, we take the values $\omegab h^2 = 0.022115
 \pm 0.00025$ and $\omegac h^2 = 0.11957 \pm 0.0025$. These values
-allow us to constrain the cosmic baryon fraction\footnote{We describe
-  our method for calculating the uncertainty in \fb{} in Appendix
-  \ref{app:delf}.} as:
+allow us to constrain the cosmic baryon fraction as:
 \begin{align}
-\fb &= 0.164 \pm 0.004 \,\,(WMAP9) \nonumber\\
-&= 0.156 \pm 0.003 \,\,(Planck) \nonumber
+\fb &= \frac{\omegab h^2}{\omegab h^2 + \omegac h^2} \\
+&=0.164 \pm 0.004 \,\,(WMAP9) \nonumber\\
+&= 0.156 \pm 0.003\,\,(Planck) \nonumber\\ 
+\intertext{The uncertainty on \fb{} comes from the propogation of
+  uncertainties on $\omegab h^2$ and $\omegac h^2$:}
+\Delta\fb &=
+\sqrt{\left(\frac{\partial\fb}{\partial\omegab h^2}\right)^2\Delta(\omegab h^2)^2 
++ \left(\frac{\partial\fb}{\partial\omegac h^2}\right)^2\Delta(\omegac h^2)^2} \nonumber \\
+&= \sqrt{\left(\frac{\omegac h^2 \Delta(\omegab h^2)}{(\omegab h^2 + \omegac h^2)^2}\right)^2
++ \left(\frac{\omegab h^2 \Delta(\omegac h^2)}{(\omegab h^2 + \omegac h^2)^2}\right)^2} \nonumber \\
+&= \frac{1}{(\omegam h^2)^2}\sqrt{\left[\omegac h^2 \Delta(\omegab h^2)\right]^2
++ \left[\omegab h^2 \Delta(\omegac h^2)\right]^2} 
 \end{align}
+
 It is commonly discussed \citeeg{Spergel2013} that the Planck
 results yield \omegam{} significantly higher and \Ho{} significantly
 lower than other previous measurements, including WMAP. This results
@@ -237,6 +244,8 @@ uncertainty on the ``true'' cosmic baryon fraction due to the
 discrepant results from CMB observations. We hope that subsequent
 analysis of the WMAP/Planck discrepancies will solve this problem, one
 way or another.
+
+\input{Chapters/CMB_Power}
 
 \section{The Cluster Missing Baryon Problem}
 \label{sec:Missing.Clusters}

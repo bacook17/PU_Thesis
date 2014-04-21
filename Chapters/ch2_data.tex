@@ -97,6 +97,7 @@ above. We will use the G09 bins as 5 independent samples of \fg{} for
 different masses. 
 
 \input{Chapters/Giodini_Fgas}
+\afterpage{\clearpage}
 
 Recent results from the \Planck{} satellite detect the ICM using the
 Thermal SZ effect, which measures the integrated line-of-sight gas
@@ -114,7 +115,7 @@ derived hydrostatic masses, and so the total mass profile of the
 stacked \Planck{} clusters assumes hydrostatic equilibrium. The total
 mass beyond \rfive{} was calculated assuming an NFW profile. The
 stacked pressure profile is measured to unprecedented scales ($3\rfive
-\sim 1.6\rvir$), although the X-ray temperature profile measured by
+\approx 1.6\rvir$), although the X-ray temperature profile measured by
 \XMM{} only extends to \rfive{}, so the authors extrapolated the
 observed temperature profile to $3\rfive{}$ to match the pressure
 observations.
@@ -129,7 +130,7 @@ reconstruction of the temperature profile was initially flawed, and
 the correct gas fraction profile was given in a corrigendum,
 \citet{PlanckIntVb}. \fg{} increases from \rfive{} to \rvir{}
 \citep[as predicted by][see \ref{sec:Gas.Extrapolation}]{Rasheed2011},
-reaching a peak of $\sim 15\pm2\%$ at $1.6\rvir{}$.
+reaching a peak of $\approx 15\pm2\%$ at $1.6\rvir{}$.
 
 \textbf{\citet{Eckert2013b}} (E13) combined the stacked pressure profile
 from \citet{PlanckIntV} with a stacked X-ray surface-brightness
@@ -137,7 +138,7 @@ profile that directly constrains the gas density to \rtwo{}. The X-ray
 observations were performed with \Rosat{}, on a sample of 31 clusters
 ($z\lsim0.2$) of temperatures $\textrm{kT} = 2.5$ -- $9$ \keV, with
 median $\textrm{kT} = 6.5$ \keV. The cluster masses range from $\Mvir
-\sim 1.4 \power{14}$ to $1.0 \power{15} \Msun$, with median $\Mvir =
+\approx 1.4 \power{14}$ to $1.0 \power{15} \Msun$, with median $\Mvir =
 6.0\power{14} \Msun$\footnote{The authors do not give the masses of
   the clusters, so these values are taken from the M-T relation of
   \citet{Vikhlinin2006} (equation \ref{eq:M-T}).}. The \Planck{}
@@ -156,11 +157,11 @@ that NCC clusters have significantly higher gas fractions within
 \rtwo{} ($0.169 \pm 0.010$) than relaxed, CC clusters do ($0.134\pm
 0.011$), suggesting that the irregular, non-spherical morphologies of
 the disturbed clusters may bias the gas fractions high. They also find
-that \fg{} increases from \rfive{} to \rtwo{} ($\fg(<\rfive) \sim
+that \fg{} increases from \rfive{} to \rtwo{} ($\fg(<\rfive) \approx
 0.12$ for CC clusters). 
 
 \textbf{\citet{Umetsu2009}} (U09) observed the ICM of four very massive
-($\Mvir \gsim 1\power{15}$ \Msun, $\textrm{kT} \sim 9$ -- $10$ \keV)
+($\Mvir \gsim 1\power{15}$ \Msun, $\textrm{kT} \approx 9$ -- $10$ \keV)
 clusters using Thermal SZ measurements with the \textit{AMiBA} CMB
 telescope. After deriving pressure profiles from the SZ effect, the
 authors calculated the gas density profile using archival X-ray
@@ -205,17 +206,108 @@ matter density can be similarly modeled,
 \rho_{m}(\textrm{r}) \propto \textrm(r)^{-\alpha_{m}}, \nonumber
 \end{equation}
 with $\alpha{}_m$ the slope of the total mass density profile. At
-large radius, the full equation for the gas fraction can be simplified
-using these model distributions:
+large radii, the full equation for the gas fraction simplifies to approximately:
 \begin{align}
 \fg(<\textrm{r}) = \frac{\textrm{M}_{gas}}{\textrm{M}_{tot}} &=
-\frac{\int_0^r 4\pi{}r^2dr\rho_{gas}(\textrm{r}')}{\int_0^r
-  4\pi{}r^2dr\rho_{m}(\textrm{r}')} \nonumber \\ & \propto
-\frac{\textrm{r}^{-\alpha_{gas}}}{\textrm{r}^{-\alpha_{m}}}\nonumber\\ &
-\propto \textrm{r}^{\alpha_{m} - \alpha_{tot}}. \nonumber
+\frac{\int_0^r 4\pi{}r'^2dr'\rho_{gas}(\textrm{r}')}{\int_0^r
+  4\pi{}r'^2dr'\rho_{m}(\textrm{r}')} \nonumber \\ & \approx
+\frac{\rho_{gas}(\textrm{r})}{\rho_{tot}(\textrm{r})} \nonumber\\ &\propto \textrm{r}^{\alpha_{m} - \alpha_{tot}}. \nonumber
+\end{align}
+Therefore, the gas fraction can be extrapolated to larger radii using
+the difference in slopes between the gas density and total mass
+density profiles.
+
+\textbf{\citet{Rasheed2011}} (R11) used this approach to extrapolate
+the gas fraction of the G09 cluster samples to \rvir{}. X-ray and SZ
+observations show that the gas density decreases more slowly with
+radius than the total mass density ($\alpha_{m} > \alpha_{gas}$),
+suggesting that the gas fraction should increase when the cluster
+outskirts are considered. The authors hoped to place constraints on
+the amount of ``missing baryons'' within the virial volume of
+clusters.
+
+R11 used a large survey of the literature to recover X-ray
+measurements which constrain the gas density slope out to
+\rfive{}. These measurements include observations with \Rosat{},
+\Chandra, \XMM, and \textit{Suzaku}, and cover a wide range of cluster
+masses and temperatures. Averaging over the many observations, the
+authors find that the gas density slope at \rfive{} steepens with more
+massive clusters, with $\alpha_{gas}$ ranging from $\approx 1.8 \pm
+0.2$ for poor clusters (G09 bin 2, $\Mvir \approx 7\power{13}\Msun$)
+to $\approx 2.3 \pm 0.02$ for the most massive G09 bin ($\Mvir
+\approx9.8\power{14}\Msun$). 
+
+Compared to the gas density profile, the total density (NFW) profile
+is significantly steeper in the outer regions of the halo. In the mass
+range of the G09 groups and clusters, the NFW profile has a slope of
+$\alpha_m = 2.6$ between \rfive{} and \rtwo{}, and steepens to
+$\alpha_m = 2.7$ in the region \rtwo{} to \rvir{}. Therefore, R11
+predicted that the gas fraction rises significantly above
+\rfive{}. Because $\alpha_{gas}$ increases with cluster mass, the gas
+fraction is predicted to rise more quickly with radius for groups and
+poor clusters ($\fg\propto \textrm{r}^{0.8}$ for G09 bin 2) than for
+rich clusters ($\fg \propto \textrm{r}^{0.3}$ for G09 bin 5). For
+these two bins, this model predicts increases in \fg{} by a factor of
+roughly $1.6$ and $1.2$, respectively, from \rfive{} to \rvir{}. This
+offers an explanation for why the missing baryon problem is more
+severe in lower-mass clusters: the shallower gas profile implies the
+ICM is spread farther out in lower-mass halos than in very massive
+ones.
+
+We adopt R11's extrapolation model in order to approximate the gas
+fraction at high radius in the samples which do not measure \fg{} to
+\rvir{} (all except PC13). $\alpha_{gas}$ for each sample in Table
+\ref{tab:F_gas} is taken from the temperature-slope relation in R11,
+we do not extrapolate the gas profiles for any individual cluster
+sample with coverage beyond \rfive{}. We assume $\alpha_m$ as
+above for the NFW profile. We extrapolate \fg{} from the maximum
+observed radius, r$_a$, to a larger radius r$_b$ using:
+\begin{equation}
+\fg(<\textrm{r}_b) =
+\fg(<\textrm{r}_a)\left(\frac{\textrm{r}_b}{\textrm{r}_a}\right)^{\alpha_m - \alpha_{gas}}.
+\end{equation}
+ For example, extrapolating the gas fraction of G09's bin 5 from \rfive{} to \rtwo{}:
+\begin{align}
+\fg{}(<\rtwo) &=
+\fg{}(<\rfive)\left(\frac{\rtwo}{\rfive}\right)^{\alpha_m -
+  \alpha_{gas}} \nonumber\\
+&\approx .103~(1.45)^{2.6 - 2.3} \nonumber \\
+&\approx .115 \nonumber
 \end{align}
 
-\textbf{\citet{Rasheed2011}} 
+To calculate the uncertainty on the extrapolated gas fraction, we
+propagate the errors in $\fg(<\textrm{r}_a)$ (or $\fg{}_{,a}$) and in
+$\alpha_{gas}$, assuming no significant uncertainty exists in
+$\alpha_m$ or r$_b$/r$_a$. The fractional errors add in quadrature.
+\begin{align}
+\frac{\Delta\fg{}_{,b}}{\fg{}_{,b}} &=
+\sqrt{\left(\frac{\Delta\fg{}_{,a}}{\fg{}_{,a}}\right)^2 +
+  \left(\frac{\Delta\left(\textrm{r}_b/\textrm{r}_a\right)^{\alpha_m-\alpha_{gas}}}{\left(\textrm{r}_b/\textrm{r}_a\right)^{\alpha_m-\alpha_{gas}}}\right)^2}\nonumber\\
+\intertext{The uncertainty in the right term is}
+\Delta\left(\textrm{r}_b/\textrm{r}_a\right)^{\alpha_m-\alpha_{gas}}
+& =
+\left(\textrm{r}_b/\textrm{r}_a\right)^{\alpha_m-\alpha_{gas}}\ln{\left(\textrm{r}_b/\textrm{r}_a\right)}\Delta\alpha_{gas}\,,\nonumber\\
+\intertext{yielding the final result:}
+\frac{\Delta\fg{}_{,b}}{\fg{}_{,b}} &=
+\sqrt{\left(\frac{\Delta\fg{}_{,a}}{\fg{}_{,a}}\right)^2 +
+  \left(\ln{\left(\textrm{r}_b/\textrm{r}_a\right)}\Delta\alpha_{gas}\right)^2}
+\end{align}
+
+The gas density profile is expected to steepen at very large radii,
+such that it eventually matches the NFW profile \citeeg{Umetsu2009},
+which translates to the gas fraction asymptotically approaching a constant
+value. At large enough radius, extrapolation of the gas fraction as
+described above will, therefore, become invalid, as $\alpha_{gas}$
+will not remain fixed. The range at which the gas density steepens
+significantly is not known, however, as observational data does not
+currently constrain $\alpha_{gas}$ far beyond \rfive. R11's assumption
+that this slope remains constant to \rvir{} is therefore a
+questionable one, but no simple alternatives exist. We also assume
+$\alpha_{gas}$ remains constant to \rvir{} (and slightly beyond), and
+emphasize that the our calculation of the gas fraction will be biased
+high if the gas density slope steepens significantly beyond
+\rfive{}. In Chapter \ref{chap:Results}, we discuss how our results
+may be able to constrain the evolution of this density slope. 
 
 \section{Cluster Stellar Mass Fraction}
 \label{sec:Stellar}
