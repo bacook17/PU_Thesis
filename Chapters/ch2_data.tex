@@ -7,8 +7,8 @@
 \section{Total Mass in Groups and Clusters}
 \label{sec:Mass}
 
-The total mass in groups and clusters can be approximated in a number
-of ways. The most direct method of measuring the mass profile of a
+The total mass in groups and clusters can be measured in a number
+of ways. The most direct method of calculating the mass profile of a
 large halo is through gravitational lensing of the light of background
 sources behind the halo. Strong gravitational lensing occurs when the
 background object (ex: a high-redshift galaxy) is magnified and
@@ -24,10 +24,73 @@ statistically determine the mass profile of a foreground halo.
 Another common method of estimating the mass of groups and clusters is
 through the assumption of \textit{hydrostatic equilibrium} (HSE). If
 the gas in clusters is in HSE, then the pressure gradient offsets the
-gravitational force, allowing the :
+gravitational force:
+\begin{align}
+\frac{d\textrm{P(\textrm{r})}}{d\textrm{r}} &=
+-\frac{\textrm{GM}(<\textrm{r})\rho(\textrm{r})}{\textrm{r}^2}
+\nonumber
+\end{align}
+Therefore, assuming the ICM is in hydrostatic
+  equilibrium, the total mass profile can be reconstructed from the
+  observed gas density and pressure profiles:
+\begin{align}
+ \textrm{M}(<\textrm{r}) &=
+ -\frac{\textrm{r}^2}{\textrm{G}~\rho_{gas}(\textrm{r})}\frac{d\textrm{P}(<\textrm{r})}{d\textrm{r}}\nonumber
+ \intertext{Alternatively, the total mass can be calculated using the
+   density and temperature profiles, assuming the ICM behaves as an
+   ideal gas, P(r)=n(r)kT(r):} \textrm{M}(<\textrm{r}) &=
+ -\frac{k~\textrm{T}(\textrm{r})~\textrm{r}}{\textrm{G}}\left(\frac{d\log{\rho_{gas}(\textrm{r})}}{d\textrm{r}}
+ + \frac{d\log{\textrm{T}(\textrm{r})}}{d\textrm{r}}\right)\nonumber
+\end{align} 
+Gas density is typically measured using X-ray observations, as the gas
+density is easily calculated from the X-ray surface
+brightness. Temperature can be determined spectroscopically from X-ray
+observations, and pressure can be measured directly through the
+thermal SZ effect. 
+
+The accuracy of the total mass derived through the assumption of
+hydrostatic equilibrium (or the ``hydrostatic mass'') is highly
+debated, as sources of non-thermal pressure (including cosmic rays,
+merger-induced shocks, and AGN feedback) can invalidate the assumption
+of hydrostatic equilibrium. Additionally, deviations from spherical
+symmetry can bias hydrostatic mass estimates, as many gas measurements
+are sensitive to the integrated profile along the
+line-of-sight. Comparing hydrostatic masses to masses derived through
+weak-lensing analysis can help constrain the bias inherent in the HSE
+assumption, although weak-lensing masses are also sensitive to the
+ellipticity of clusters.
+
+The total matter density distribution is often modeled by the NFW
+profile, an analytical equation first proposed by \citet{Navarro1996}
+to describe the ``universal density profile'' of simulated dark matter
+halos, regardless of size. The NFW profile has the form:
 \begin{equation}
-\frac{\textrm{dP}}{\textrm{dr}} 
+\rho_m(\radius) = \frac{\delta_c\rhocrit}{(\textrm{r/r}_s)(1 + \textrm{r/r}_s)^2}~.\nonumber
 \end{equation}
+r$_s$ is a characteristic radius representing the central core of the
+dark matter halo, $\rhocrit$ is the critical matter density, and
+$\delta_c$ is a normalization constant which sets the characteristic
+overdensity of the cluster. Halos which fit the NFW profile are
+self-similar, in that only $\radius_s$ is dependent on mass. When
+$\radius \approx \radius_s$, the density profile decreases slowly
+($\rho_m \propto \radius^{-1}$), while at $\radius \gg \radius_s$ the
+profile steepens to $\rho_m \propto \radius^{-3}$. Observations of
+group and cluster halos consistently find that the total mass profile
+follows the NFW profile well
+\citeeg{Vikhlinin2006,Mandelbaum2008,Sheldon2009,Umetsu2009}.
+
+Several ``mass proxies'' have been used to estimate the total mass of
+clusters. Mass proxies are typically easily-observed quantities that
+are found to correlate strongly with the total cluster mass. Examples
+include the X-ray temperature ($\textrm{kT}_\textrm{X}\approx1$ -- $10$ \keV{}
+for groups and clusters), and $\textrm{Y}_{\textrm{X}} =
+\Mass_{gas}\textrm{T}_\textrm{X}$. Using mass proxies allows observers
+to place general constraints on the mass of a cluster without
+requiring deep observations to recover the true gas or mass density
+profiles. The assumption of hydrostatic equilibrium can also affect
+the determination of mass through this method, as many Mass-Proxy
+relations are calibrated against hydrostatic masses of clusters
+\citeeg{Arnaud2007,Arnaud2010}.
 
 \section{Cluster Gas Mass Fraction}
 \label{sec:Gas}
@@ -116,7 +179,6 @@ Figure \ref{fig:Giodini_Fgas} shows the distribution of the observed
 gas fractions, as a function of halo mass, measured by the three works
 above. We will use the G09 bins as 5 independent samples of \fg{} for
 different masses. 
-
 \input{Chapters/Giodini_Fgas}
 \afterpage{\clearpage}
 
@@ -332,6 +394,21 @@ may be able to constrain the evolution of this density slope.
 
 \section{Cluster Stellar Mass Fraction}
 \label{sec:Stellar}
+
+The integrated stellar mass of groups and clusters is also an
+important (although subdominant) reservoir of baryons in these large
+halos. The stellar mass of clusters comes almost entirely from the
+stellar content of the individual cluster galaxies.
+
+G09 approximated the stellar content of a large number ($>90$) groups
+and clusters from the COSMOS survey. Using optical and infrared
+observations from SUBARU, the authors fit a broad-band spectrum to the
+clusters and used these spectral energy distributions to derive photometric redshifts for
+the sample. Converting the IR luminosity of detected galaxies to
+stellar mass, and accounting for the entire predicted galactic mass
+function, G09 approximated the stellar fraction in clusters of sizes
+$\power{13}$ -- $\power{15}$ \Msun. At \rfive{}, the stellar fraction
+was found to be significantly 
 
 \section{Galaxy Mass Fractions}
 \label{sec:Galaxy}
