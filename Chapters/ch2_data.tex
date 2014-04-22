@@ -17,7 +17,7 @@ cluster). This allows a very accurate measurement of the mass of the
 lens, but occurs only rarely when the background/foreground are in a
 particular alignment. More commonly utilized is the technique of weak
 gravitational lensing
-\citeeg{Umetsu2009,Sheldon2009,VonderLinden2014}, where small
+\citeeg{Umetsu2009,Sheldon2009a,VonderLinden2014}, where small
 distortions of an immense number of background objects are used to
 statistically determine the mass profile of a foreground halo.
 
@@ -77,13 +77,14 @@ $\radius \approx \radius_s$, the density profile decreases slowly
 profile steepens to $\rho_m \propto \radius^{-3}$. Observations of
 group and cluster halos consistently find that the total mass profile
 follows the NFW profile well
-\citeeg{Vikhlinin2006,Mandelbaum2008,Sheldon2009,Umetsu2009}.
+\citeeg{Vikhlinin2006,Mandelbaum2008,Sheldon2009a,Umetsu2009}.
 
 Several ``mass proxies'' have been used to estimate the total mass of
 clusters. Mass proxies are typically easily-observed quantities that
 are found to correlate strongly with the total cluster mass. Examples
 include the X-ray temperature ($\textrm{kT}_\textrm{X}\approx1$ -- $10$ \keV{}
-for groups and clusters), and $\textrm{Y}_{\textrm{X}} =
+for groups and clusters), the richness (number of bright
+galaxies observed within the cluster), and $\textrm{Y}_{\textrm{X}} =
 \Mass_{gas}\textrm{T}_\textrm{X}$. Using mass proxies allows observers
 to place general constraints on the mass of a cluster without
 requiring deep observations to recover the true gas or mass density
@@ -403,15 +404,81 @@ stellar content of the individual cluster galaxies.
 G09 approximated the stellar content of a large number ($>90$) groups
 and clusters from the COSMOS survey. Using optical and infrared
 observations from SUBARU, the authors fit a broad-band spectrum to the
-clusters and used these spectral energy distributions to derive photometric redshifts for
-the sample. Converting the IR luminosity of detected galaxies to
-stellar mass, and accounting for the entire predicted galactic mass
-function, G09 approximated the stellar fraction in clusters of sizes
-$\power{13}$ -- $\power{15}$ \Msun. At \rfive{}, the stellar fraction
-was found to be significantly 
+detected galaxies in each cluster and used these spectral energy
+distributions to derive photometric redshifts for the
+sample. Converting the $Ks$-band (IR) luminosity of detected galaxies to stellar
+mass, and accounting for the entire predicted galactic mass function,
+G09 approximated the stellar fraction in clusters of sizes
+$1\power{13}$ -- $1\power{15}$ \Msun. At \rfive{}, the stellar fraction
+was found to be significantly higher ($\approx 6\%$) for groups and
+poor clusters than for the most massive clusters ($\approx 2\%$). The
+authors derived a fit to stellar-fraction versus mass of:
+\begin{equation}
+\textrm{f}_{*}(<\rfive{}) =
+(5.0\pm0.1)\power{-2}~\left(\frac{\Mfive}{5\power{13}\Msun}\right)^{-0.37\pm0.04}~. \nonumber
+\end{equation}
+This suggested another possible solution to the increased amount of
+missing baryons in low-mass halos: the lower fraction of gas could be
+offset by a higher fraction of stellar mass. Including both stars and
+gas, however, G09 concluded that the baryon fraction of low-mass
+clusters still remained below the cosmic fraction ($\approx 12\%$), as
+did high-mass clusters ($\approx 14\%$). 
+
+The results of an extensive Sloan Digital Sky Survey (SDSS)
+weak-lensing study of stacked groups and clusters has placed
+unparalleled constraints on the stellar fraction in clusters. The
+MaxBCG sample \citep{Sheldon2009a} contains $> 130,000$ clusters
+between redshifts $z = 0.1-0.3$, was binned by richness and
+luminosity, and stacked by centering on the brightest cluster galaxy
+(BCG). The mean weak-lensing profile was detected well into the
+surrounding large scale structure ($\gsim 15-20 \rvir$), as was the
+averaged optical surface brightness \citep{Sheldon2009b}, allowing the
+total mass to light ratio (M/L) to be calculated. \citet{Bahcall2014} (BK14)
+developed a model for the stellar mass to light ratio of individual
+spiral and elliptical galaxies, as well as their relative abundance
+from the density-morphology relation, and converted the total mass to
+light ratio into the stellar mass fraction. 
+
+Figure \ref{fig:BK14} shows the stellar fraction distributions derived
+by BK14.  The stellar fraction is calculated at
+$\radius{}_{200b}$\footnote{$\radius{}_{200b}$ represents where the
+  density is 200 times the cosmic matter density, not the critical
+  density, and corresponds roughly to our definition of \rvir{}.} as a
+function of cluster mass. The authors find that the stellar fraction
+at fixed radius decreases with halo mass, in excellent agreement with
+G09. The stellar fraction is also calculated as a function of radius,
+divided into three richness bins, with mass ranges corresponding
+roughly to $\Mvir{}< 2\power{13}\Msun$, $2\power{13}\Msun{} < \Mvir{}
+< 1\power{14}\Msun{}$, and $1\power{14}\Msun{} < \Mvir{}$. The stellar
+fraction decreases significantly from the centers of clusters (where
+the light is dominated by the BCG), asymptotically approaching at high
+radius a ``cosmic'' stellar fraction of $\textrm{f}_{*} \approx 0.01
+\pm 0.004$ in all richness bins. The radius at which the stellar
+fraction reaches this cosmic limit decreases with richness class,
+suggesting that all clusters contain roughly the same stellar
+fraction, but that the stellar mass is more widely distributed in
+low-mass clusters with shallow gravitational potentials.
+
+\input{Chapters/BK14}
 
 \section{Galaxy Mass Fractions}
 \label{sec:Galaxy}
+
+Studying the distribution of baryons in individual galaxies presents
+many other challenges not faced in the investigation of
+clusters. Because galaxy halos are significantly lower mass than
+cluster halos ($\Mvir \approx 1-2\power{12}\Msun{}$ for a typical
+L$^*$ galaxy), their gravitational wells are shallower, and it is
+easier for feedback effects to remove gas from the systems altogether
+\citeeg{Oppenheimer2010}. The lower total mass also translates to a
+much lower thermal temperature for the gas to be in hydrostatic
+equilibrium. Therefore, the main diffuse gaseous component of galaxy halos
+will primarily be too cool and low-density to be detected in
+emission. 
+
+The most obvious and easily detected baryon reservoir in (L$^*$)
+galaxy halos is the galactic disk itself, which contains the stellar
+population and a 
 
 \subsection{The Circumgalactic Medium}
 \label{sec:Galaxy.CGM}
