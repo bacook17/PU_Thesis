@@ -124,6 +124,8 @@ def SetAxes(legend=False):
     plt.tick_params(size=10, which='major')
     plt.tick_params(size=5, which='minor')
 
+    plt.minorticks_on()
+
     plt.ylim(ymax=0.2)
 
     if legend:
@@ -149,6 +151,8 @@ def SetAxes(legend=False):
     plt.ylim([0.06,0.2])
     plt.tick_params(size=10, which='major')
     plt.tick_params(size=5, which='minor')
+
+    plt.minorticks_on()
 
     if legend:
         plt.legend(loc=0, prop={'size':'medium'}, markerscale=0.7, numpoints=1)

@@ -16,7 +16,7 @@ def PlotFbvM(inputfile):
     errb_12v = np.sqrt(np.power(Data['errg12v'], 2) + np.power(Data['errs200b'], 2))
 
     #Data from Werk+ 2014
-    Fb_gal = 0.144
+    Fb_gal = 0.145
     errb_gal = 0.03
     M_gal = 10**12.2
 
@@ -68,7 +68,7 @@ def SetAxes(legend=False):
 
     plt.tick_params(size=10, which='major')
     plt.tick_params(size=5, which='minor')
-
+    plt.minorticks_on()
     if legend:
         plt.legend(loc=0, prop={'size':'medium'}, markerscale=0.7, numpoints=1)
 

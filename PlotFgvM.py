@@ -38,6 +38,8 @@ def SetAxes(legend=False):
 
     plt.tick_params(length=10, which='major')
     plt.tick_params(length=5, which='minor')
+
+    plt.minorticks_on()
     if legend:
         plt.legend(loc=0, prop={'size':'large'}, markerscale=0.7, numpoints=1)
 

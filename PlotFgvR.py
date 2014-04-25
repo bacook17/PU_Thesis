@@ -15,7 +15,7 @@ def PlotFgvR(inputfile):
     colors = np.array(['b','c', 'r', 'g', 'y'])
     styles = np.array(['-','--','-.','..'])
 
-    lables = np.array([r'R11 - %1.0e M$_\odot$',r'P1 - %1.0e M$_\odot$', r'P2 - %1.0e M$_\odot$',r'E13 - %1.0e M$_\odot$', r'E13 - Cool Core', r'U09 - %1.0e M$_\odot$'])
+    lables = np.array([r'G09 - %1.0e M$_\odot$',r'P1 - %1.0e M$_\odot$', r'P2 - %1.0e M$_\odot$',r'E13 - %1.0e M$_\odot$', r'E13 - Cool Core', r'U09 - %1.0e M$_\odot$'])
 
     markers = np.array(['o','s','D','^','o','s','o','D'])
     
@@ -47,6 +47,8 @@ def SetAxes(legend=False):
     plt.tick_params(length=10, which='major')
     plt.tick_params(length=5, which='minor')
     plt.xlim([0.4,1.5])
+    plt.minorticks_on()
+
     if legend:
         plt.legend(loc=0, prop={'size':'small'}, markerscale=0.7, numpoints=1, ncol=2)
 
