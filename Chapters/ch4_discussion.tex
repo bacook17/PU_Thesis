@@ -3,8 +3,156 @@
 %Adviser: Neta Bahcall
 \chapter{Discussion}
 \label{chap:Discussion}
+
+\section{Limitations and Observational Biases}
+\label{sec:Limitations}
+
+\subsection{Assumption of Hydrostatic Equilibrium}
+\label{sec:Limitations.HSE}
+As was highlighted throughout Chapter \ref{chap:Data}, there are
+several different ways to calculate the total mass of group and
+cluster halos. One key characteristic of a mass estimation method is
+whether it relies on the assumption of hydrostatic equilibrium. The
+so-called ``hydrostatic mass'' ($\Mass{}_{HSE}$) can be calculated by combining the gas
+density profile with either the temperature or pressure profile, a
+method ubiquitous in X-ray observations. Using mass-scaling relations
+(such as the Y$_\textrm{SZ}$-\Mfive{} relation) may also be sensitive
+to the assumption of HSE if the relation is calibrated against
+hydrostatic masses. Masses which do not rely on the assumption of HSE
+are primarily derived from gravitational lensing.
+
+Hydrostatic masses could be systematically biased, relative to the
+``true'' total mass (usually assumed to be the lensing mass, $\Mass{}_{WL}$) if there
+are significant sources of non-thermal pressure in the ICM. These
+could include kinetic bulk motions or magnetic fields. Hydrostatic
+equilibrium assumes that the gravitational force (the total mass) is
+offset by the pressure gradient, so assuming that only the gas
+pressure contributes can lead to an incorrect calculation of the
+mass. 
+
+The magnitude of the hydrostatic mass bias is of paramount importance
+to precision cosmology. Cosmological parameters (such as \omegam{})
+derived from \Planck{} cluster counts and hydrostatic mass estimates
+disagree significantly from values derived directly from the CMB power
+spectrum, but a large hydrostatic mass bias ($ b= 1-
+\Mass{}_{HSE}/\Mass{}_{WL} \approx 0.3$) could relieve the
+observational tension \citep{Gruen2013,VonderLinden2014}. Such a large
+bias on the total halo mass would also dramatically affect the gas
+fraction derived using hydrostatic masses, limiting its use as a
+cosmological probe \citeeg{Grego2001,Ettori2009b}. As the majority of
+our \fg{} measurements in clusters were measured relative to
+hydrostatic masses (with the exception of \citet{Umetsu2009}), our
+results are likewise sensitive to the hydrostatic bias.
+
+Cosmological simulations are a major tool used to constrain this bias.
+True mass calculations can be compared to mock X-ray observations
+which assume hydrostatic equilibrium, determining the bias factor as a
+function of mass and overdensity. Simulations nearly unanimously
+indicate that the hydrostatic mass is biased low compared to the true
+halo mass ($b>0$) and is more significant towards the outskirts of
+clusters or in unrelaxed clusters, where merger disruptions and bulk flows
+become more significant. However, different simulations and physical
+prescriptions place the bias anywhere from $5\%$
+\citeeg{Lau2009,Meneghetti2010,Burns2010,Nelson2012} to $20\%$
+\citeeg{Arnaud2007,Nagai2007,Battaglia2013}.
+
+Observational constraints on the hydrostatic mass bias vary
+widely. Some weak-lensing measurements of clusters suggest that
+hydrostatic X-ray or SZ masses are biased low by $10\%$
+\citep{Andersson2011,High2012}, while others indicate this bias is as
+large as $20-30\%$
+\citep{Arnaud2007,Ichikawa2013,VonderLinden2014}. Yet others, however,
+find no significant difference between weak-lensing masses and
+hydrostatic masses, with some hints that hydrostatic equilibrium
+assumptions may even \textit{overestimate} the true mass in lower-mass
+clusters \citep{Gruen2013, Israel2014}. Figure \ref{fig:Gruen}, from
+\citet{Gruen2013}, shows the agreement in measured weak lensing and
+hydrostatic masses. 
+
+\input{Figures/Gruen_Mass}
+\afterpage{\clearpage}
+
+The issue of hydrostatic mass bias is far from solved. Due to the
+inconsistent observational and simulated constraints, it is unclear
+how large of a hydrostatic correction factor should be included in our
+measurements of the gas fraction, or if one is even necessary. A bias
+low in the hydrostatic mass would bias the gas fraction high, meaning
+that groups and clusters are slightly more deficient of baryons at a
+given radius. Our reservations to use a hydrostatic correction factor
+are slightly justified by the fact that one of our samples (U09)
+measures gas fraction against the weak-lensing mass, and this fraction
+agrees well with gas fraction derived from the HSE
+assumption.
+
+\subsection{Gas Clumping in Cluster Outskirts}
+\label{sec:Limitations.Clumping}
+
+The primary means of deriving the gas density profile of clusters is
+from measurements of X-ray surface-brightness, which scales with the
+square of electron density. Due to this $n^2$ dependence, clumpy
+structures in the ICM will emit more than their share of X-ray,
+biasing gas density measurements high. The magnitude of this bias
+depends on the smoothness of the ICM gas distribution, which can vary
+widely from cluster to cluster. 
+
+Simulations typically predict a clumping bias (overestimate of
+$\Mass{}_{gas}$) of $\approx10-15\%$ \citep{Nagai2011,Battaglia2013},
+which increases in unrelaxed clusters and towards cluster outskirts,
+where recent interactions have a more significant dynamical
+effect. This could explain the large differences in measured gas
+fraction between CC and NCC clusters, although observations suggest
+that the level of clumpiness is overestimated in simulations, and that
+the average bias is below $10\%$ \citep{Eckert2013c}. The majority of our
+cluster samples represent relaxed (CC) clusters, so we do not include
+a clumping bias factor at this time. We also note that the P13
+\citep{PlanckIntV} and U09 \citep{Umetsu2009} gas fractions are
+derived from SZ measurements, which do not suffer from this clumping
+bias, and agree well with our X-ray data sets. 
+
+\subsection{Extrapolation of the Density Profile Slope}
+\label{sec:Limitations.Slope}
 The choice to extrapolate the gas fraction to $1.2\rvir{}$ and then
 stop is arbitrary. The radius at which the gas profile steepens
-substantially ($\alpha{}_{gas}$ increases) is not well-known. One
-major constraint is the excellent stacked gas-fraction profile
-obtained by \citet{PlanckIntV}. 
+substantially ($\alpha{}_{gas}$ increases) is not well constrained.
+ Between \rfive{} (where $\alpha{}_{gas}$ is well
+measured) and \rtwo{}, observations disagree whether the slope remains
+roughly constant \citep{Dai2010} or steepens by roughly $10\%$
+\citep{Ettori2009a}. Assuming the true evolution is somewhere in
+between, the gas density slope should not change appreciably relative
+to the total mass (NFW) profile, which steepens by about $4\%$ within
+this range. Therefore, our assumption that $\alpha{}_{m}$ and
+$\alpha_{gas}$ remain constant beyond \rtwo{} should roughly
+approximate the increase of \fg{} with radius. 
+
+It is expected that the slope will eventually asymptote to match the
+total mass (NFW) profile \citep{Umetsu2009, Battaglia2013}, suggesting
+that, at large radius, $\alpha_{gas}$ will steepen more quickly that
+$\alpha_{m}$. The point at which this occurs is unknown, but it will
+taper the growth of \fg{}, which should eventually reach a constant
+value, similar to the stellar fraction.  \citet{PlanckIntV} finds that
+the gas fraction in stacked \Planck{} clusters flattens out between
+$1$ and $1.5\rvir{}$. We approximate this by extrapolating \fb{} as
+constant above $1.2\rvir{}$. However, until temperature measurements
+beyond \rfive{} improve, the true radius where the baryon fraction
+reaches a maximum will remain unconstrained. 
+
+\section{Comparison to Simulations}
+\label{sec:Simulations}
+
+\input{Figures/Battaglia_FbvM}
+\input{Figures/Battaglia_FbvR}
+\input{Figures/Battaglia_Fgvz}
+
+
+
+\section{Implications}
+\label{sec:Implications}
+
+\subsection{Deviations from Scale Invariance}
+\label{sec:Implications.Invariance}
+
+\subsection{Hierarchical Structure Formation}
+\label{sec:Implications.Hierarchical}
+
+\subsection{Where are the Baryons?}
+\label{sec:Implications.Where}

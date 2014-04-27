@@ -108,11 +108,11 @@ def SetAxes(legend=False):
 
     plt.figure(1)
     plt.axhline(y=F_wmap, ls=':', c='k', zorder=-1)
-    plt.text(5,F_wmap+0.005, r'f$_{b,WMAP}$', verticalalignment='bottom', size='large')
+    plt.text(5,F_wmap+0.005, r'f$_{b,WMAP}$', verticalalignment='bottom', size='x-large')
     plt.fill_between(x, y1=F_wmap - sig_F_wmap, y2=F_wmap + sig_F_wmap, color='k', alpha=0.3, zorder=-2)
 
     plt.axhline(y=F_planck, ls=':', c='k', zorder=-1)
-    plt.text(5,F_planck-0.005, r'f$_{b,Planck}$', verticalalignment='top', size='large')
+    plt.text(5,F_planck-0.005, r'f$_{b,Planck}$', verticalalignment='top', size='x-large')
     plt.fill_between(x, y1=F_planck - sig_F_planck, y2=F_planck + sig_F_planck, edgecolor='k', color='w', zorder=-3, hatch='//', lw=0.0)
 
     plt.xlabel(r'r/r$_{vir}$', size='x-large')
@@ -133,11 +133,11 @@ def SetAxes(legend=False):
 
     plt.figure(2)
     plt.axhline(y=F_wmap, ls=':', c='k', zorder=-1)
-    plt.text(0.4,F_wmap+0.005, r'f$_{b,WMAP}$', verticalalignment='bottom', size='large')
+    plt.text(0.4,F_wmap+0.004, r'f$_{b,WMAP}$', verticalalignment='bottom', size='x-large')
     plt.fill_between(x, y1=F_wmap - sig_F_wmap, y2=F_wmap + sig_F_wmap, color='k', alpha=0.3, zorder=-2)
 
     plt.axhline(y=F_planck, ls=':', c='k', zorder=-1)
-    plt.text(0.4,F_planck-0.004, r'f$_{b,Planck}$', verticalalignment='top', size='large')
+    plt.text(0.4,F_planck-0.004, r'f$_{b,Planck}$', verticalalignment='top', size='x-large')
     plt.fill_between(x, y1=F_planck - sig_F_planck, y2=F_planck + sig_F_planck, color='w', edgecolor='k', zorder=-3, hatch='//', lw=0.0)
 
     plt.xlabel(r'r/r$_{vir}$', size='x-large')
