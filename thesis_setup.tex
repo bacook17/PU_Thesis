@@ -3,7 +3,7 @@
 %adviser: Neta Bahcall
 
 \bibliographystyle{apj}
-\usepackage{graphicx, multirow, natbib,amsmath,amssymb,afterpage, caption}
+\usepackage{graphicx, multirow, natbib,amsmath,amssymb,afterpage, caption, xfrac}
 \usepackage[bookmarks=true,colorlinks=false,bookmarksopen]{hyperref}
 
 %slightly bigger plots than standard
@@ -44,7 +44,14 @@
 
 \newcommand\fb{\textrm{f\ensuremath{_b}}}
 \newcommand\fg{\textrm{f\ensuremath{_{gas}}}}
-\newcommand\Ho{\textrm{H\ensuremath{_0}}}
+\newcommand\fgfive{\textrm{f\ensuremath{_{gas,500}}}}
+\newcommand\fgtwo{\textrm{f\ensuremath{_{gas,200}}}}
+\newcommand\fgvir{\textrm{f\ensuremath{_{gas,vir}}}}
+\newcommand\fbfive{\textrm{f\ensuremath{_{b,500}}}}
+\newcommand\fbtwo{\textrm{f\ensuremath{_{b,200}}}}
+\newcommand\fbvir{\textrm{f\ensuremath{_{b,vir}}}}
+
+\newcommand\Ho{\ensuremath{H_0}}
 
 \newcommand\rfive{\textrm{r\ensuremath{_{500}}}}
 \newcommand\rtwo{\textrm{r\ensuremath{_{200}}}}
@@ -56,10 +63,17 @@
 
 \newcommand\power[1]{\ensuremath{\times 10^{#1}}}
 
+\newcommand\WMAP{\textit{WMAP}}
 \newcommand\Planck{\textit{Planck}}
 \newcommand\Chandra{\textit{Chandra}}
 \newcommand\XMM{\textit{XMM-Newton}}
 \newcommand\Rosat{\textit{ROSAT}}
+\newcommand\Suzaku{\textit{Suzaku}}
 
 \newcommand\radius{\textrm{r}}
 \newcommand\Mass{\textrm{M}}
+
+\newcommand\ion[2]{#1$\,${\scshape{#2}}}
+%ex: SiII = \ion{Si}{ii}
+
+\newcommand\dash{\ensuremath{\;\textrm{--}\;}}
