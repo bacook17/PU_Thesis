@@ -82,11 +82,15 @@
   \end{center}
   \vspace{.6in}
   \begin{center}
-   Submitted in partial fulfillment\\
-of the requirements for the degree of\\
-Bachelor of Arts\\
-\@deptpref{} \@dept\\
-Princeton University
+   A SENIOR THESIS\\
+   PRESENTED TO THE FACULTY\\
+   OF PRINCETON UNIVERSITY\\
+   IN CANDIDACY FOR THE DEGREE\\
+   OF BACHELOR OF ARTS\\
+\vspace{2in}
+RECOMMENDED FOR ACCEPTANCE\\
+BY THE \@deptpref{}\\ \@dept
+%Princeton University
   \end{center}
   \vspace{0.9in}
   \begin{center}
