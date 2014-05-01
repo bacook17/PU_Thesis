@@ -7,7 +7,16 @@
 \section{Limitations and Observational Biases}
 \label{sec:Limitations}
 
-\subsection{Assumption of Hydrostatic Equilibrium}
+Due to the extreme sensitivity required to accurately measure the gas
+mass and total mass in clusters, our methods have included several
+assumptions (such as that the ICM is in hydrostatic equilibrium, and
+that the gas density slope is constant beyond \rfive{}) which require
+additional discussion. Here, we discuss theoretical and observational
+constraints on the magnitude of possible biases which we introduce by
+making these simplifications.
+
+\subsection{Assumption of Hydrostatic Equilibrium in Calculating Total
+Mass}
 \label{sec:Limitations.HSE}
 As was highlighted throughout Chapter \ref{chap:Data}, there are
 several different ways to calculate the total mass of group and
@@ -22,13 +31,13 @@ hydrostatic masses. Masses which do not rely on the assumption of HSE
 are primarily derived from gravitational lensing.
 
 Hydrostatic masses could be systematically biased, relative to the
-``true'' total mass (usually assumed to be the lensing mass, $\Mass{}_{WL}$) if there
-are significant sources of non-thermal pressure in the ICM. These
-could include kinetic bulk motions or magnetic fields. Hydrostatic
-equilibrium assumes that the gravitational force (the total mass) is
-offset by the pressure gradient, so assuming that only the gas
-pressure contributes can lead to an incorrect calculation of the
-mass. 
+``true'' mass (usually assumed to be the lensing mass, $\Mass{}_{WL}$)
+if there are significant sources of non-thermal pressure in the
+ICM. Examples include kinetic bulk motions or magnetic
+fields. Hydrostatic equilibrium assumes that the gravitational force
+(the total mass) is offset by the pressure gradient, so assuming that
+only the gas pressure contributes can lead to a bias in the inferred
+mass.
 
 The magnitude of the hydrostatic mass bias is of paramount importance
 to precision cosmology. Cosmological parameters (such as \omegam{})
@@ -36,38 +45,39 @@ derived from \Planck{} cluster counts and hydrostatic mass estimates
 disagree significantly from values derived directly from the CMB power
 spectrum, but a large hydrostatic mass bias ($ b= 1-
 \Mass{}_{HSE}/\Mass{}_{WL} \approx 0.3$) could relieve the
-observational tension \citep{Gruen2013,VonderLinden2014}. Such a large
-bias on the total halo mass would also dramatically affect the gas
-fraction derived using hydrostatic masses, limiting its use as a
-cosmological probe \citeeg{Grego2001,Ettori2009b}. As the majority of
-our \fg{} measurements in clusters were measured relative to
-hydrostatic masses (with the exception of \citet{Umetsu2009}), our
-results are likewise sensitive to the hydrostatic bias.
+observational tension \citep{Gruen2013,VonderLinden2014,
+  Israel2014}. Such a large bias on the total halo mass would also
+dramatically affect the gas fraction derived using hydrostatic masses,
+affecting its use as a cosmological probe
+\citeeg{Grego2001,Ettori2009b}. As the majority of our \fg{}
+measurements in clusters were measured relative to hydrostatic masses
+(with the exception of \citet{Umetsu2009}), our results are likewise
+sensitive to the hydrostatic bias.
 
 Cosmological simulations are a major tool used to constrain this bias.
-True mass calculations can be compared to mock X-ray observations
-which assume hydrostatic equilibrium, determining the bias factor as a
-function of mass and overdensity. Simulations nearly unanimously
-indicate that the hydrostatic mass is biased low compared to the true
-halo mass ($b>0$) and is more significant towards the outskirts of
-clusters or in unrelaxed clusters, where merger disruptions and bulk flows
-become more significant. However, different simulations and physical
-prescriptions place the bias anywhere from $5\%$
-\citeeg{Lau2009,Meneghetti2010,Burns2010,Nelson2012} to $20\%$
+The mass of simulated clusters can be compared to mock X-ray
+observations which assume hydrostatic equilibrium, determining the
+bias factor as a function of mass and overdensity. Simulations nearly
+unanimously indicate that the hydrostatic mass is biased low compared
+to the true halo mass ($b>0$), a bias which increases towards the
+outskirts of clusters or in unrelaxed clusters, where merger
+disruptions and bulk flows become more significant. Different
+simulations and physical prescriptions place the bias anywhere from
+$5\%$ \citeeg{Lau2009,Meneghetti2010,Burns2010,Nelson2012} to $20\%$
 \citeeg{Arnaud2007,Nagai2007,Battaglia2013}.
 
-Observational constraints on the hydrostatic mass bias vary
-widely. Some weak-lensing measurements of clusters suggest that
+Observational constraints on the hydrostatic mass bias vary widely,
+however. Some weak lensing measurements of clusters suggest that
 hydrostatic X-ray or SZ masses are biased low by $10\%$
-\citep{Andersson2011,High2012}, while others indicate this bias is as
-large as $20-30\%$
-\citep{Arnaud2007,Ichikawa2013,VonderLinden2014}. Yet others, however,
-find no significant difference between weak-lensing masses and
-hydrostatic masses, with some hints that hydrostatic equilibrium
-assumptions may even \textit{overestimate} the true mass in lower-mass
-clusters \citep{Gruen2013, Israel2014}. Figure \ref{fig:Gruen}, from
-\citet{Gruen2013}, shows the agreement in measured weak lensing and
-hydrostatic masses. 
+\citep{Andersson2011,High2012}, and others indicate this bias could be
+as large as $20\dash30\%$
+\citep{Arnaud2007,Ichikawa2013,VonderLinden2014}. Yet others find no
+significant difference between weak lensing masses and hydrostatic
+masses, with some hints that hydrostatic equilibrium assumptions may
+even \textit{overestimate} the true mass in lower-mass clusters
+\citep{Gruen2013, Israel2014}. Figure \ref{fig:Gruen}, from
+\citet{Gruen2013}, shows the agreement in their measured weak lensing
+and hydrostatic masses.
 
 \input{Figures/Gruen_Mass}
 \afterpage{\clearpage}
@@ -77,26 +87,26 @@ inconsistent observational and simulated constraints, it is unclear
 how large of a hydrostatic correction factor should be included in our
 measurements of the gas fraction, or if one is even necessary. A bias
 low in the hydrostatic mass would bias the gas fraction high, meaning
-that groups and clusters are slightly more deficient of baryons at a
-given radius. Our reservations to use a hydrostatic correction factor
-are slightly justified by the fact that one of our samples (U09)
-measures gas fraction against the weak-lensing mass, and this fraction
-agrees well with gas fraction derived from the HSE
-assumption.
+that groups and clusters are slightly more deficient of baryons than
+we suggest. Our choice to avoid using a hydrostatic correction factor
+until this issue is clarified is slightly justified by the fact that
+one of our samples (U09) measures gas fraction against the weak
+lensing mass, and this fraction agrees well with gas fraction derived
+from the HSE assumption.
 
 \subsection{Gas Clumping in Cluster Outskirts}
 \label{sec:Limitations.Clumping}
 
 The primary means of deriving the gas density profile of clusters is
 from measurements of X-ray surface-brightness, which scales with the
-square of electron density. Due to this $n^2$ dependence, clumpy
-structures in the ICM will emit more than their share of X-ray,
-biasing gas density measurements high. The magnitude of this bias
-depends on the smoothness of the ICM gas distribution, which can vary
-widely from cluster to cluster. 
+square of electron density. Due to this $n^2$ dependence, clumpy and
+overdense structures in the ICM will emit more than their share of
+X-ray luminosity, biasing gas density measurements high. The magnitude
+of this bias depends on the smoothness of the ICM gas distribution,
+which can vary widely from cluster to cluster.
 
 Simulations typically predict a clumping bias (overestimate of
-$\Mass{}_{gas}$) of $\approx10-15\%$ \citep{Nagai2011,Battaglia2013},
+$\Mass{}_{gas}$) of $\approx10\dash15\%$ \citep{Nagai2011,Battaglia2013},
 which increases in unrelaxed clusters and towards cluster outskirts,
 where recent interactions have a more significant dynamical
 effect. This could explain the large differences in measured gas
@@ -104,7 +114,7 @@ fraction between CC and NCC clusters, although observations suggest
 that the level of clumpiness is overestimated in simulations, and that
 the average bias is below $10\%$ \citep{Eckert2013c}. The majority of our
 cluster samples represent relaxed (CC) clusters, so we do not include
-a clumping bias factor at this time. We also note that the P13
+a clumping bias factor in our analysis. We also note that the P13
 \citep{PlanckIntV} and U09 \citep{Umetsu2009} gas fractions are
 derived from SZ measurements, which do not suffer from this clumping
 bias, and agree well with our X-ray data sets. 
@@ -112,45 +122,48 @@ bias, and agree well with our X-ray data sets.
 \subsection{Extrapolation of the Density Profile Slope}
 \label{sec:Limitations.Slope}
 The choice to extrapolate the gas fraction to $1.2\rvir{}$ and then
-stop is arbitrary. The radius at which the gas profile steepens
-substantially ($\alpha{}_{gas}$ increases) is not well constrained.
- Between \rfive{} (where $\alpha{}_{gas}$ is well
+stop is arbitrary. Between \rfive{} (where $\alpha{}_{gas}$ is well
 measured) and \rtwo{}, observations disagree whether the slope remains
 roughly constant \citep{Dai2010} or steepens by roughly $10\%$
 \citep{Ettori2009a}. Assuming the true evolution is somewhere in
 between, the gas density slope should not change appreciably relative
 to the total mass (NFW) profile, which steepens by about $4\%$ within
-this range. Therefore, our assumption that $\alpha{}_{m}$ and
+this range. Therefore, our simplified model that $\alpha{}_{m}$ and
 $\alpha_{gas}$ remain constant beyond \rtwo{} should roughly
-approximate the increase of \fg{} with radius. 
+approximate the increase of \fg{} with radius.
 
 It is expected that the slope will eventually asymptote to match the
 total mass (NFW) profile \citep{Umetsu2009, Battaglia2013}, suggesting
 that, at large radius, $\alpha_{gas}$ will steepen more quickly that
-$\alpha_{m}$. The point at which this occurs is unknown, but it will
-taper the growth of \fg{}, which should eventually reach a constant
-value, similar to the stellar fraction.  \citet{PlanckIntV} finds that
-the gas fraction in stacked \Planck{} clusters flattens out between
-$1$ and $1.5\rvir{}$. We approximate this by extrapolating \fb{} as
-constant above $1.2\rvir{}$. However, until temperature measurements
-beyond \rfive{} improve, the true radius where the baryon fraction
-reaches a maximum will remain unconstrained. 
+$\alpha_{m}$. The point at which this occurs is not well constrained,
+but it will taper the growth of \fg{}, which should eventually reach a
+constant value, similar to the stellar fraction.  \citet{PlanckIntV}
+finds that the gas fraction in stacked \Planck{} clusters flattens out
+between $1$ and $1.5\rvir{}$. We approximate this by extrapolating
+\fg{} as constant above $1.2\rvir{}$. However, until temperature
+measurements beyond \rfive{} improve, the true radius where the baryon
+fraction reaches a maximum will remain unconstrained.
 
 \section{Comparison to Simulations}
 \label{sec:Simulations}
 
-As discussed above, cosmological simulations have been commonly used
+As discussed above, cosmological simulations have frequently been used
 to examine the magnitude of observational biases on measurements of
-cluster properties. Here we discuss the measured cluster properties
-themselves, from the simulations of \textbf{\citet{Battaglia2013}}.
+cluster properties. Here we discuss the simulated cluster properties
+themselves, from the simulations of \textbf{\citet{Battaglia2013}}. We
+have discussed above that these simulations suggest that the
+assumption of HSE may bias our observed gas and baryon fractions
+low. Here, we neglect these biases and compare the trends in their
+simulated gas and baryon fraction to our observations, having
+concluded earlier that the issue of mass bias is not yet settled.
 
 The authors conducted a series of smoothed particle hydrodynamic (SPH)
 simulations with three different physical feedback prescriptions: 1) a
 ``shock-heating'' only method, 2) a method that also included
 radiative cooling and star formation/supernovae feedback, and 3) a
 prescription including AGN thermal feedback. The simulations produced
-(at $z=0$) a sample of over 1000 clusters with $\Mtwo > 7\power{13}$
-\Msun{}, and 800 above $10^{14}$ \Msun{}.
+(at $z=0$) a sample of over 1000 clusters with $\Mtwo >
+7\power{13}~\Msun{}$, and 800 above $10^{14}~\Msun{}$.
 
 \input{Figures/Battaglia_FbvM}
 
@@ -159,36 +172,37 @@ baryon fractions in the simulated clusters, as a function of mass
 (compare to our Figure \ref{fig:FgvM}). In the shock heating and
 radiative cooling models, the total baryon fraction within
 \rtwo{} is nearly the cosmic value in all clusters ranging from
-$10^{14}-10^{15}$ \Msun{}. In the AGN feedback model, \fb{}
+$10^{14}\dash10^{15}~\Msun{}$. In the AGN feedback model, \fb{}
 decreases in smaller halos, due primarily to suppressed stellar mass
 production, although partly due to increased non-thermal
 pressure pushing the gas towards higher radius. These simulations are
-in good agreement with our results that conclude the entire baryon
+in agreement with our results that conclude the entire baryon
 fraction can be recovered in clusters of all mass ranges. 
 
 \input{Figures/Battaglia_FbvR}
 
 Figure \ref{fig:Battaglia_FbvR} presents the radial distribution of
-gas, stellar, and baryon fractions for clusters binned by mass. Only
-the results for the AGN feedback model are presented. The stellar
-fraction decreases significantly from the center of the clusters, with
-a higher stellar fraction in low-mass clusters for any given
-radius. In all mass bins, however, the stellar fraction asymptotically
-approaches a ``cosmic'' value of $\approx10\%$ of the baryon
-fraction. This behavior matches very well the stellar fraction profile
-measured by \citet{Bahcall2014}, although the asymptotic cosmic
-fraction is higher than observed ($\approx6\%$). 
+the gas, stellar, and baryon fractions for clusters binned by
+mass. Only the results for the AGN feedback model are presented. The
+stellar fraction decreases significantly from the center of the
+clusters, with a higher stellar fraction in low-mass clusters for any
+given radius. In all mass bins, however, the stellar fraction
+asymptotically approaches a ``cosmic'' value of $\approx10\%$ of the
+baryon fraction. This behavior matches very well the stellar fraction
+profile measured by \citet{Bahcall2014}, although the asymptotic
+fraction (relative to the baryon fraction) is higher than observed
+($\approx6\%$).
 
 The gas fraction profile also matches our observed trends well. The
-gas fraction in low-mass clusters is significantly lower in the
-central cluster regions, but increases more rapidly with radius than
+gas fraction in the central regions of low mass clusters is
+significantly lower but increases more rapidly with radius than in
 high-mass clusters. The gas fraction in clusters of all mass converges
 towards the same profile at high radius. Of particular interest,
 however, is that even at $\radius{}>3\rtwo{}$ the gas fraction is
 still increasing steadily. If this represents the gas profile in real
-clusters (not certain, as the different feedback models have different
-behavior in the outskirts), then the our assumption that the gas
-fraction remains constant above $1.2\rvir{}$ may need adjustment. 
+clusters (different feedback models have different behavior in the
+outskirts), then the our assumption that the gas fraction remains
+constant above $1.2\rvir{}$ may need adjustment.
 
 The overall baryon fraction increases from a minimum of $70-80\%$
 cosmic around $0.5\rtwo{}$ to $>90\%$ outside the virial radius. The
@@ -196,7 +210,7 @@ fact that the baryon fraction does not reach the cosmic fraction until
 very high radius ($>4\rtwo{}$) is in slight tension with our results,
 and improved observations of the gas profile slope beyond \rtwo{} will
 help constrain whether these simulations accurately predict how far
-beyond the virial radius cluster baryons are pushed out. Additionally,
+beyond the virial radius the baryons are extended. Additionally,
 the simulations assume a cosmic baryon fraction of $\fb{} = 0.172$,
 higher than current observational estimates. The increased baryon
 abundance could lead to enhanced feedback effects, pushing baryons
@@ -207,17 +221,146 @@ this issue.
 \input{Figures/Battaglia_Fgvz}
 
 Finally, in Figure \ref{fig:Battaglia_Fgvz}, we show the redshift
-evolution of the gas fraction of the \citet{Battaglia2013} simulated
+evolution in the gas fraction of the \citet{Battaglia2013} simulated
 clusters. Measured from the cluster centers to far beyond the virial
 radius, the gas fraction appears constant with redshift at all radii,
 with the exception of a slight decrease within $2\rtwo$. Measured from
 $z=1.5-0$, this shows remarkable stability within the ICM over many
 gigayears, including the phase when the most massive clusters begin to
-form. \todo{What does this mean cosmologically? What else should we
-  say about the redshift evolution?}
+form.
 
 \section{Implications}
 \label{sec:Implications}
+
+Having addressed the possible observational biases in our measurements
+and comparing our results to simulations, we address the global
+conclusions about the distribution of baryons that our results allow
+us to make. Understanding how baryons are distributed relative to dark
+matter and what relative forms they take in different halos will
+constrain how accurately baryons can be used as cosmological tools.
+
+\subsection{Deviations from Self-Similarity}
+\label{sec:Implications.Invariance}
+
+Dark matter halos (both observationally and in simulations) are found
+to fit the NFW density profile, and hence are, roughly,
+``self-similar''. This means that all dark matter halos have the same
+proportions and shapes, varying only by overall size. Assuming only
+gravitational collapse, physical properties of baryons in clusters
+(such as pressure and temperature) would be expected to obey
+``universal profiles'', once scaled to the appropriate halo size
+\citeeg{Arnaud2010,PlanckIntV}.
+
+Although we have shown that the entire baryonic mass can be accounted
+for in halos ranging over three orders of magnitude in mass, the
+concentrations of gas and stellar fractions vary with halo mass. Pure
+self-similarity would suggest that the baryon fraction should reach
+the cosmic value at the same overdensity (such as $\rtwo$ or
+$\radius{}_{100}$) regardless of halo mass. However, observations of
+the gas fraction (Section \ref{sec:Spatial}) and the stellar fraction
+\citep{Bahcall2014} in clusters indicate that the scale at which these
+fractions asymptote to the cosmic values decreases with cluster
+mass. Baryons in less massive halos are extended farther relative to
+their virial radii than in massive clusters, an observation which is
+supported by cosmological simulations \citep{Battaglia2013}.
+
+Therefore, baryonic physics plays an important role in shaping the
+distribution of baryons on scales smaller than the virial radius in
+halos. Feedback effects (such as merger shocks, AGN feedback, and star
+formation) are able to push baryons further into the outskirts of
+small halos than in large halos, due to the decreased gravitational
+potential. However, as our results indicate, these feedback effects
+are not so powerful as to remove a substantial fraction of baryons
+from the halos altogether, and nearly the entire baryon fraction
+remains bound to dark matter halos.
+
+\subsection{The Contribution of Individual Galaxies to Clusters}
+\label{sec:Implications.Individual}
+
+\citet{Bahcall2014} found that the overall mass-to-light ratio of
+clusters matches closely the average mass-to-light ratio of individual
+galaxies, when normalized by the changing ratio of elliptical and
+spiral galaxies with cluster radius (the ``density-morphology
+relation''). This is consistent with the picture that the entire dark
+matter content of clusters is comprised of the dark matter originally
+bound to galaxy halos, which fell into the clusters and was stripped
+to form the cluster halo. There is no reason, they argue, to assume
+that groups and clusters contain more dark matter (relative to light)
+than individual galaxy halos do \cite[unlike as predicted by
+  e.g.,][]{Ostriker1974, Guo2010}.
+
+Our results suggest a similar interpretation involving the entire
+baryonic content of clusters. We show that clusters of all sizes
+contain the cosmic fraction of baryons within about the virial radius,
+distributed in about 15 parts hot ICM gas to 1 part stellar mass. Yet,
+combining the stellar mass of galaxies with observations of the
+multiphase CGM gas, \citet{Werk2014} demonstrated that large, L$^*$
+galaxies also contain approximately the cosmic fraction of baryons
+within their halos. If clusters form entirely from the disruption of
+infalling galaxies, then the galaxies would bring a baryon abundance
+equal to the cosmic fraction with them, filling clusters with dark
+matter, stars, and gas from their halos. Clusters do not necessarily
+need a separate source of non-galactic baryons to explain the high
+abundance of baryons in their halos: the cluster baryons could be
+comprised entirely of the baryonic mass once held in the halo of
+constituent galaxies. The ICM, therefore, could be the stripped
+remains of galactic ISMs and CGMs, with the stellar disks either
+remaining as cluster galaxies or being dispersed as the diffuse
+intracluster light (ICL).
+
+One inconsistency that arises in this model is the stellar makeup of
+the baryons in halos: around $15\%$ of the baryons in $z=0$ L$^*$
+galaxies in the field are held in stars, while the stellar mass of
+clusters is only $\approx6\%$ of their baryons. As stars themselves
+are not destroyed when galaxies fall into clusters, one possible
+explanation for this discrepancy is a quenching of any further star
+formation in the galaxies that fall into clusters. Due to the hot,
+relatively dense ICM, collisional heating of the ISM of infalling
+galaxies could prevent these galaxies from forming stars. The stellar
+fraction in clusters could be explained if galaxies which merged into
+clusters had $\approx 2.5$ times lower stellar mass than presently
+observed field galaxies, leaving the remainder of the baryons in a
+gaseous phase to populate the ICM. This level of star formation
+suppression is high, but not unreasonable. Most large clusters
+collapsed around redshift $z=1\dash1.5$ \citep{Eke1996, Battaglia2013} and
+while the galactic star formation rate (per year) peaked around
+$z=2\dash3$, a large majority of stellar mass formed during the long
+period between $z=2\dash0$ \citep{Hopkins2006}. Even if star formation
+suppression of this magnitude did not occur, we can place a lower
+limit on the total contribution by galaxies to the baryons (and dark
+matter) of clusters using the observed ratio of stellar fraction.
+
+In the conservative case, let us assume that the entire stellar mass
+of galaxies formed during the peak of star formation, such that
+galaxies are not forming any stars during the period of cluster
+growth, and that there is no inherent difference between galaxies
+which will fall into clusters and those that will not. Therefore, the
+current observed stellar fractions of field galaxies ($15\%$)
+represents accurately the stellar fraction of cluster galaxies just
+before they merge. Assuming no stars are formed except in galaxies,
+then the total stellar fraction in clusters ($6\%$) came entirely from
+the previously formed stars of merging galaxies. Galaxies, therefore,
+must have contributed $6/15 = 40\%$ of the total mass of clusters,
+with the remaining $60\%$ coming from diffuse IGM gas which collapsed
+into the cluster along with the galaxies. 
+
+This estimate represents a lower limit, due to the assumption of no
+star formation past $z\approx2$. In reality, stellar mass buildup has
+continued strongly to $z=0$, such that galaxies which began merging
+into clusters at $z\approx1$ likely had a stellar fraction lower than
+$15\%$. In this case, star formation in cluster galaxies was likely
+quenched when falling into clusters, lowering the stellar mass of each
+constituent galaxy, and raising our estimate of the galactic
+contribution to clusters.
+
+According to the models of \citet{Hopkins2006}, the accumulated
+stellar mass in galaxies at $z=1$ was only $\approx60\%$ its current
+value, and only $45\%$ at $z=1.5$. If galaxies had a $50\%$ overall
+quenching in star formation after falling into clusters at $z=1.5$,
+their current stellar fraction would be $11\%$, suggesting that
+individual galaxies contributed $>50\%$ of the matter of clusters. An
+$80\%$ suppression of star formation would raise the galactic
+contribution to clusters to $70\%$. 
 
 \subsection{Where are the Baryons?}
 \label{sec:Implications.Where}
@@ -234,23 +377,23 @@ the central regions and the diffuse outskirts.
 
 The size and frequency of virialized halos define the overall
 structure of matter in the universe. Because baryons populate in equal
-proportions galactic, group, and cluster halos, on large scales they
+abundances galactic, group, and cluster halos, on large scales they
 represent excellent tracers of the overall dark matter distribution
 and structure. A relevant physical scale seems to be the halo virial
 radius: this scale separates the regimes where baryons do/do not trace
 the dark matter. On scales smaller than the virial radius, baryons are
-under-abundant, relative to their cosmic fraction, and this abundance
+under-abundant, relative to their cosmic fraction, and this shortage
 is dependent on the overall mass of the halo. However, averaging on
 scales larger than \rvir{}, baryons match the dark matter distribution
-of the cosmos at a constant, unvarying fraction. 
+of the cosmos at a constant, unvarying fraction.
 
 This suggests new ways to place constraints on the cosmology of the
 universe. Dark matter is notoriously difficult to detect or measure
-accurately, with the only direct method being weak lensing. Baryons,
-however, emit or absorb radiation in a variety of measurable
-ways. The knowledge that baryons trace the underlying dark matter
-profile allows the use of easily observed baryon mass distributions to
-constrain the abundance and masses of halos \citeeg{Ettori2009b}. 
+accurately, with the only direct method being with gravitational
+lensing. Baryons, however, emit or absorb radiation in a variety of
+measurable ways. The knowledge that baryons trace the underlying dark
+matter profile allows the use of baryon mass distributions to
+constrain the abundance and masses of halos \citeeg{Ettori2009b}.
 
 Furthermore, our results can help place constraints on the expected
 contents of baryon reservoirs exterior to halos. Examples of these
@@ -261,128 +404,5 @@ these interhalo components would necessarily be overabundant, holding
 the additional baryons removed from halos. Because halos retain their
 relative baryon fractions, these diffuse components must also, and the
 baryonic mass in these components (as a whole) must match the total
-dark matter mass outside of halos in the cosmic fraction. \todo{How
-  else should we answer where are the baryons?}
-
-\subsection{Deviations from Self-Similarity}
-\label{sec:Implications.Invariance}
-
-Dark matter halos (both observationally and in simulations) are found
-to fit the NFW density profile, and hence are, roughly,
-``self-similar''. This means that all dark matter halos have the same
-proportions and shapes, varying only by overall size. Assuming simple
-gravitational collapse, physical properties of baryons in clusters
-(such as pressure and temperature) are likewise to obey ``universal
-profiles'', once scaled to the appropriate halo size
-\citeeg{Arnaud2010,PlanckIntV}.
-
-Although we have shown that the entire baryonic mass can be accounted
-for in halos ranging over three orders of magnitude in mass, the gas
-and stellar fractions reach their expected cosmic levels at
-overdensities which appear to be mass-dependent. Pure self-similarity
-would suggest that, for instance, the stellar fraction should reach
-the cosmic value of 0.01 at the same overdensity (such as $\rtwo$ or
-$\radius{}_{100}$) regardless of halo mass. However, observations of
-the gas fraction (Section \ref{sec:Spatial}) and the stellar fraction
-\citep{Bahcall2014} in clusters indicate that the scale at which these
-fractions asymptote to the cosmic values decreases with cluster
-mass. Baryons are spread to larger scales, relative to the halo size,
-in smaller halos, an observation which is supported by cosmological
-simulations \citep{Battaglia2013}.
-
-Therefore, baryonic physics plays an important role in shaping the
-distribution of baryons in dark matter halos. Feedback effects (such
-as merger shocks, AGN feedback, and star formation) are able to push
-baryons further into the outskirts of small halos than in large halos,
-due to the decreased gravitational potential. However, as our results
-indicate, these feedback effects are not so powerful as to remove a
-substantial fraction of baryons from the halos altogether, and nearly
-the entire baryon fraction remains bound to dark matter halos.
-
-\subsection{The Contribution of Individual Galaxies to Clusters}
-\label{sec:Implications.Individual}
-
-\citet{Bahcall2014} found that the overall mass-to-light ratio of
-clusters matches closely the average mass-to-light ratio of individual
-galaxies, when normalized by the changing ratio of elliptical and
-spiral galaxies with cluster radius (the ``density-morphology
-relation''). This is consistent with the picture that
-the entire dark matter content of clusters is comprised of the dark
-matter originally bound to galaxy halos, which fell into the clusters
-and was stripped to form the cluster halo. There is no reason, they
-argue, to assume that groups and clusters contain more dark matter (relative to
-light) than galaxy halos do \citeeg{Ostriker1974, Guo2010}. 
-
-Our results suggest a similar interpretation involving the entire
-baryonic content of clusters. We show that clusters of all sizes
-contain the cosmic fraction of baryons within about the virial radius,
-distributed in about 15 parts hot ICM gas to 1 part stellar mass. Yet,
-combining the stellar mass of galaxies with observations of the
-multiphase CGM gas, \citet{Werk2014} demonstrates that large, L$^*$
-galaxies also contain approximately the cosmic fraction of baryons
-within their halos. If clusters form entirely from the disruption of
-infalling galaxies, then the galaxies would bring a baryon abundance
-equal to the cosmic fraction with them, filling clusters with dark
-matter, stars, and gas from their halos. Clusters do not necessarily
-need a separate source of gas to explain the high abundance of baryons
-in their halos: the cluster baryons could be comprised entirely of the
-baryonic mass once held in the disk and CGM of constituent
-galaxies. The ICM, therefore, could be the stripped remains of
-galactic ISMs and CGMs, with the stellar disks either remaining as
-cluster galaxies or being dispersed as the diffuse intracluster light
-(ICL).
-
-One inconsistency that arises in this model is the stellar makeup of
-the baryons in structures: around $15\%$ of the baryons in L$^*$
-galaxies are held in stars, while the stellar mass of clusters is only
-$\approx6\%$ of their total mass. One possible explanation for this
-discrepancy is a suppression of star formation in the galaxies that
-fall into clusters. Due to the hot, relatively dense ICM, frictional
-heating of the ISM of infalling galaxies could prevent these galaxies
-from forming stars. The stellar fraction in clusters could be
-explained if galaxies which merged into clusters had $\approx 2.5$
-times lower stellar mass than presently observed field galaxies,
-leaving the remainder of the baryons in a gaseous phase to populate
-the ICM. This level of star formation suppression is high, but not
-unreasonable. Most large clusters collapsed around redshift $z=1-1.5$
-\citep{Eke1996, Battaglia2013} and while the galactic star formation
-rate (per year) peaked around $z=2-3$, a large majority of stellar
-mass formed during the long period between $z=2-0$
-\citep{Hopkins2006}. Even if star formation suppression of this
-magnitude did not occur, we can place a lower limit on the total
-contribution by galaxies to the baryons (and dark matter) of clusters
-using the observed ratio of stellar fraction.
-
-In the conservative case, let us assume that the entire stellar mass
-of galaxies formed during the peak of star formation, such that
-galaxies are not forming any stars during the period of cluster
-growth, and that there is no inherent difference between galaxies
-which will fall into clusters and those that will not. Therefore, the
-current observed stellar fractions of field galaxies ($15\%$)
-represents accurately the stellar fraction of cluster galaxies just
-before they merge, and no star formation suppression effects need to
-be considered. Assuming no star formation occurs except in galaxies,
-then the total stellar fraction in clusters ($6\%$) came entirely from
-the previously formed stars of merging galaxies. Galaxies, therefore,
-must have contributed $6/15 = 40\%$ of the total mass of clusters,
-with the remaining $60\%$ coming from diffuse IGM gas which collapsed
-into the cluster along with the galaxies. 
-
-This estimate represents a lower limit, due to the assumption of no
-star formation past $z\approx2$. In reality, stellar mass buildup has
-continued strongly to $z=0$, such that galaxies which began merging
-into clusters at $z\approx1$ likely had a stellar fraction lower than
-$15\%$. In this case, star formation in cluster galaxies will surely
-be suppressed by falling into clusters, raising our estimate of the
-galactic contribution to clusters. 
-
-According to the models of \citet{Hopkins2006}, the accumulated
-stellar mass in galaxies at $z=1$ was only $\approx60\%$ its current
-value, and only $45\%$ at $z=1.5$. If galaxies had a $50\%$ overall
-suppression in star formation after falling into clusters at $z=1.5$,
-their current stellar fraction would be $11\%$, suggesting that
-individual galaxies contributed $>50\%$ of the matter of clusters,
-while suppression of $80\%$ of star formation would raise the galactic
-contribution to clusters to $70\%$. \todo{Cite Bahcall,Bahcall,Pop on the stripping
-  of gas in galaxies falling into clusters??}
+dark matter mass outside of halos in the cosmic fraction. 
 
