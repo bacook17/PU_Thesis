@@ -62,8 +62,8 @@
 \makelot\clearpage\makelof\clearpage\makelos
 \clearpage\mainmatter}
 \def\@submitted{\@submittedmonth~\@submittedyear}
-\def\@dept{Astrophysical Sciences}
-\def\@deptpref{Department of}
+\def\@dept{ASTROPHYSICAL SCIENCES}
+\def\@deptpref{DEPARTMENT OF}
 \def\departmentprefix#1{\gdef\@deptpref{#1}}
 \def\department#1{\gdef\@dept{#1}}
 \long\def\acknowledgements#1{\gdef\@acknowledgements{#1}}
@@ -71,29 +71,33 @@
 \newcommand{\maketitlepage}{{
   \thispagestyle{empty}
   \sc
-  \vspace*{0in}
+  \vspace*{-0.5in}
   \begin{center}
-    \LARGE \@title
+    \Large \@title
   \end{center}
-  \vspace{.6in}
+  \vspace{.8in}
   \begin{center}
-   \@author \\
-    Advisor: \@advisor
+   \large \@author 
   \end{center}
-  \vspace{.6in}
+  \vspace{.5in}
   \begin{center}
+    \normalsize
    A SENIOR THESIS\\
    PRESENTED TO THE FACULTY\\
    OF PRINCETON UNIVERSITY\\
    IN CANDIDACY FOR THE DEGREE\\
    OF BACHELOR OF ARTS\\
-\vspace{2in}
+\vspace{.5in}
 RECOMMENDED FOR ACCEPTANCE\\
 BY THE \@deptpref{}\\ \@dept
 %Princeton University
   \end{center}
-  \vspace{0.9in}
+  \vspace{0.5in}
   \begin{center}
+    Advisor: \@advisor\\
+    \end{center}
+    \vspace{0.2in}
+\begin{center}
     \@submitted
   \end{center}
   \clearpage

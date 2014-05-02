@@ -7,15 +7,17 @@
 \section{Total Mass in Groups and Clusters}
 \label{sec:Mass}
 
-The total mass in groups and clusters can be measured in a number
-of ways. The most direct method of calculating the mass profile of a
+The total mass in groups and clusters can be measured in a number of
+ways. The most direct method of determining the mass profile of a
 large halo is through gravitational lensing of the light of background
 sources behind the halo. Strong gravitational lensing occurs when the
 background object (e.g., a high-redshift galaxy) is magnified and
 severely warped by the gravitational potential of the lens (foreground
 cluster). This allows a very accurate measurement of the mass of the
-lens, but occurs only rarely when the background/foreground are in a
-particular alignment. More commonly utilized is the technique of weak
+lens within the lensed arc radius, but occurs only rarely when the
+background/foreground are aligned, and it provides the mass only
+within the inner strongly lensed region.  More commonly utilized to
+obtain the mass to larger radius is the technique of weak
 gravitational lensing
 \citeeg{Umetsu2009,Sheldon2009a,VonderLinden2014}, where small
 distortions of an immense number of background objects are used to
@@ -23,31 +25,29 @@ statistically determine the mass profile of a foreground halo.
 
 Another common method of estimating the mass of groups and clusters is
 through the assumption of \textit{hydrostatic equilibrium} (HSE). If
-the gas in clusters is in hydrostatic equilibrium, then the pressure
-gradient offsets the gravitational force:
+the gas in clusters is in hydrostatic equilibrium with the cluster
+potential, then the pressure gradient offsets the gravitational force:
 \begin{align}
 \frac{dP(\radius)}{d\radius} &=
 -\frac{G~\Mass(<\radius)\rho_{gas}(\radius)}{\radius^2}
-\nonumber
 \end{align}
-Therefore, assuming the ICM is in hydrostatic
-  equilibrium, the total mass profile can be reconstructed from the
-  observed gas density and pressure profiles:
+Therefore, assuming the ICM is in hydrostatic equilibrium with the
+cluster potential, the total mass profile can be reconstructed from
+the observed gas density and pressure profiles:
 \begin{align}
  \Mass(<\radius) &=
- -\frac{\radius^2}{G~\rho_{gas}(\radius)}\frac{dP(<\radius)}{d\radius}\nonumber
- \intertext{Alternatively, the total mass can be calculated using the
+ -\frac{\radius^2}{G~\rho_{gas}(\radius)}\frac{dP(<\radius)}{d\radius}\;.
+ \intertext{Alternatively, the total mass can be obtained from the
    density and temperature profiles, assuming the ICM behaves as an
    ideal gas, $P(\radius)=n(\radius)kT(\radius)$:} 
 \Mass(<\radius) &=
  -\frac{k~T(\radius)~\radius}{G}\left(\frac{d\log{\rho_{gas}(\radius)}}{d\radius}
- + \frac{d\log{T(\radius)}}{d\radius}\right)\nonumber
+ + \frac{d\log{T(\radius)}}{d\radius}\right)\;.
 \end{align} 
 Gas density is typically measured using X-ray observations, as the gas
-density is easily calculated from the X-ray surface
-brightness. Temperature can be determined from X-ray
-spectroscopy, and pressure can be measured directly through the
-thermal SZ effect. 
+density is easily determined from the X-ray surface
+brightness. Temperature is determined from X-ray spectroscopy, and
+pressure is measured directly through the thermal SZ effect.
 
 Whether the total mass derived through the assumption of hydrostatic
 equilibrium (or the ``hydrostatic mass'') is biased relative to the
@@ -64,7 +64,7 @@ profile, an analytic equation first proposed by \citet{Navarro1996}
 to describe the ``universal density profile'' of simulated dark matter
 halos, regardless of size. The NFW profile has the form:
 \begin{equation}
-\rho_m(\radius) = \frac{\delta_c\rhocrit}{(\textrm{r/r}_s)(1 + \textrm{r/r}_s)^2}~.\nonumber
+\rho_m(\radius) = \frac{\delta_c\rhocrit}{(\textrm{r/r}_s)(1 + \textrm{r/r}_s)^2}\;.
 \end{equation}
 r$_s$ is a characteristic radius representing the central core of the
 dark matter halo, $\rhocrit$ is the critical matter density, and
@@ -100,15 +100,15 @@ gas mass in the ICM in the inner regions of groups and clusters,
 typically to around \rfive{} \citeeg{Vikhlinin2006, Arnaud2007,
   Sun2009}. Because \rvir{} is about twice \rfive{}, these
 observations only probe the inner $\approx \sfrac{1}{8}$ of the virial
-volume of group and cluster halos. In order to measure the baryon
+volume of groups and clusters. In order to measure the baryon
 distribution within the entire halo of groups and clusters, it is
-essential to consider the gas within a volume substantially larger
+important to consider the gas within a volume substantially larger
 than that within \rfive{}. Here, we describe the relevant observations
 of groups and clusters which measure both the ICM and total mass of
-the dark matter halo. Because very few observations retain the
-sensitivity required to measure the gas density in the outskirts of
-clusters, we also discuss a method of using measured gas density
-profiles to extrapolate observed gas fractions to higher radii.
+the cluster. Because very few observations retain the sensitivity
+required to measure the gas density in the outskirts of clusters, we
+also discuss a method of using measured gas density profiles to
+extrapolate observed gas fractions to larger radii.
 
 \subsection{Observations}
 \label{sec:Gas.Observations}
@@ -121,7 +121,7 @@ $kT = 2\dash9~\keV$. The authors measured X-ray temperature
 and surface brightness profiles to approximately \rfive{}. They
 modeled the surface brightness profile (which is proportional to
 $n_en_p$) to recover the gas particle density,
-$\rho_{gas}($r$)$. The total mass (\Mfive) was calculated by solving the
+$\rho_{gas}($r$)$. The total mass (\Mfive) was measured by solving the
 equation of hydrostatic equilibrium, using the observed density and
 temperature profiles, and is well-fit by an NFW profile in most
 cases. The integrated gas density and total mass profiles were used to
@@ -155,7 +155,7 @@ extrapolated to \rfive{}. The total mass of the 23 best-measured
 groups ranges from $\Mvir = 2.0\power{13}\dash2.1 \power{14}~\Msun$, with a
 median of $1.1 \power{14}~\Msun$, and ICM temperatures range from
 $kT = 0.7\dash2.7~\keV$. The total mass (assuming hydrostatic
-equilibrium) and gas mass were calculated using similar principles to
+equilibrium) and gas mass were obtained using similar principles to
 \citet{Vikhlinin2006}, with errors estimated by using 1000 artificial
 profiles generated from Monte-Carlo simulations. \fgfive{} for
 these 23 groups ranges from $5\%$ -- $11\%$, with a median of $8\%$,
@@ -170,16 +170,16 @@ The above three samples were combined in the analysis of
 of the 23 best-measured groups from \citet{Sun2009} to study the
 group/cluster gas mass fraction over a wide range of halo masses. The
 authors binned the 41 groups and clusters logarithmically by mass,
-highlighting that lower mass halos have significantly lower gas
+highlighting that lower mass groups have significantly lower gas
 fractions. The best-fit trend is:
 \begin{equation}
 \fg(<\rfive) = (9.3 \pm 0.2)\power{-2}~h_{70}^{-3/2}~
 \left(\frac{\Mfive}{2\power{14}~\Msun}\right)^{0.21 \pm 0.03}.
 \end{equation}
 Figure \ref{fig:Giodini_Fgas} shows the distribution of the observed
-gas fractions, as a function of halo mass, measured by the three works
-above. We will use the G09 bins as 5 independent samples of \fg{} for
-different masses. 
+gas fractions, as a function of virial mass, measured by the three
+works above. We will use the G09 bins as 5 independent samples of
+\fg{} for different masses.
 
 Recent results from the \Planck{} satellite detected the ICM using the
 thermal SZ effect, which measures the integrated line-of-sight gas
@@ -196,22 +196,23 @@ been found to be a good mass proxy. The scaling relation in question
 \citep{Arnaud2010} was calibrated against X-ray derived hydrostatic
 masses, and so the total mass of the stacked \Planck{}
 clusters assumes hydrostatic equilibrium. The total mass beyond
-\rfive{} was calculated assuming an NFW profile. The stacked pressure
+\rfive{} was determined assuming an NFW profile. The stacked pressure
 profile is measured to unprecedented scales ($3\rfive \approx
 1.6\rvir$), although the X-ray temperature profile measured by \XMM{}
 only extends to \rfive{}, so the authors extrapolated the observed
 temperature profile to $3\rfive{}$ to match the pressure observations.
 
-Assuming the ICM acts as an ideal gas ($P=n_ekT$), the authors inverted the pressure
-and temperature profiles to retrieve the gas density profile and
-derive $\fg{}(<\radius)$ out to 3\rfive{}\footnote{The authors also
-  derive the gas fraction assuming a conservative case in which the
-  ICM is isothermal beyond \rfive{}, resulting in lower \fg{}.}. The
-reconstruction of the temperature profile was initially flawed, and
-the correct gas fraction profile was given in an erratum,
-\citet{PlanckIntVb}. The gas fraction increases from \rfive{} to \rvir{}
-\citep[as predicted by][see \ref{sec:Gas.Extrapolation}]{Rasheed2011},
-reaching a peak of $\approx 15\pm2\%$ at $1.6\rvir{}$.
+Assuming the ICM acts as an ideal gas ($P=n_ekT$), the authors
+inverted the pressure and temperature profiles to retrieve the gas
+density profile and derive $\fg{}(<\radius)$ out to
+3\rfive{}\footnote{The authors also derive the gas fraction assuming a
+  conservative case in which the ICM is isothermal beyond \rfive{},
+  resulting in lower \fg{}.}. The reconstruction of the temperature
+profile was initially flawed, and the correct gas fraction profile was
+given in an erratum, \citet{PlanckIntVb}. The gas fraction increases
+from \rfive{} to \rvir{} \citep[as indeed shown by][see
+  \ref{sec:Gas.Extrapolation}]{Rasheed2011}, reaching a peak of
+$\approx 15\pm2\%$ at $1.6\rvir{}$.
 
 \textbf{\citet{Eckert2013b}} (E13) combined the stacked pressure
 profile from \citet{PlanckIntV} with a stacked X-ray
@@ -224,7 +225,7 @@ median $\Mvir = 6.0\power{14}~\Msun$\footnote{The authors do not give
   the masses of the clusters, so these values are taken from the
   $\Mass{}\dash{}T$ relation of \citet{Vikhlinin2006} (our equation
   \ref{eq:M-T}).}. The \Planck{} pressure profile, combined with the
-gas density profile, was used to calculate the total mass, assuming
+gas density profile, was used to determine the total mass, assuming
 hydrostatic equilibrium. This is different from the method used by
 \citet{PlanckIntV}, which used a scaling relation and assumed an NFW
 profile. However, both estimates rely on the assumption of hydrostatic
@@ -232,7 +233,7 @@ equilibrium either explicitly or implicitly through calibration of the
 $Y_X\dash\Mfive$ relation. 18 clusters are in common
 between the \Rosat{} and \Planck{} samples, and the authors separated
 them into cool-core (CC, 6 clusters) and non-cool core (NCC, 12
-clusters) categories. The gas fraction profile was calculated
+clusters) categories. The gas fraction profile was determined
 separately for the two categories, and the authors found that NCC
 clusters have significantly higher gas fractions within \rtwo{}
 ($0.169 \pm 0.010$) than relaxed, CC clusters do ($0.134\pm 0.011$),
@@ -245,20 +246,20 @@ that \fg{} increases from \rfive{} to \rtwo{} ($\fgfive \approx
 massive ($\Mvir \gsim 1\power{15}~\Msun$, $kT \approx 9\dash10~\keV$)
 clusters using Thermal SZ measurements with the \textit{AMiBA} CMB
 telescope. After deriving pressure profiles from the SZ effect, the
-authors calculated the gas density profile using archival X-ray
+authors obtained the gas density profile using archival X-ray
 temperature measurements and a theoretically-derived temperature
 profile \citep{Komatsu2001}. The authors use \textit{Subaru}
 observations to derive the cluster masses with weak lensing
-analysis. The average gas fraction is calculated to the limit of the
-SZ observations, \rtwo, and is found to be $\fg(<\rfive) = 0.126 \pm
-0.019$ within \rfive{} and $\fg(<\rtwo) = 0.133 \pm 0.020$ within
+analysis. The average gas fraction is determined to the limit of the
+SZ observations, \rtwo, and is observed to be $\fg(<\rfive) = 0.126
+\pm 0.019$ within \rfive{} and $\fg(<\rtwo) = 0.133 \pm 0.020$ within
 \rtwo{}. These observations also find that \fg{} increases with radius
-beyond \rfive{}, in agreement with \citet{PlanckIntV} and
-\citet{Eckert2013b}. We emphasize that the total mass for these
-clusters is \textit{not} dependent on the assumption of hydrostatic
-equilibrium (because they were derived using weak lensing
-measurements). See our discussion of the hydrostatic mass bias in
-Section \ref{sec:Limitations.HSE}.
+beyond \rfive{}, in agreement with \citet{Rasheed2011},
+\citet{PlanckIntV}, and \citet{Eckert2013b}. We emphasize that the
+total mass for these clusters is \textit{not} dependent on the
+assumption of hydrostatic equilibrium (because they were derived using
+weak lensing measurements). See our discussion of the hydrostatic mass
+bias in Section \ref{sec:Limitations.HSE}.
 
 Table \ref{tab:F_gas_obs} lists the observed data from the samples
 described above, including the most important characteristics of each
@@ -269,27 +270,27 @@ assuming HSE, and the gas fraction at directly-observed radii.
 
 \subsection{Extrapolation of Gas Density Profiles}
 \label{sec:Gas.Extrapolation}
-As seen above, very few observations retain the sensitivity necessary to
-measure the gas density all the way to \rvir{}. Therefore, to
-constrain the gas fraction within the entire halo, we extrapolate
-the observed gas mass profile (at \rtwo{} or \rfive{}) to higher
-radius by assuming a power-law profile:
+As seen above, very few observations retain the sensitivity necessary
+to measure the gas density to \rvir{}. Therefore, to constrain the gas
+fraction within the virial radius, we extrapolate the observed gas
+mass profile (at \rtwo{} or \rfive{}) to larger radius by assuming a
+power-law profile:
 \begin{equation}
-\rho_{gas}(\textrm{r}) \propto \textrm{r}^{-\alpha_{gas}}, \nonumber
+\rho_{gas}(\textrm{r}) \propto \textrm{r}^{-\alpha_{gas}}\;, 
 \end{equation}
 where $\alpha{}_{gas}$ is the slope of the gas density profile, which can in
 general change as radius increases. The total
 matter density can be similarly modeled,
 \begin{equation}
-\rho_{m}(\radius) \propto (\radius)^{-\alpha_{m}}, \nonumber
+\rho_{m}(\radius) \propto (\radius)^{-\alpha_{m}}\;,
 \end{equation}
 with $\alpha{}_m$ the slope of the total mass density profile. At
 large radii, the full equation for the gas fraction simplifies to approximately:
 \begin{align}
 \fg(<\radius) = \frac{\Mass_{gas}}{\Mass_{tot}} &=
 \frac{\int_0^\radius 4\pi{}\radius'^2\rho_{gas}(\radius')d\radius'}{\int_0^\radius
-  4\pi{}\radius'^2\rho_{m}(\radius')d\radius'} \nonumber \\ & \approx
-\frac{\rho_{gas}(\radius)}{\rho_{tot}(\radius)} \nonumber\\ &\propto \radius^{\alpha_{m} - \alpha_{tot}}. \nonumber
+  4\pi{}\radius'^2\rho_{m}(\radius')d\radius'} \\ & \approx
+\frac{\rho_{gas}(\radius)}{\rho_{tot}(\radius)} \nonumber\\ &\propto \radius^{\alpha_{m} - \alpha_{tot}}\;.
 \end{align}
 Therefore, the gas fraction can be extrapolated to larger radii using
 the difference in slopes between the gas density and total mass
@@ -299,41 +300,40 @@ density profiles.
 the gas fraction of the G09 cluster samples to \rvir{}. X-ray and SZ
 observations show that the gas density decreases more slowly with
 radius than the total mass density ($\alpha_{gas} < \alpha_{m}$),
-suggesting that the gas fraction should increase when the cluster
-outskirts are considered. The authors hoped to place constraints on
-the amount of ``missing baryons'' within the virial volume of
-clusters.
+suggesting that the gas fraction increases when the cluster outskirts
+are considered. This is as expected if the gas is shock heated or
+supported by feedback pressure, and thus extends to larger radius.
 
 R11 surveyed the literature to recover X-ray measurements which
-constrain the gas density slope out to \rfive{}. These measurements
+constrain the gas density slope nearly to \rvir{}. These measurements
 include observations with \Rosat{}, \Chandra, \XMM, and
 \textit{Suzaku}, and cover a wide range of cluster masses and
 temperatures. Averaging over the many observations, the authors find
-that the gas density slope at \rfive{} is steeper in with more massive
-clusters, with $\alpha_{gas}$ ranging from $\approx 1.8 \pm 0.2$ for
-poor clusters (G09 bin 2, $\Mvir \approx 7\power{13}~\Msun$) to
-$\approx 2.3 \pm 0.02$ for the most massive G09 bin ($\Mvir
-\approx9.8\power{14}~\Msun$). 
+that the observed gas density slope at \rfive{} is steeper in with
+more massive clusters, with $\alpha_{gas}$ ranging from $\approx 1.8
+\pm 0.2$ for poor clusters (G09 bin 2, $\Mvir \approx
+7\power{13}~\Msun$) to $\approx 2.3 \pm 0.02$ for the most massive G09
+bin ($\Mvir \approx9.8\power{14}~\Msun$).
 
 Compared to the gas density profile, the total density (NFW) profile
 is significantly steeper in the outer regions of the halo. The NFW
 profile has a slope of $\alpha_m = 2.6$ between \rfive{} and \rtwo{},
 and steepens to $\alpha_m = 2.7$ in the region \rtwo{} to
-\rvir{}. Therefore, R11 predicted that the gas fraction rises
-significantly above \rfive{}. Because $\alpha_{gas}$ increases with
-cluster mass, the gas fraction is predicted to rise more quickly with
-radius in groups and poor clusters ($\fg\propto \textrm{r}^{0.8}$ for
-G09 bin 2) than in rich clusters ($\fg \propto \textrm{r}^{0.3}$ for
-G09 bin 5). For these two bins, this model predicts increases in \fg{}
-by a factor of roughly $1.6$ and $1.2$, respectively, from \rfive{} to
-\rvir{}. This offers an explanation for the particular deficiency of
-baryons in low-mass clusters: the shallower gas profile implies the
-ICM is less centrally-concentrated than in massive clusters, and the
-gas is extended further into the cluster outskirts.
+\rvir{}. Therefore, R11 find that the gas fraction rises significantly
+beyond \rfive{}. Because $\alpha_{gas}$ increases with cluster mass,
+the gas fraction rises more quickly with radius in groups and poor
+clusters ($\fg\propto \textrm{r}^{0.8}$ for G09 bin 2) than in rich
+clusters ($\fg \propto \textrm{r}^{0.3}$ for G09 bin 5). For these two
+bins, this yields an increase in \fg{} by a factor of $1.6$ and $1.2$,
+respectively, from \rfive{} to \rvir{}. This offers an explanation for
+the particular deficiency of baryons in low-mass clusters: the
+shallower gas profile implies the ICM is spread more broadly than in
+massive clusters, and the gas is extended further into the cluster
+outskirts.
 
 We adopt R11's extrapolation model in order to approximate the gas
-fraction at high radius in the samples which do not measure \fg{} to
-\rvir{} (all except PC13). $\alpha_{gas}$ for each sample in Table
+fraction at \rvir{} in the samples which do not measure \fg{} to
+these scales (all except PC13). $\alpha_{gas}$ for each sample in Table
 \ref{tab:F_gas_obs} is taken from the temperature-slope relation in
 R11; for consistency, we do not extrapolate the gas profiles for any
 individual cluster sample with coverage beyond \rfive{}. We assume
@@ -347,7 +347,7 @@ maximum observed radius, r$_a$, to a larger radius r$_b$ using:
  For example, extrapolating the gas fraction of G09's bin 5 from \rfive{} to \rtwo{}:
 \begin{align}
 \fgtwo &= \fgfive\left(\frac{\rtwo}{\rfive}\right)^{\alpha_m -
-  \alpha_{gas}} \nonumber\\ &\approx 0.103~(1.45)^{2.6 - 2.3} \nonumber
+  \alpha_{gas}} \\ &\approx 0.103~(1.45)^{2.6 - 2.3} \nonumber
 \\ &\approx 0.115 \nonumber
 \end{align}
 
@@ -358,15 +358,15 @@ r$_b$/r$_a$. The fractional errors add in quadrature.
 \begin{align}
 \frac{\Delta\fg{}_{,b}}{\fg{}_{,b}} &=
 \sqrt{\left(\frac{\Delta\fg{}_{,a}}{\fg{}_{,a}}\right)^2 +
-  \left(\frac{\Delta\left(\textrm{r}_b/\textrm{r}_a\right)^{\alpha_m-\alpha_{gas}}}{\left(\textrm{r}_b/\textrm{r}_a\right)^{\alpha_m-\alpha_{gas}}}\right)^2}\nonumber\\
+  \left(\frac{\Delta\left(\textrm{r}_b/\textrm{r}_a\right)^{\alpha_m-\alpha_{gas}}}{\left(\textrm{r}_b/\textrm{r}_a\right)^{\alpha_m-\alpha_{gas}}}\right)^2}\;.\\
 \intertext{The uncertainty in the right term is}
 \Delta\left(\textrm{r}_b/\textrm{r}_a\right)^{\alpha_m-\alpha_{gas}}
 & =
-\left(\textrm{r}_b/\textrm{r}_a\right)^{\alpha_m-\alpha_{gas}}\ln{\left(\textrm{r}_b/\textrm{r}_a\right)}\Delta\alpha_{gas}\,,\nonumber\\
+\left(\textrm{r}_b/\textrm{r}_a\right)^{\alpha_m-\alpha_{gas}}\ln{\left(\textrm{r}_b/\textrm{r}_a\right)}\Delta\alpha_{gas}\,,\\
 \intertext{yielding the final result:}
 \frac{\Delta\fg{}_{,b}}{\fg{}_{,b}} &=
 \sqrt{\left(\frac{\Delta\fg{}_{,a}}{\fg{}_{,a}}\right)^2 +
-  \left(\ln{\left(\textrm{r}_b/\textrm{r}_a\right)}\Delta\alpha_{gas}\right)^2}
+  \left(\ln{\left(\textrm{r}_b/\textrm{r}_a\right)}\Delta\alpha_{gas}\right)^2}\;.
 \end{align}
 
 The gas density profile is expected to steepen at very large radii,
@@ -377,12 +377,10 @@ fraction as described above will, therefore, become invalid, as
 $\alpha_{gas}$ will not remain fixed. The range at which the gas
 density steepens significantly is not known, however, as observational
 data does not currently constrain $\alpha_{gas}$ far beyond
-\rfive. R11's assumption that this slope remains constant to \rvir{}
-is therefore a questionable one, but no simple alternatives exist. We,
-likewise, assume $\alpha_{gas}$ remains constant to \rvir{} (and
-slightly beyond), and emphasize that the our calculation of the gas
-fraction will be biased high if the gas density slope steepens
-significantly beyond \rfive{}. In Section
+\rtwo{}. We assume $\alpha_{gas}$ remains constant to
+\rvir{} (and slightly beyond), and emphasize that the our estimate
+of the gas fraction will be biased high if the gas density slope
+steepens significantly beyond \rtwo{}. In Section
 \ref{sec:Limitations.Slope}, we discuss current constraints on this
 steepening of this slope.
 
@@ -391,62 +389,66 @@ steepening of this slope.
 
 The integrated stellar mass of groups and clusters is also an
 important (although subdominant) reservoir of baryons in these large
-halos. The stellar mass of clusters is thought to come almost entirely
-from the stellar content of the individual cluster galaxies.
+systems. The stellar mass of clusters is thought to come almost entirely
+from the stellar content of the individual cluster galaxies (plus an
+estimated $\approx10\%$ from the diffuse intracluster light).
 
-G09 approximated the stellar content of a large number ($>90$) of
-groups and clusters from the \textit{COSMOS} survey. Using optical and infrared
-observations from \textit{Subaru}, the authors fit a broad-band spectrum to the
-detected galaxies in each cluster and used these spectral energy
-distributions to derive photometric redshifts for the
-sample. Converting the $Ks$-band (IR) luminosity of detected galaxies
-to stellar mass, and accounting for the entire predicted galactic mass
-function, G09 approximated the stellar fraction in clusters of sizes
-$1\power{13}\dash1\power{15}~\Msun$. At \rfive{}, the stellar
-fraction was found to be significantly higher ($\approx 6\%$) for
-groups and poor clusters than for the most massive clusters ($\approx
-2\%$). The authors derived a fit to stellar-fraction versus mass of:
+G09 estimated the stellar content of a large number ($>90$) of
+groups and clusters from the \textit{COSMOS} survey. Using optical and
+infrared observations from \textit{Subaru}, the authors fit a
+broad-band spectrum to the detected galaxies in each cluster and used
+their spectral energy distributions to derive photometric redshifts
+for the sample. Converting the $Ks$-band (IR) luminosity of detected
+galaxies to stellar mass, and accounting for the entire predicted
+galactic mass function, G09 determined the stellar fraction in
+clusters of masses $1\power{13}\dash1\power{15}~\Msun$. At \rfive{},
+the stellar fraction was found to be significantly higher ($\approx
+6\%$) for groups and poor clusters than for the most massive clusters
+($\approx 2\%$). The authors derived a fit to stellar-fraction versus
+mass of:
 \begin{equation}
 \textrm{f}_{*}(<\rfive{}) =
-(5.0\pm0.1)\power{-2}~\left(\frac{\Mfive}{5\power{13}\Msun}\right)^{-0.37\pm0.04}~. \nonumber
+(5.0\pm0.1)\power{-2}~\left(\frac{\Mfive}{5\power{13}\Msun}\right)^{-0.37\pm0.04}
+\;.
 \end{equation}
 
 The results of an extensive Sloan Digital Sky Survey (SDSS) weak
 lensing study of stacked groups and clusters has placed unparalleled
-constraints on the stellar fraction in clusters. The MaxBCG sample
-\citep{Sheldon2009a} contains $> 130,000$ clusters between redshifts
-$z = 0.1\dash0.3$. \citet{Sheldon2009b} binned the clusters by
-richness and luminosity, and stacked by centering on the brightest
-cluster galaxy (BCG). The mean weak lensing profile was detected well
-into the surrounding large scale structure ($\gsim 15\dash20 \rvir$),
-as was the averaged optical surface brightness, allowing the total
-mass to light ratio (M/L) to be
-calculated. \textbf{\citet{Bahcall2014}} (BK14) developed a model for
-the stellar mass to light ratio of individual spiral and elliptical
-galaxies, as well as their relative abundance from the
-density-morphology relation, and converted the total mass to light
-ratio into the stellar mass fraction.
+constraints on the stellar fraction in groups and clusters. The MaxBCG
+sample \citep{Sheldon2009a} contains $> 130,000$ groups and clusters
+between redshifts $z = 0.1\dash0.3$. \citet{Sheldon2009b} binned the
+clusters by richness and luminosity, and stacked by centering on the
+brightest cluster galaxy (BCG). The mean weak lensing profile was
+observed well into the surrounding large scale structure ($\gsim
+15\dash20 \rvir$), as was the averaged optical surface brightness,
+allowing the total mass to light ratio (M/L) to be
+determined. \textbf{\citet{Bahcall2014}} (BK14) determined the
+observed mass-to-light distribution as a function of environment and
+scale. They combined this with the observed stellar mass to light
+ratio of individual spiral and elliptical galaxies and their relative
+abundance from the density-morphology relation, and used it to
+determine the stellar mass fraction as a function of radius and for
+groups and clusters of various masses.
 
-Figure \ref{fig:BK14} shows the stellar fraction distributions derived
-by BK14.  The stellar fraction is calculated at
+Figure \ref{fig:BK14} shows the cumulative stellar fraction
+distributions derived by BK14. The stellar fraction is determined at
 $\radius{}_{200b}$\footnote{$\radius{}_{200b}$ represents where the
   density is 200 times the cosmic matter density, not the critical
   density, and corresponds roughly to our definition of \rvir{}.} as a
 function of cluster mass. The authors find that the stellar fraction
-at this fixed radius decreases with halo mass, in excellent agreement
-with G09. The stellar fraction is also calculated as a function of
-radius, divided into three richness bins, with mass ranges
-corresponding roughly to $\Mvir{}< 2\power{13}~\Msun$,
-$2\power{13}~\Msun{} < \Mvir{} < 1\power{14}~\Msun{}$, and
-$\Mvir{}>1\power{14}~\Msun{}$. The stellar fraction decreases
-significantly from the centers of clusters (where the light is
-dominated by the BCG), asymptotically approaching at high radius a
+at this fixed radius decreases with virial mass, in good agreement with
+G09. The stellar fraction is also obtained as a function of radius,
+divided into three richness bins, with mass ranges corresponding
+approximately to $\Mvir{}< 2\power{13}~\Msun$, $2\power{13}~\Msun{} <
+\Mvir{} < 1\power{14}~\Msun{}$, and $\Mvir{}>1\power{14}~\Msun{}$. The
+cumulative stellar fraction decreases significantly from the centers
+of groups and clusters, asymptotically approaching at high radius a
 ``cosmic stellar fraction'' of $\textrm{f}_{*} \approx 0.01 \pm 0.004$
-in all richness bins. The radius at which the stellar fraction reaches
-this cosmic limit decreases with richness class, suggesting that all
-clusters contain roughly the same stellar fraction, but that the
-stellar mass distribution is more extended in low-mass clusters with
-shallow gravitational potentials.
+in all richness bins. The local stellar fraction is approximately the
+cosmic fraction at all scales above roughly $300$ kpc, the scale of
+the BCG. The higher cumulative stellar fraction at any radius in
+groups and poor clusters suggests that their stellar masses are more
+dominated by the BCG than massive clusters.
 
 \input{Figures/BK14}
 
@@ -455,18 +457,18 @@ shallow gravitational potentials.
 
 Studying the distribution of baryons in individual galaxies presents
 many other challenges not faced in the investigation of
-clusters. Because galaxy halos are significantly lower mass than
-cluster halos ($\Mvir \approx 1\dash2\power{12}~\Msun{}$ for a typical
+clusters. Because galaxy systems are significantly lower mass than
+clusters ($\Mvir \approx 1\dash2\power{12}~\Msun{}$ for a typical
 L$^*$ galaxy), their gravitational wells are shallower, and it is
 easier for feedback effects to remove gas from the systems altogether
 \citeeg{Oppenheimer2010}. The lower total mass also translates to a
 much lower thermal temperature for the gas to be in hydrostatic
-equilibrium. Therefore, the main diffuse gaseous component of galaxy halos
+equilibrium. Therefore, the main diffuse gaseous component of galactic system
 will primarily be too cool and low density to be detected in
 emission. 
 
 The most obvious and easily detected baryon reservoir in (L$^*$)
-galaxy halos is the galactic disk itself, which contains the stellar
+galaxies is the galactic disk itself, which contains the stellar
 population as well as the gas and dust of the ISM. Baryons are also
 stored in the ``circumgalactic medium'' (CGM), a large, diffuse region
 surrounding galaxies with low temperatures and densities. Observations
@@ -493,13 +495,13 @@ stage, many separate phases of the CGM were predicted, as temperatures
 ranging from $2\power{4} - 2\power{5}~\textrm{K}$ were required to
 explain the variety of ionization states.
 
-Subsequent observations have confirmed this hypothesis by associating
-the absorption features in QSO sightlines to nearby foreground
-galaxies with the expected redshifts. The CGM is a gaseous reservoir
-in the dark matter halo around galaxies, which extends for several
-hundred kiloparsecs, and likely as far as the virial radius
+Very recently, observations have confirmed this hypothesis by
+associating the absorption features in QSO sightlines to nearby
+foreground galaxies with the expected redshifts. The CGM is a gaseous
+reservoir in the dark matter halo around galaxies, which extends for
+several hundred kiloparsecs, and likely as far as the virial radius
 ($\rvir{}\approx 300$ kpc for an L$^*$ galaxy). The CGM is also likely
-the major source of pristine gas accreting onto the galactic disk. 
+the major source of pristine gas accreting onto the galactic disk.
 
 The use of QSO and galaxy absorption spectroscopy remains the most
 powerful tool in statistically characterizing the CGM. The high
@@ -521,18 +523,19 @@ projected radius bins) were measured for Ly$\alpha$, \ion{C}{iv}
 (1549\AA), \ion{C}{ii} (1334\AA), \ion{Si}{iv} (1393\AA), and
 \ion{Si}{ii}(1260\AA{} and 1526\AA). Hydrogen, the most dominant
 element by mass in the CGM, is measured in its neutral phase through
-Ly$\alpha$ absorption, an is observed well beyond 100 kpc. Using an
+Ly$\alpha$ absorption, and is observed well beyond 100 kpc. Using an
 approximate model for populating the CGM by galactic outflows, the
 authors place a rough constraint on the CGM mass of $\Mass{}_{CGM}
-\approx 3\power{10} ~\Msun{}$. By this approximation, the CGM contains
-roughly the same mass content as the sum of stars and gas in the
+\approx 3\power{10}~\Msun{}$, although we emphasize that this is only
+an order-of-magnitude estimate. By this approximation, the CGM
+contains roughly the same mass as the sum of stars and gas in the
 stellar disk, and amounts to $\approx 3-4\%$ of the total mass of the
 dark matter halo ($\approx 20\%$ of the expected baryonic mass,
 assuming the halo contains the entire cosmic baryon fraction).
 
 The COS-Halos survey \citep{Tumlinson2011} was designed specifically
 to study the CGM in low-redshift galaxies. It uses far-UV spectroscopy
-of background quasars behind 44 roughly L$^*$ galaxy halos, observed
+of background quasars behind 44 roughly L$^*$ galaxies, observed
 with the Cosmic Origins Spectrograph instrument on the Hubble Space
 Telescope. Measuring the column density in Ly$\alpha$, early results
 \citep{Thom2012,Werk2013} placed a very conservative lower limit on
@@ -541,28 +544,28 @@ the CGM gas mass of $\Mass{}_{CGM} > 10^9 \Msun{}$. Later analysis by
 state of the CGM, constrained by the observed absorption of low,
 intermediate, and high-ionization transitions in metals. This model --
 which indicates that the hydrogen in the CGM is increasingly ionized
-at higher radii -- is used to greatly improve the limits on the CGM
+at larger radii -- is used to greatly improve the limits on the CGM
 mass. Integrating their best-fit gas density profile to the virial
 radius (300 kpc), they find that the cool phase (T $\approx 10^4 -
 10^5$ K) of the CGM in L$^*$ galaxies has a mass of $\Mass{}_{CGM}
-\approx 9.5\power{10}$ \Msun{}. This CGM mass is consistent with the
-rough estimate made by \citet{Steidel2010}, and is similar to the
-combined mass of the stellar disk and ISM. The uncertainty in
-$\Mass{}_{CGM}$ is dominated by saturation in a few Ly$\alpha$
-absorption profiles. The minimum CGM mass is $\Mass{}_{CGM} >
-6.5\power{10} ~\Msun$, and could range as high as $\Mass{}_{CGM}
-\approx 1.2\power{11}~\Msun{}$ if all saturated column densities are 3
-times higher than their lower limits. The total halo mass of L$^*$
-galaxies is approximately $1.6\power{12}~\Msun{}$, so the authors
-conclude the CGM accounts for $25\dash45\%$ of the expected baryonic
-mass in galaxies ($\Mass{}_{b} = \fb{}_{,cosmic} \Mvir{} \approx
-2.6\power{11} \Msun{}$).
+\approx 7\power{10}\dash1.2\power{11}~\Msun{}$. This CGM mass is
+larger than, although consistent with, the rough estimate made by
+\citet{Steidel2010}, and is similar to the combined mass of the
+stellar disk and ISM. The uncertainty in $\Mass{}_{CGM}$ is dominated
+by saturation in a few Ly$\alpha$ absorption profiles. The minimum CGM
+mass is $\Mass{}_{CGM} > 6.5\power{10} ~\Msun$, and could range as
+high as $\Mass{}_{CGM} \approx 1.2\power{11}~\Msun{}$ if all saturated
+column densities are 3 times higher than their lower limits. The total
+virial mass of L$^*$ galaxies is approximately $1.6\power{12}~\Msun{}$,
+so the authors conclude the CGM accounts for $25\dash45\%$ of the
+expected baryonic mass in galaxies ($\Mass{}_{b} = \fb{}_{,cosmic}
+\Mvir{} \approx 2.6\power{11} \Msun{}$).
 
-\subsection{Estimate of The Galactic Halo Baryon Fraction}
+\subsection{Estimate of The Galactic Baryon Fraction}
 \label{sec:Galaxy.Fraction}
 
 W14 combined their estimate of the cool gas mass in the CGM with
-observations of other baryonic components of galactic halos to
+observations of other baryonic components of galactic systems to
 constrain the total baryon fraction currently detected within the
 virial radius. The median stellar mass of the COS-Halos galaxies is
 $\left<\Mass{}_*\right> = 4\power{10}\Msun$, in agreement with
@@ -572,21 +575,21 @@ little (for elliptical galaxies) to of order the stellar mass
 \citep{McGaugh2010, Martin2010}. Together, for a star-forming L$^*$
 galaxy, the mass of the stellar and gaseous disk (the normal galactic
 component) is given as $7\power{10}\Msun{}$. Thus, the disk
-contributes about $4-5\%$ of the total mass of the galactic halo, or
+contributes about $4-5\%$ of the total mass of the galactic system, or
 about $27\%$ of the expected baryon content.
 
 The presence of high-ionization absorption lines in CGM profiles
 suggests that a warm ($>10^5~\textrm{K}$) CGM component exists. The
 ionization model derived by W14 to fit the low-ionization transition
 abundances severely underestimates the column density of
-\ion{O}{vi}. The authors reference halo models which predict a mass of
+\ion{O}{vi}. The authors reference models which predict a mass of
 warm CGM of at least $\Mass_{CGM, warm} \gsim 10^{10}~\Msun{}$ to
 explain the observed \ion{O}{vi} absorption \citep{Peeples2014}. This
 mass estimate is highly sensitive to the assumed metallicity in the
 warm CGM phase, and decreasing Z from Z$_\odot$ to $0.1$Z$_\odot$
 increases the predicted warm CGM mass by a factor of 10. The
 constraints on the warm CGM fraction thus range from $0.6\%$ to $6\%$
-of the total halo mass, or $4\dash40\%$ of the expected baryon fraction.
+of the total virial mass, or $4\dash40\%$ of the expected baryon fraction.
 
 X-ray observations hint at the existence of a hot ($>10^6~\textrm{K}$)
 gaseous reservoir outside large galaxies. Estimates of the total mass
@@ -606,7 +609,7 @@ background. If this is true, the X-ray component of the CGM may be
 substantially larger than observed by \citet{Anderson2013}.
 
 Allow us to summarize the distribution of the expected baryonic mass
-($\Mass{}_b\approx 2.6\power{11}~\Msun{}$) in galaxy halos, as
+($\Mass{}_b\approx 2.6\power{11}~\Msun{}$) in galactic halos, as
 described above and by \citet{Werk2014}. The gas in the cool CGM has
 at least $25\%$ and as much as $50\%$ of $\Mass{}_{b}$. The stellar
 disk contains $\approx25\%$, depending on the amount of gas in the
@@ -619,8 +622,8 @@ warm CGM.
 To fit a best estimate to the baryon fraction, we take the mean of the
 lower and upper limits on each component's abundance, with the
 exception of the stellar-disk component, which we take to be the upper
-limit of $4.5\%$ of the total halo mass from stars and ISM. We take
-one-half the range on the limits as the uncertainty, with the results:
+limit of $4.5\%$ of the total virial mass from stars and ISM. We take
+one-half the range on the limits as the uncertainty:
 \begin{align}
 \textrm{f}_{disk}(<\rvir{})&= 0.045 \pm 0.013 \nonumber \\
 \textrm{f}_{CGM, cool}(<\rvir) &= 0.060 \pm 0.013 \nonumber \\
@@ -628,9 +631,9 @@ one-half the range on the limits as the uncertainty, with the results:
 \textrm{f}_{X-ray}(<\rvir) &= 0.005 \pm 0.004 \nonumber 
 \intertext{Summing these components and propagating uncertainties,
   assuming they are independent, yields our best estimate of the
-  baryon fraction in galactic halos:}
-\textrm{\textbf{f}}_{\textbf{b}}(<\textbf{\rvir}) &= \textbf{0.145} \pm \textbf{0.030} \nonumber
+  baryon fraction in galactic systems:}
+\textrm{\textbf{f}}_{\textbf{b}}(<\textbf{\rvir}) &= \textbf{0.145} \pm \textbf{0.030} \;.
 \end{align}
 If the errors are not independent (and add linearly, not in
 quadrature), the true lower and upper limits on the baryon fraction in
-galactic halos are $9.5\%$ and $19\%$, respectively.
+galactic systems are $9.5\%$ and $19\%$, respectively.
