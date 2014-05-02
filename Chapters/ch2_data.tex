@@ -44,12 +44,12 @@ the observed gas density and pressure profiles:
  -\frac{k~T(\radius)~\radius}{G}\left(\frac{d\log{\rho_{gas}(\radius)}}{d\radius}
  + \frac{d\log{T(\radius)}}{d\radius}\right)\;.
 \end{align} 
-Gas density is typically measured using X-ray observations, as the gas
-density is easily determined from the X-ray surface
-brightness. Temperature is determined from X-ray spectroscopy, and
-pressure is measured directly through the thermal SZ effect.
+Gas density is typically measured using X-ray observations, as it is
+easily determined from the X-ray surface brightness. Temperature is
+determined from X-ray spectroscopy, and pressure is measured directly
+through the thermal SZ effect.
 
-Whether the total mass derived through the assumption of hydrostatic
+Whether the total mass obtained through the assumption of hydrostatic
 equilibrium (or the ``hydrostatic mass'') is biased relative to the
 true mass is highly debated, as sources of non-thermal pressure
 (including cosmic rays, merger-induced shocks, and AGN feedback) can
@@ -79,17 +79,18 @@ consistently find that the total mass profile follows the NFW profile
 well \citeeg{Vikhlinin2006,Mandelbaum2008,Sheldon2009a,Umetsu2009}.
 
 Several ``mass proxies'' have been used to estimate the total mass of
-clusters. Mass proxies are typically easily-observed quantities that
-are found to correlate strongly with the total cluster mass. Examples
-include the X-ray temperature ($kT_X\approx1\dash10~\keV{}$ for groups
-and clusters), the richness (number of bright galaxies observed within
-the cluster), the X-ray luminosity, and $Y_X = \Mass_{gas}T_X$. Using
-mass proxies allows observers to place loose constraints on the mass
-of a cluster without requiring deep observations to recover the true
-gas or mass density profiles. The assumption of hydrostatic
-equilibrium can also affect the determination of mass through this
-method, as many Mass-Proxy relations are calibrated against
-hydrostatic masses of clusters \citeeg{Arnaud2007,Arnaud2010}.
+groups and clusters. Mass proxies are typically easily-observed
+quantities that are found to correlate strongly with the total cluster
+mass. Examples include the X-ray temperature
+($kT_X\approx1\dash10~\keV{}$ for groups and clusters), the richness
+(number of bright galaxies observed within the cluster), the X-ray
+luminosity, and $Y_X = \Mass_{gas}T_X$. Using mass proxies allows
+observers to place loose constraints on the mass of a cluster without
+requiring deep observations to recover the true gas or mass density
+profiles. The assumption of hydrostatic equilibrium can also affect
+the determination of mass through this method, as many Mass-Proxy
+relations are calibrated against hydrostatic masses of clusters
+\citeeg{Arnaud2007,Arnaud2010}.
 
 \section{Cluster Gas Mass Fraction}
 \label{sec:Gas}
@@ -168,7 +169,7 @@ The above three samples were combined in the analysis of
 \textbf{\citet{Giodini2009}} (G09), which used all 10 clusters from
 \citet{Vikhlinin2006}, all 10 clusters from \citet{Arnaud2007}, and 21
 of the 23 best-measured groups from \citet{Sun2009} to study the
-group/cluster gas mass fraction over a wide range of halo masses. The
+group/cluster gas mass fraction over a wide range of total masses. The
 authors binned the 41 groups and clusters logarithmically by mass,
 highlighting that lower mass groups have significantly lower gas
 fractions. The best-fit trend is:
@@ -189,15 +190,14 @@ observations with \XMM. The cluster sample \citep[detailed
   in][]{PlanckEarlyXI} includes clusters of mass $\Mvir =
 3.3\power{14}\dash2.7 \power{15}~\Msun$, with median mass
 approximately $\Mvir = 8.70 \power{14}~\Msun$. X-ray temperatures
-range from $kT = 3.4\dash13~\keV$. Total mass (\Mfive) was derived
-from a scaling relation with the quantity $Y_X =
-\Mass_{gas}T_X$, an observable quantity that has
-been found to be a good mass proxy. The scaling relation in question
-\citep{Arnaud2010} was calibrated against X-ray derived hydrostatic
-masses, and so the total mass of the stacked \Planck{}
-clusters assumes hydrostatic equilibrium. The total mass beyond
-\rfive{} was determined assuming an NFW profile. The stacked pressure
-profile is measured to unprecedented scales ($3\rfive \approx
+range from $kT = 3.4\dash13~\keV$. Total mass (\Mfive) was determined
+from a scaling relation with the quantity $Y_X = \Mass_{gas}T_X$, an
+observable quantity that has been found to be a good mass proxy. The
+scaling relation in question \citep{Arnaud2010} was calibrated against
+X-ray derived hydrostatic masses, and so the total mass of the stacked
+\Planck{} clusters assumes hydrostatic equilibrium. The total mass
+beyond \rfive{} was determined assuming an NFW profile. The stacked
+pressure profile is measured to unprecedented scales ($3\rfive \approx
 1.6\rvir$), although the X-ray temperature profile measured by \XMM{}
 only extends to \rfive{}, so the authors extrapolated the observed
 temperature profile to $3\rfive{}$ to match the pressure observations.
@@ -244,7 +244,7 @@ that \fg{} increases from \rfive{} to \rtwo{} ($\fgfive \approx
 
 \textbf{\citet{Umetsu2009}} (U09) observed the ICM of four very
 massive ($\Mvir \gsim 1\power{15}~\Msun$, $kT \approx 9\dash10~\keV$)
-clusters using Thermal SZ measurements with the \textit{AMiBA} CMB
+clusters using thermal SZ measurements with the \textit{AMiBA} CMB
 telescope. After deriving pressure profiles from the SZ effect, the
 authors obtained the gas density profile using archival X-ray
 temperature measurements and a theoretically-derived temperature
@@ -290,7 +290,7 @@ large radii, the full equation for the gas fraction simplifies to approximately:
 \fg(<\radius) = \frac{\Mass_{gas}}{\Mass_{tot}} &=
 \frac{\int_0^\radius 4\pi{}\radius'^2\rho_{gas}(\radius')d\radius'}{\int_0^\radius
   4\pi{}\radius'^2\rho_{m}(\radius')d\radius'} \\ & \approx
-\frac{\rho_{gas}(\radius)}{\rho_{tot}(\radius)} \nonumber\\ &\propto \radius^{\alpha_{m} - \alpha_{tot}}\;.
+\frac{\rho_{gas}(\radius)}{\rho_{tot}(\radius)} \nonumber\\ &\propto \radius^{\alpha_{m} - \alpha_{gas}}\;.
 \end{align}
 Therefore, the gas fraction can be extrapolated to larger radii using
 the difference in slopes between the gas density and total mass
@@ -422,7 +422,7 @@ brightest cluster galaxy (BCG). The mean weak lensing profile was
 observed well into the surrounding large scale structure ($\gsim
 15\dash20 \rvir$), as was the averaged optical surface brightness,
 allowing the total mass to light ratio (M/L) to be
-determined. \textbf{\citet{Bahcall2014}} (BK14) determined the
+obtained. \textbf{\citet{Bahcall2014}} (BK14) determined the
 observed mass-to-light distribution as a function of environment and
 scale. They combined this with the observed stellar mass to light
 ratio of individual spiral and elliptical galaxies and their relative
@@ -430,7 +430,7 @@ abundance from the density-morphology relation, and used it to
 determine the stellar mass fraction as a function of radius and for
 groups and clusters of various masses.
 
-Figure \ref{fig:BK14} shows the cumulative stellar fraction
+Figure \ref{fig:BK14} shows the cumulative and local stellar fraction
 distributions derived by BK14. The stellar fraction is determined at
 $\radius{}_{200b}$\footnote{$\radius{}_{200b}$ represents where the
   density is 200 times the cosmic matter density, not the critical
@@ -521,11 +521,11 @@ the foreground absorbers ($z\approx 2$), this translates to projected
 distances within 125 kpc. Absorption profiles (stacked into three
 projected radius bins) were measured for Ly$\alpha$, \ion{C}{iv}
 (1549\AA), \ion{C}{ii} (1334\AA), \ion{Si}{iv} (1393\AA), and
-\ion{Si}{ii}(1260\AA{} and 1526\AA). Hydrogen, the most dominant
+\ion{Si}{ii} (1260\AA{} and 1526\AA). Hydrogen, the most dominant
 element by mass in the CGM, is measured in its neutral phase through
 Ly$\alpha$ absorption, and is observed well beyond 100 kpc. Using an
 approximate model for populating the CGM by galactic outflows, the
-authors place a rough constraint on the CGM mass of $\Mass{}_{CGM}
+authors placed a rough constraint on the CGM mass of $\Mass{}_{CGM}
 \approx 3\power{10}~\Msun{}$, although we emphasize that this is only
 an order-of-magnitude estimate. By this approximation, the CGM
 contains roughly the same mass as the sum of stars and gas in the
@@ -535,18 +535,18 @@ assuming the halo contains the entire cosmic baryon fraction).
 
 The COS-Halos survey \citep{Tumlinson2011} was designed specifically
 to study the CGM in low-redshift galaxies. It uses far-UV spectroscopy
-of background quasars behind 44 roughly L$^*$ galaxies, observed
-with the Cosmic Origins Spectrograph instrument on the Hubble Space
+of background quasars behind 44 roughly L$^*$ galaxies, observed with
+the Cosmic Origins Spectrograph instrument on the Hubble Space
 Telescope. Measuring the column density in Ly$\alpha$, early results
 \citep{Thom2012,Werk2013} placed a very conservative lower limit on
-the CGM gas mass of $\Mass{}_{CGM} > 10^9 \Msun{}$. Later analysis by
+the CGM gas mass of $\Mass{}_{CGM} > 10^9~\Msun{}$. Later analysis by
 \textbf{\citet{Werk2014}} (W14) developed a model for the ionization
 state of the CGM, constrained by the observed absorption of low,
 intermediate, and high-ionization transitions in metals. This model --
 which indicates that the hydrogen in the CGM is increasingly ionized
-at larger radii -- is used to greatly improve the limits on the CGM
-mass. Integrating their best-fit gas density profile to the virial
-radius (300 kpc), they find that the cool phase (T $\approx 10^4 -
+at larger radii -- was used to greatly improve the limits on the CGM
+mass. Integrating the best-fit gas density profile to the virial
+radius (300 kpc), they found that the cool phase (T $\approx 10^4 -
 10^5$ K) of the CGM in L$^*$ galaxies has a mass of $\Mass{}_{CGM}
 \approx 7\power{10}\dash1.2\power{11}~\Msun{}$. This CGM mass is
 larger than, although consistent with, the rough estimate made by
@@ -556,10 +556,11 @@ by saturation in a few Ly$\alpha$ absorption profiles. The minimum CGM
 mass is $\Mass{}_{CGM} > 6.5\power{10} ~\Msun$, and could range as
 high as $\Mass{}_{CGM} \approx 1.2\power{11}~\Msun{}$ if all saturated
 column densities are 3 times higher than their lower limits. The total
-virial mass of L$^*$ galaxies is approximately $1.6\power{12}~\Msun{}$,
-so the authors conclude the CGM accounts for $25\dash45\%$ of the
-expected baryonic mass in galaxies ($\Mass{}_{b} = \fb{}_{,cosmic}
-\Mvir{} \approx 2.6\power{11} \Msun{}$).
+virial mass of L$^*$ galaxies is approximately
+$1.6\power{12}~\Msun{}$, so the authors conclude the cool CGM accounts
+for $25\dash45\%$ of the expected baryonic mass in galaxies
+($\Mass{}_{b} = \fb{}_{,cosmic} \Mvir{} \approx 2.6\power{11}
+\Msun{}$).
 
 \subsection{Estimate of The Galactic Baryon Fraction}
 \label{sec:Galaxy.Fraction}
@@ -568,7 +569,7 @@ W14 combined their estimate of the cool gas mass in the CGM with
 observations of other baryonic components of galactic systems to
 constrain the total baryon fraction currently detected within the
 virial radius. The median stellar mass of the COS-Halos galaxies is
-$\left<\Mass{}_*\right> = 4\power{10}\Msun$, in agreement with
+$\left<\Mass{}_*\right> = 4\power{10}~\Msun$, in agreement with
 abundance matching estimates \citep{Behroozi2010}. The gaseous
 component of the ISM, observed with HI surveys, can vary from very
 little (for elliptical galaxies) to of order the stellar mass
